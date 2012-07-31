@@ -9,10 +9,9 @@ rm -rfv .bash .bashrc .conky .emacs .emacs.d .emacs-themes
 
 echo "linking new config files"
 cd $repoDir
-pwd
-ln -s .bash $HOME/.bash
-ln -s .bashrc $HOME/.bashrc
-ln -s .conky $HOME/.conky
-ln -s .emacs $HOME/.emacs
-ln -s .emacs.d $HOME/.emacs.d
-ln -s .emacs-themes/ $HOME/.emacs-themes
+ln -s $repoDir/.bash $HOME/.bash
+ln -s $repoDir/.bashrc $HOME/.bashrc
+ln -s $repoDir/.conky $HOME/.conky
+ln -s $repoDir/.emacs $HOME/.emacs
+ln -s $repoDir/.emacs.d $HOME/.emacs.d
+ln -s $repoDir/.emacs-themes/ $HOME/.emacs-themes
