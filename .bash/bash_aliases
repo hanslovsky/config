@@ -1,0 +1,29 @@
+### Programme ###
+
+
+# latex compile script
+alias texpile='/home/phil/scripts/latex_compile.sh'
+
+# get bounding box of postscript
+alias getbb='gs -dNOPAUSE -dBATCH -q -sDEVICE=bbox'
+
+# emacs with fullscreen and colors
+# alias emacs='emacs -bg black -fg white'
+
+# quilt for deb pkg
+alias dquilt="quilt --quiltrc=${HOME}/.quiltrc-dpkg"
+
+# copy terminal output to clipboard
+alias termclip="xclip -sel clip"
+
+# gnome keyboard config for clementine
+alias gnome-keybinding-properties="gnome-control-center keyboard"
+
+# matlab
+alias matlab="$HOME/Tools/matlab/bin/matlab -nosplash"
+
+# pdflatex
+alias pdflatex="pdflatex --enable-write18"
+
+# conky orange
+alias ckyorange="conky -c $HOME/.conky/conky_orange/conkyrc_orange"
