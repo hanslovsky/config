@@ -4,8 +4,8 @@
 ;; ========== Color themes                     ==========
 (require 'color-theme)
 (color-theme-initialize)
-(load-file "~/Downloads/emacs/themes/color-theme-sunburst.el")
-;;(load-file "~/Downloads/emacs/themes/color-theme-tango.el")
+(load-file "~/.emacs-themes/color-theme-sunburst.el")
+;;(load-file "~/.emacs-themes/color-theme-tango.el")
 (color-theme-tm)
 ;;(color-theme-tango)
 
