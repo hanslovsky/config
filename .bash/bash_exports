@@ -4,15 +4,18 @@ CPLEX_LIB="$HOME/local/ILOG/cplex/lib/x86-64_sles10_4.1/static_pic"
 CONCERT_INCLUDE="$HOME/local/ILOG/concert/include"
 CONCERT_LIB="$HOME/local/ILOG/concert/lib/x86-64_sles10_4.1/static_pic"
 
+SITE_PACKAGES="$HOME/local/lib/python2.7/site-packages"
 DIST_PACKAGES="$HOME/local/lib/python2.7/dist-packages"
 
 
 ### PATH Variablen
-export CPLUS_INCLUDE_PATH="$CPLEX_INCLUDE:$CONCERT_INCLUDE:$HOME/local/include:/usr/include/mpi:$CPLUS_INCLUDE_PATH"
+export C_INCLUDE_PATH="$HOME/local/include:$C_INCLUDE_PATH"
+export ILOG_LICENSE_FILE="$HOME/.ilog_license/acces.ilm"
+export CPLUS_INCLUDE_PATH="$CPLEX_INCLUDE:$CONCERT_INCLUDE:$HOME/local/include:/usr/include/mpi:$HOME/local/include:$CPLUS_INCLUDE_PATH"
 export LIBRARY_PATH="$CPLEX_LIB:$CONCERT_LIB:$HOME/local/lib:$LIBRARY_PATH"
-export PATH="/home/phil/local/bin:/home/phil/scripts:$PATH"
-export LD_LIBRARY_PATH="$HOME/local/lib:$DIST_PACKAGES:$LD_LIBRARY_PATH"
-export PYTHONPATH="$DIST_PACKAGES:$PYTHONPATH"
+export PATH="$HOME/local/bin:/home/phil/scripts:$PATH"
+export LD_LIBRARY_PATH="$HOME/local/lib:$SITE_PACKAGES:$LD_LIBRARY_PATH"
+export PYTHONPATH="$DIST_PACKAGES:$SITE_PACKAGES:$PYTHONPATH"
 
 
 
@@ -26,4 +29,4 @@ unset CPLEX_LIB
 unset CONCERT_INCLUDE
 unset CONCERT_LIB
 
-unset DIST_PACKAGES
+unset SITE_PACKAGES
