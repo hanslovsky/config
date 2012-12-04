@@ -16,8 +16,9 @@ export LIBRARY_PATH="$CPLEX_LIB:$CONCERT_LIB:$HOME/local/lib:$LIBRARY_PATH"
 export PATH="$HOME/local/bin:/home/phil/scripts:$PATH"
 export LD_LIBRARY_PATH="$HOME/local/lib:$SITE_PACKAGES:$LD_LIBRARY_PATH"
 export PYTHONPATH="$DIST_PACKAGES:$SITE_PACKAGES:$PYTHONPATH"
-export EDITOR="macs -c"
 
+export EDITOR="macs -c"
+export ALTERNATE_EDITOR=""
 
 export DEBEMAIL="Philipp.Hanslovsky@gmail.com"
 export DEBFULLNAME="Philipp Hanslovsky"
