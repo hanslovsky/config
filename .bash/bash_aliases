@@ -27,3 +27,7 @@ alias pdflatex="pdflatex --enable-write18"
 
 # conky orange
 alias ckyorange="conky -c $HOME/.conky/conky_orange/conkyrc_orange"
+
+# desktop logout
+alias desklo="dbus-send --session --type=method_call --print-reply --dest=org.gnome.SessionManager /org/gnome/SessionManager org.gnome.SessionManager.Logout uint32:1"
+

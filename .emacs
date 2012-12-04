@@ -14,6 +14,9 @@
 
 (global-hl-line-mode 1)
 
+;; specify default font
+;; (set-default-font "Inconsolata 12")
+
 ;; ========== Enable Line and Column Numbering ==========
 
 ;; Show line-number in the mode line
@@ -42,13 +45,18 @@
   ;; If you edit it by hand, you could mess it up, so be careful.
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
- '(inhibit-startup-screen t))
+ '(blink-cursor-mode t)
+ '(column-number-mode t)
+ '(inhibit-startup-screen t)
+ '(menu-bar-mode nil)
+ '(tool-bar-mode nil)
+ '(transient-mark-mode (quote (only . t))))
 (custom-set-faces
   ;; custom-set-faces was added by Custom.
   ;; If you edit it by hand, you could mess it up, so be careful.
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
- )
+ '(default ((t (:inherit nil :stipple nil :background "#111" :foreground "#ddd" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight semi-bold :height 83 :width normal :foundry "adobe" :family "Source Code Pro")))))
 
 ;; ===== Matlab Mode =====
 (autoload 'matlab-mode "matlab" "Matlab Editing Mode" t)
