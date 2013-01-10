@@ -4,17 +4,22 @@
 ;; ========== Color themes                     ==========
 (require 'color-theme)
 (color-theme-initialize)
-(load-file "~/.emacs-themes/color-theme-sunburst.el")
-;;(load-file "~/.emacs-themes/color-theme-tango.el")
-(color-theme-tm)
-;;(color-theme-tango)
+;;(load-file "~/.emacs-themes/color-theme-sunburst.el")
+(load-file "~/.emacs-themes/color-theme-tango.el")
+;;(load-file "~/.emacs-themes/gentooish.el")
+(add-to-list 'load-path "~/.emacs-themes")
+;;(color-theme-tm)
+(color-theme-tango)
+;;(color-theme-gentooish)
+
 
 ;; In every buffer, the line which contains the cursor will be fully
 ;; highlighted
 
 (global-hl-line-mode 1)
 
-;; specify default font
+
+;; Specify default font
 ;; (set-default-font "Inconsolata 12")
 
 ;; ========== Enable Line and Column Numbering ==========
