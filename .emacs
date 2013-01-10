@@ -2,16 +2,19 @@
 
 
 ;; ========== Color themes                     ==========
-(require 'color-theme)
-(color-theme-initialize)
+;;(require 'color-theme)
+;;(color-theme-initialize)
 ;;(load-file "~/.emacs-themes/color-theme-sunburst.el")
-(load-file "~/.emacs-themes/color-theme-tango.el")
+;;(load-file "~/.emacs-themes/color-theme-tango.el")
 ;;(load-file "~/.emacs-themes/gentooish.el")
-(add-to-list 'load-path "~/.emacs-themes")
+;;(add-to-list 'load-path "~/.emacs-themes")
 ;;(color-theme-tm)
-(color-theme-tango)
+;;(color-theme-tango)
 ;;(color-theme-gentooish)
 
+;;(setq custom-theme-path "~/.emacs-themes/")
+(add-to-list 'custom-theme-load-path "~/.emacs-themes")
+(load-theme 'solarized-light t)
 
 ;; In every buffer, the line which contains the cursor will be fully
 ;; highlighted
