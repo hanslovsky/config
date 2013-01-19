@@ -14,7 +14,7 @@
 
 ;;(setq custom-theme-path "~/.emacs-themes/")
 (add-to-list 'custom-theme-load-path "~/.emacs-themes")
-(load-theme 'solarized-light t)
+(load-theme 'solarized-dark t)
 
 ;; In every buffer, the line which contains the cursor will be fully
 ;; highlighted
@@ -49,22 +49,21 @@
 (global-linum-mode t)
 
 (custom-set-variables
-  ;; custom-set-variables was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
- '(blink-cursor-mode t)
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  '(column-number-mode t)
+ '(custom-safe-themes (quote ("fc5fcb6f1f1c1bc01305694c59a1a861b008c534cae8d0e48e4d5e81ad718bc6" "1e7e097ec8cb1f8c3a912d7e1e0331caeed49fef6cff220be63bd2a6ba4cc365" default)))
  '(inhibit-startup-screen t)
  '(menu-bar-mode nil)
- '(tool-bar-mode nil)
- '(transient-mark-mode (quote (only . t))))
+ '(tool-bar-mode nil))
 (custom-set-faces
-  ;; custom-set-faces was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "#111" :foreground "#ddd" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight semi-bold :height 83 :width normal :foundry "adobe" :family "Source Code Pro")))))
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(default ((t (:family "Source Code Pro" :foundry "adobe" :slant normal :weight bold :height 90 :width normal)))))
 
 ;; ===== Matlab Mode =====
 (autoload 'matlab-mode "matlab" "Matlab Editing Mode" t)
