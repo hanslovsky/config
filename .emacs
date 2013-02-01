@@ -25,6 +25,9 @@
 ;; Specify default font
 ;; (set-default-font "Inconsolata 12")
 
+;; open *.h in c++ mode instead of c mode
+(add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
+
 ;; ========== Enable Line and Column Numbering ==========
 
 ;; Show line-number in the mode line
@@ -72,3 +75,6 @@
   '("\\.m$" . matlab-mode))
 (setq matlab-indent-function t)
 (setq matlab-shell-command "matlab")
+
+;; minor fold mode
+;; (hs-minor-mode t)
