@@ -3,16 +3,17 @@
 set -e
 
 repoDir=$(pwd)
+targets=(".sh" ".bashrc" ".conky" ".emacs" ".emacs-themes" ".fonts")
 cd $HOME
-echo "removing existing config files"
-rm -rfv .bash .bashrc .conky .emacs .emacs-themes .fonts
+echo "removing existing config files..."
+for t in ${targets[@]}; do
+    rm -rf $t
+    echo "  $t"
+done
 
 echo "linking new config files"
 cd $repoDir
-ln -s $repoDir/.bash $HOME/.bash
-ln -s $repoDir/.bashrc $HOME/.bashrc
-ln -s $repoDir/.conky $HOME/.conky
-ln -s $repoDir/.emacs $HOME/.emacs
-# ln -s $repoDir/.emacs.d $HOME/.emacs.d
-ln -s $repoDir/.emacs-themes/ $HOME/.emacs-themes
-ln -s $repoDir/.fonts $HOME/.fonts
+for t in ${targets[@]}; do
+    ln -s "$repoDir/$t" "$HOME/$t"
+    echo "  $HOME/$t -> $t"
+done
