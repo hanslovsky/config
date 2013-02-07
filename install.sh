@@ -20,6 +20,10 @@ done
 
 # check for oh-my-zsh
 if [[ -d "$HOME/git/oh-my-zsh" ]]; then
-    echo "linking oh-my-zsh"
-    ln -s "$HOME/git/oh-my-zsh" $HOME/.oh-my-zsh
+    if [[ -e "$HOME/.oh-my-zsh" ]]; then
+	echo "~/.oh-my-zsh already exists"
+    else
+	echo "linking oh-my-zsh"
+	ln -s "$HOME/git/oh-my-zsh" "$HOME/.oh-my-zsh"
+    fi
 fi
