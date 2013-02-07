@@ -26,6 +26,9 @@ if [[ -d "$HOME/git/oh-my-zsh" ]]; then
 	echo "linking oh-my-zsh"
 	ln -s "$HOME/git/oh-my-zsh" "$HOME/.oh-my-zsh"
     fi
+else
+    echo "$HOME/git/oh-my-zsh does not exist"
+    echo "  type \"git clone git://github.com/robbyrussell/oh-my-zsh.git\" to get it"
 fi
 
 # set standard shell
