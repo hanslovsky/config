@@ -27,3 +27,8 @@ if [[ -d "$HOME/git/oh-my-zsh" ]]; then
 	ln -s "$HOME/git/oh-my-zsh" "$HOME/.oh-my-zsh"
     fi
 fi
+
+# set standard shell
+std_shell="/bin/zsh"
+echo "setting standard shell to $std_shell"
+chsh -s $std_shell
