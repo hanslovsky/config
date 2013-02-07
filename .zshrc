@@ -37,3 +37,14 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
+
+# additional aliases
+if [ -f ~/.sh/sh_aliases ]; then
+    . ~/.sh/sh_aliases
+fi
+
+# set environment variables
+if [ -f ~/.sh/sh_exports ]; then
+    . ~/.sh/sh_exports
+fi
+

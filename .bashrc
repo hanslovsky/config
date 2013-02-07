@@ -83,7 +83,7 @@ if [ -x /usr/bin/dircolors ]; then
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
 
-    alias grep='grep --color=auto -i'
+    alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
 fi
@@ -102,8 +102,8 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
-if [ -f ~/.bash/bash_aliases ]; then
-    . ~/.bash/bash_aliases
+if [ -f ~/.sh/sh_aliases ]; then
+    . ~/.sh/sh_aliases
 fi
 
 # enable programmable completion features (you don't need to enable
@@ -115,8 +115,8 @@ fi
 
 
 
-if [ -f ~/.bash/bash_exports ]; then
-    . ~/.bash/bash_exports
+if [ -f ~/.sh/sh_exports ]; then
+    . ~/.sh/sh_exports
 fi
 
 
