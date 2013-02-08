@@ -12,7 +12,7 @@
 ;;(color-theme-tango)
 ;;(color-theme-gentooish)
 
-;;(setq custom-theme-path "~/.emacs-themes/")
+;; (setq custom-theme-path "~/.emacs-themes/")
 (add-to-list 'custom-theme-load-path "~/.emacs-themes")
 (load-theme 'solarized-dark t)
 

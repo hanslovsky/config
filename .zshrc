@@ -41,6 +41,9 @@ zstyle -e ':completion:*' special-dirs '[[ $PREFIX = (../)#(|.|..) ]] && reply=(
 
 # Customize to your needs...
 
+# special directory completion
+zstyle -e ':completion:*' special-dirs '[[ $PREFIX = (../)#(|.|..) ]] && reply=(..)'
+
 # additional aliases
 if [ -f ~/.sh/sh_aliases ]; then
     . ~/.sh/sh_aliases

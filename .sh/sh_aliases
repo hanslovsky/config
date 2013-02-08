@@ -28,6 +28,9 @@ alias pdflatex="pdflatex --enable-write18"
 # conky orange
 alias ckyorange="conky -c $HOME/.conky/conky_orange/conkyrc_orange"
 
+# cheddar
+alias cheddar="rdesktop -u phanslovsky -g 1024x768 cheddar.iwr.uni-heidelberg.de"
+
 # desktop logout
 alias desklo="dbus-send --session --type=method_call --print-reply --dest=org.gnome.SessionManager /org/gnome/SessionManager org.gnome.SessionManager.Logout uint32:1"
 
