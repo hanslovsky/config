@@ -36,6 +36,9 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
+# enable autocompletion for special directories
+zstyle -e ':completion:*' special-dirs '[[ $PREFIX = (../)#(|.|..) ]] && reply=(..)'
+
 # Customize to your needs...
 
 # special directory completion
@@ -50,4 +53,3 @@ fi
 if [ -f ~/.sh/sh_exports ]; then
     . ~/.sh/sh_exports
 fi
-
