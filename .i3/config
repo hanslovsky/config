@@ -164,7 +164,7 @@ workspace  4 output VGA1
 # bind lock screen to
 # bindsym $mod+Shift+W exec --no-startup-id i3lock -i $HOME/wp.png -p win -t
 # bindsym $mod+Shift+W exec --no-startup-id i3lock -i $HOME/lock2.png -p win -t
-bindsym $mod+Shift+W exec --no-startup-id i3lock -i $HOME/bs.png -p win -t
+bindsym $mod+Shift+W exec --no-startup-id i3lock -i $HOME/bs.png -t
 
 # set correct number of screen (hostname dependend)
 # exec --no-starup-id bash $HOME/git/scripts/set_nr_screens_hostname_dependend.sh
