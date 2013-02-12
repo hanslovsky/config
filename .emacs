@@ -66,7 +66,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "Source Code Pro" :foundry "adobe" :slant normal :weight bold :height 90 :width normal)))))
+ '(default ((t (:family "DejaVu Sans Mono" :foundry "unknown" :slant normal :weight normal :height 83 :width normal)))))
 
 ;; ===== Matlab Mode =====
 (autoload 'matlab-mode "matlab" "Matlab Editing Mode" t)

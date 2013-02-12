@@ -30,3 +30,4 @@
    r = checkout
 [core]
 	excludesfile = $HOME/.gitignore
+	
