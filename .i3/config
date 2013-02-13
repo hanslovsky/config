@@ -116,17 +116,30 @@ mode "resize" {
         # when pressing left, the window is resized so that it has
         # more space on its left
 
-bindsym j resize shrink left 10 px or 10 ppt
-bindsym Shift+J resize grow   left 10 px or 10 ppt
+bindsym j resize shrink left 5 px or 5 ppt
+bindsym Shift+J resize grow   left 5 px or 5 ppt
 
-bindsym k resize shrink down 10 px or 10 ppt
-bindsym Shift+K resize grow   down 10 px or 10 ppt
+bindsym k resize shrink down 5 px or 5 ppt
+bindsym Shift+K resize grow   down 5 px or 5 ppt
 
-bindsym l resize shrink up 10 px or 10 ppt
-bindsym Shift+L resize grow   up 10 px or 10 ppt
+bindsym l resize shrink up 5 px or 5 ppt
+bindsym Shift+L resize grow   up 5 px or 5 ppt
 
-bindsym odiaeresis resize shrink right 10 px or 10 ppt
-bindsym Shift+Odiaeresis resize grow   right 10 px or 10 ppt
+bindsym odiaeresis resize shrink right 5 px or 5 ppt
+bindsym Shift+Odiaeresis resize grow   right 5 px or 5 ppt
+
+# smaller steps
+bindsym u resize shrink left 1 px or 1 ppt
+bindsym Shift+U resize grow   left 1 px or 1 ppt
+
+bindsym i resize shrink down 1 px or 1 ppt
+bindsym Shift+I resize grow   down 1 px or 1 ppt
+
+bindsym o resize shrink up 1 px or 1 ppt
+bindsym Shift+O resize grow   up 1 px or 1 ppt
+
+bindsym p resize shrink right 1 px or 1 ppt
+bindsym Shift+P resize grow   right 1 px or 1 ppt
 
         # same bindings, but for the arrow keys
 bindsym Left resize shrink left 10 px or 10 ppt
