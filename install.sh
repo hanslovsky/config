@@ -3,7 +3,7 @@
 set -e
 
 repoDir=$(pwd)
-targets=(".sh" ".bashrc" ".zshrc" ".conky" ".emacs" ".emacs-themes" ".fonts" ".gitconfig" ".gitignore" ".i3")
+targets=(".sh" ".bashrc" ".zshrc" ".conky" ".emacs" ".emacs-themes" ".fonts" ".gitconfig" ".gitignore" ".i3" ".xsessionrc")
 cd $HOME
 echo "removing existing config files..."
 for t in ${targets[@]}; do
