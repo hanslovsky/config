@@ -7,14 +7,24 @@ CONCERT_LIB="$HOME/local/ILOG/concert/lib/x86-64_sles10_4.1/static_pic"
 SITE_PACKAGES="$HOME/local/lib/python2.7/site-packages"
 DIST_PACKAGES="$HOME/local/lib/python2.7/dist-packages"
 
+GOOGLE_APP="$HOME/local/google_appengine"
+
+TEX_BIN_DIR="$HOME/local/texlive/2012/bin/x86_64-linux"
+
 
 ### PATH Variablen
-export C_INCLUDE_PATH="$HOME/local/include:$C_INCLUDE_PATH"
+export C_INCLUDE_PATH="$CPLEX_INCLUDE:$CONCERT_INCLUDE:$HOME/local/include:$C_INCLUDE_PATH"
+
 export ILOG_LICENSE_FILE="$HOME/.ilog_license/acces.ilm"
+
 export CPLUS_INCLUDE_PATH="$CPLEX_INCLUDE:$CONCERT_INCLUDE:$HOME/local/include:/usr/include/mpi:$HOME/local/include:$CPLUS_INCLUDE_PATH"
+
 export LIBRARY_PATH="$CPLEX_LIB:$CONCERT_LIB:$HOME/local/lib:$LIBRARY_PATH"
-export PATH="$HOME/local/bin:/home/phil/scripts:$PATH"
+
+export PATH="$TEX_BIN_DIR:$GOOGLE_APP:$HOME/local/bin:/home/phil/scripts:$PATH"
+
 export LD_LIBRARY_PATH="$HOME/local/lib:$SITE_PACKAGES:$LD_LIBRARY_PATH"
+
 export PYTHONPATH="$DIST_PACKAGES:$SITE_PACKAGES:$PYTHONPATH"
 
 export EDITOR="macs -c"
@@ -31,3 +41,6 @@ unset CONCERT_INCLUDE
 unset CONCERT_LIB
 
 unset SITE_PACKAGES
+
+unset GOOGLE_APP
+unset TEX_BIN_DIR
