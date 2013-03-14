@@ -81,3 +81,6 @@
 ;; (hs-minor-mode t)
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
+
+;; no tabs!
+(setq-default indent-tabs-mode nil)
