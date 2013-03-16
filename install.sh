@@ -33,5 +33,8 @@ fi
 
 # set standard shell
 std_shell="/bin/zsh"
-echo "setting standard shell to $std_shell"
-chsh -s $std_shell
+if [ -z "$(cat /etc/passwd | grep $USER | grep zsh)" ]; then
+    echo "setting standard shell to $std_shell"
+    chsh -s $std_shell
+fi
+
