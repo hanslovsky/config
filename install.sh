@@ -32,9 +32,11 @@ else
 fi
 
 # set standard shell
-std_shell="/bin/zsh"
-if [ -z "$(cat /etc/passwd | grep $USER | grep zsh)" ]; then
-    echo "setting standard shell to $std_shell"
-    chsh -s $std_shell
+std_shell="$(which zsh)"
+if [ -n "$std_shell" ]; then
+    if [ -z "$(cat /etc/passwd | grep $USER | grep zsh)" ]; then
+        echo "setting standard shell to $std_shell"
+        chsh -s $std_shell
+    fi
 fi
 
