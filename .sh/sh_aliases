@@ -34,3 +34,5 @@ alias cheddar="rdesktop -u phanslovsky -g 1024x768 cheddar.iwr.uni-heidelberg.de
 # desktop logout
 alias desklo="dbus-send --session --type=method_call --print-reply --dest=org.gnome.SessionManager /org/gnome/SessionManager org.gnome.SessionManager.Logout uint32:1"
 
+# vpn
+alias vpn_client="/opt/cisco/anyconnect/bin/vpnui"
