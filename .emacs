@@ -14,7 +14,11 @@
 
 ;; (setq custom-theme-path "~/.emacs-themes/")
 (add-to-list 'custom-theme-load-path "~/.emacs-themes")
-(load-theme 'solarized-dark t)
+;; do not load colortheme if started in terminal
+(
+ if window-system
+    (load-theme 'solarized-dark t)
+)
 
 ;; In every buffer, the line which contains the cursor will be fully
 ;; highlighted
