@@ -90,4 +90,4 @@
 (setq-default indent-tabs-mode nil)
 
 ;; magit
-(require 'magit)
+;; (require 'magit)
