@@ -3,19 +3,26 @@
 set -e
 
 repoDir=$(pwd)
-targets=(".sh" ".bashrc" ".zshrc" ".conky" ".emacs" ".emacs-themes" ".fonts" ".gitconfig" ".gitignore" ".i3" ".xsessionrc")
+targets=(".sh" ".bashrc" ".zshrc" ".conky" ".emacs" ".emacs-themes" ".fonts" ".gitconfig" ".gitignore" ".i3" ".xsessionrc" "$(ls .emacs.d | while read x; do echo .emacs.d/$x; done)")
 cd $HOME
+
+if ! [[ -d ".emacs.d" ]]; then
+    echo "Need to create ~/.emacs.d"
+    mkdir -p .emacs.d
+fi
+
 echo "removing existing config files..."
 for t in ${targets[@]}; do
     rm -rf $t
     echo "  $t"
 done
 
+
 echo "linking new config files"
 cd $repoDir
 for t in ${targets[@]}; do
     ln -s "$repoDir/$t" "$HOME/$t"
-    echo "  $HOME/$t -> $t"
+    echo "  $HOME/$t -> $repoDir/$t"
 done
 
 # check for oh-my-zsh
