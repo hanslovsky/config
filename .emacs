@@ -91,3 +91,6 @@
 
 ;; magit
 ;; (require 'magit)
+
+; blinking cursor
+(load-file "~/.emacs.d/blink-cursor-colors.el")
