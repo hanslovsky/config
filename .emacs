@@ -100,3 +100,7 @@
 
 ;; ede
 ;; (load-file "~/.emacs.d/ede_config.el")
+
+
+;; tramp
+(require 'tramp)

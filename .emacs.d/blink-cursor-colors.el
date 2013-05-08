@@ -1,7 +1,7 @@
 ; cursor blinking and changing colors
 ; taken from http://stackoverflow.com/questions/4642835/how-to-change-the-cursor-color-on-emacs
 
-(defvar blink-cursor-colors (list  "#92c48f" "#6785c5" "#be369c" "#d9ca65")
+(defvar blink-cursor-colors (list "#ff0000");(list  "#92c48f" "#6785c5" "#be369c" "#d9ca65")
   "On each blink the cursor will cycle to the next color in this list.")
 
 (setq blink-cursor-count 0)
