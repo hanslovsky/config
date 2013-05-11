@@ -55,4 +55,4 @@ if [ -f ~/.sh/sh_exports ]; then
 fi
 
 
-echo $(cat ~/.sh/sh_greet)
+echo $(cat $(ls -1 ~/.sh/greet_dir | shuf -n1))
