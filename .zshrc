@@ -7,7 +7,7 @@ ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="af-magic"
 
-# Example aliases
+n# Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
@@ -53,3 +53,6 @@ fi
 if [ -f ~/.sh/sh_exports ]; then
     . ~/.sh/sh_exports
 fi
+
+
+echo $(cat ~/.sh/sh_greet)
