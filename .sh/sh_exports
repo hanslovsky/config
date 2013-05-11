@@ -11,7 +11,7 @@ GOOGLE_APP="$HOME/local/google_appengine"
 
 TEX_BIN_DIR="$HOME/local/texlive/2012/bin/x86_64-linux"
 
-export GIT_DIR=$HOME/git
+export GIT_REPO_DIR=$HOME/git
 
 ### PATH Variablen
 export C_INCLUDE_PATH="$CPLEX_INCLUDE:$CONCERT_INCLUDE:$HOME/local/include:$C_INCLUDE_PATH"
