@@ -52,10 +52,10 @@
 (require 'semanticdb-global)
 ;(error "%s" exec-path)
 (semanticdb-enable-gnu-global-databases 'c-mode)
-;; (semanticdb-enable-gnu-global-databases 'c++-mode)
+(semanticdb-enable-gnu-global-databases 'c++-mode)
  
 ;; ctags
-;; (require 'semanticdb-ectag)
-;; (semantic-load-enable-primary-exuberent-ctags-support)
+(require 'semanticdb-ectag)
+(semantic-load-enable-primary-exuberent-ctags-support)
  
-;; (global-semantic-idle-tag-highlight-mode 1)
+(global-semantic-idle-tag-highlight-mode 1)
