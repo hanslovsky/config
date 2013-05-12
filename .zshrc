@@ -54,8 +54,10 @@ if [ -f ~/.sh/sh_exports ]; then
     . ~/.sh/sh_exports
 fi
 
-CURR_DIR=$(pwd)
-cd ~/.sh/greet_dir
-echo $(cat $(ls -1  | shuf -n1))
-cd $CURR_DIR
-unset CURR_DIR
+if [[ -n "$DISPLAY" ]]; then
+    CURR_DIR=$(pwd)
+    cd ~/.sh/greet_dir
+    echo $(cat $(ls -1  | shuf -n1))
+    cd $CURR_DIR
+    unset CURR_DIR
+fi
