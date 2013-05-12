@@ -57,7 +57,13 @@ fi
 if [[ -n "$DISPLAY" ]]; then
     CURR_DIR=$(pwd)
     cd ~/.sh/greet_dir
-    echo $(cat $(ls -1  | shuf -n1))
+    fn=$(ls -1 | shuf -n1)
+    n_chars=$(sed 's/\\n/\n/g' $fn | head -n1 | sed 's/\\e\[.\{0,12\}m//g' | sed 's/\\033.*//g' | wc -m)
+    let "n_chars=n_chars-1"
+    if [[ "$n_chars" -le "$COLUMNS" ]]; then
+        let "margin = (COLUMNS - n_chars)/2"
+        echo -e $(cat $fn) | sed "s/^/$(printf ' %.0s' {1..$margin})/g"
+    fi
     cd $CURR_DIR
     unset CURR_DIR
 fi
