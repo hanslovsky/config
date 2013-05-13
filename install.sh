@@ -3,12 +3,17 @@
 set -e
 
 repoDir=$(pwd)
-targets=(".sh" ".bashrc" ".zshrc" ".conky" ".emacs" ".emacs-themes" ".fonts" ".gitconfig" ".gitignore" ".i3" ".xsessionrc" "$(ls .emacs.d | while read x; do echo .emacs.d/$x; done)")
+targets=(".sh" ".bashrc" ".zshrc" ".conky" ".emacs" ".emacs-themes" ".fonts" ".gitconfig" ".gitignore" ".i3" ".xsessionrc" "$(ls .emacs.d | while read x; do echo .emacs.d/$x; done)" "$(ls .ipython | while read x; do echo .emacs.d/$x; done)")
 cd $HOME
 
 if ! [[ -d ".emacs.d" ]]; then
     echo "Need to create ~/.emacs.d"
     mkdir -p .emacs.d
+fi
+
+if ! [[ -d ".ipython" ]]; then
+    echo "Need to create ~/.ipython"
+    mkdir -p .ipython
 fi
 
 echo "removing existing config files..."
