@@ -62,7 +62,7 @@ if [[ -n "$DISPLAY" ]]; then
     let "n_chars=n_chars-1"
     if [[ "$n_chars" -le "$COLUMNS" ]]; then
         let "margin = (COLUMNS - n_chars)/2"
-        echo -e $(cat $fn) | sed "s/^/$(printf ' %.0s' {1..$margin})/g"
+        echo -e "$(cat $fn)" | sed "s/^/$(printf ' %.0s' {1..$margin})/g"
     fi
     cd $CURR_DIR
     unset CURR_DIR
