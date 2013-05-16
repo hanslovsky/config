@@ -36,3 +36,6 @@ alias desklo="dbus-send --session --type=method_call --print-reply --dest=org.gn
 
 # vpn
 alias vpn_client="/opt/cisco/anyconnect/bin/vpnui"
+
+# standard cmake
+alias cmake_std="cmake -DCMAKE_INSTALL_PREFIX=$HOME/local"
