@@ -123,7 +123,6 @@
       ; (let filepath (concat license_dir "/" license_type)
       (if (file-exists-p (concat license_dir "/" license_type))
           (progn
-            (message "bla2")
             (beginning-of-buffer)
             (insert-file (concat license_dir "/" license_type))
             (pop-global-mark)
