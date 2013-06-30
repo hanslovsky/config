@@ -111,6 +111,45 @@
         (message "File '%s' successfully removed" filename)))))
 
 
+;; add license text as file heading
+(defun add-license-heading (license_dir license_type)
+  "Adds license in front of file"
+  ; (interactive "sDirectory in which to look for license file (default): \nsLicense to be used (default):")
+  (interactive
+   (list (read-file-name "Directory in which to look for license file: " (get_default_license_dir))
+         (read-string "License to be used: " (get_default_license_type))
+         ))
+  (if (file-exists-p license_dir)
+      ; (let filepath (concat license_dir "/" license_type)
+      (if (file-exists-p (concat license_dir "/" license_type))
+          (progn
+            (message "bla2")
+            (beginning-of-buffer)
+            (insert-file (concat license_dir "/" license_type))
+            (pop-global-mark)
+            (message "Added license %s at the beginning of the buffer." (concat license_dir "/" license_type)))
+        (message "File %s does not exist!" (concat license_dir "/" license_type)))
+    (message "Directory %s does not exist!" license_dir))
+  )
+
+
+(defun get_default_license_dir ()
+  (interactive)
+  (when (not (boundp 'default_license_dir))
+    (setq default_license_dir "~/.emacs.d/license"))
+  (setq default_license_dir default_license_dir))
+
+
+(defun get_default_license_type ()
+  (interactive)
+  (when (not (boundp 'default_license_type))
+    (setq default_license_type "GPL"))
+  (setq default_license_type default_license_type))
+  
+    
+
+
+
 ;; settings for backup files (*~):
 (setq backup-directory-alist '(("." . "~/.emacs.d/backup"))
   backup-by-copying t    ; Don't delink hardlinks
