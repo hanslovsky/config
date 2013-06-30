@@ -114,11 +114,11 @@
 ;; add license text as file heading
 (defun add-license-heading (license_dir license_type)
   "Adds license in front of file"
-  ; (interactive "sDirectory in which to look for license file (default): \nsLicense to be used (default):")
   (interactive
-   (list (read-file-name "Directory in which to look for license file: " (get_default_license_dir))
+   (list (read-directory-name "Directory in which to look for license file: " (get_default_license_dir) (get_default_license_dir))
          (read-string "License to be used: " (get_default_license_type))
          ))
+  (message "%s %s" license_dir license_type)
   (if (file-exists-p license_dir)
       ; (let filepath (concat license_dir "/" license_type)
       (if (file-exists-p (concat license_dir "/" license_type))
