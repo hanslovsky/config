@@ -3,7 +3,22 @@
 set -e
 
 repoDir=$(pwd)
-targets=(".sh" ".bashrc" ".zshrc" ".conky" ".emacs" ".emacs-themes" ".fonts" ".gitconfig" ".gitignore" ".i3" ".xsessionrc" "$(ls .emacs.d | while read x; do echo .emacs.d/$x; done)" "$(ls .ipython | while read x; do echo .ipython/$x; done)" ".latexmkrc" "$(ls texmf/tex/latex | while read x; do echo texmf/tex/latex/$x; done)")
+targets=(".sh"
+    ".bashrc"
+    ".zshrc"
+    ".conky"
+    ".emacs"
+    ".emacs-themes"
+    ".fonts"
+    ".gitconfig"
+    ".gitignore"
+    ".i3"
+    ".xsessionrc"
+    ".tmux.conf"
+    "$(ls .emacs.d | while read x; do echo .emacs.d/$x; done)"
+    "$(ls .ipython | while read x; do echo .ipython/$x; done)"
+    ".latexmkrc"
+    "$(ls texmf/tex/latex | while read x; do echo texmf/tex/latex/$x; done)")
 cd $HOME
 
 if ! [[ -d ".emacs.d" ]]; then
