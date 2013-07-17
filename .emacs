@@ -1,4 +1,4 @@
-;; ===== Set the highlight current line minor mode =====
+;; ===== Set the highlight cpurrent line minor mode =====
 (message (getenv "PATH"))
 
 ;; ========== Color themes                     ==========
@@ -15,14 +15,14 @@
 ;; (setq custom-theme-path "~/.emacs-themes/")
 (add-to-list 'custom-theme-load-path "~/.emacs-themes")
 ;; do not load colortheme if started in terminal
-(
- if window-system
+(if window-system
     (load-theme 'solarized-dark t)
-)
+  (load-theme 'manoj-dark t))
 
 ;; In every buffer, the line which contains the cursor will be fully
 ;; highlighted
-
+; (if window-system
+;    (global-hl-line-mode 1))
 (global-hl-line-mode 1)
 
 
