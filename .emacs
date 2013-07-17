@@ -161,7 +161,7 @@
 
 
 ;; cedet
-(load-file "~/.emacs.d/cedet_config.el")
+;; (load-file "~/.emacs.d/cedet_config.el")
 
 ;; ede
 ;; (load-file "~/.emacs.d/ede_config.el")

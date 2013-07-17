@@ -28,8 +28,8 @@ export LD_LIBRARY_PATH="$HOME/local/lib:$SITE_PACKAGES:$LD_LIBRARY_PATH"
 
 export PYTHONPATH="$DIST_PACKAGES:$SITE_PACKAGES:$PYTHONPATH"
 
-# export EDITOR="macs -c"
-# export ALTERNATE_EDITOR=""
+export EDITOR="emacsclient -c"
+export ALTERNATE_EDITOR=""
 
 export DEBEMAIL="Philipp.Hanslovsky@gmail.com"
 export DEBFULLNAME="Philipp Hanslovsky"

@@ -7,8 +7,13 @@ alias texpile='/home/phil/scripts/latex_compile.sh'
 # get bounding box of postscript
 alias getbb='gs -dNOPAUSE -dBATCH -q -sDEVICE=bbox'
 
-# emacs with fullscreen and colors
-# alias emacs='emacs -bg black -fg white'
+# emacs
+alias ec='emacsclient -c'
+alias et='emacsclient -t -n'
+alias e='emacsclient'
+ecs() { emacsclient -c"/sudo::$*";
+ }
+ets() { emacsclient -t -n "/sudo::$*"; }
 
 # quilt for deb pkg
 alias dquilt="quilt --quiltrc=${HOME}/.quiltrc-dpkg"
