@@ -18,7 +18,8 @@ targets=(".sh"
     "$(ls .emacs.d | while read x; do echo .emacs.d/$x; done)"
     "$(ls .ipython | while read x; do echo .ipython/$x; done)"
     ".latexmkrc"
-    "$(ls texmf/tex/latex | while read x; do echo texmf/tex/latex/$x; done)")
+    "$(ls texmf/tex/latex | while read x; do echo texmf/tex/latex/$x; done)"
+    ".xinitrc")
 cd $HOME
 
 if ! [[ -d ".emacs.d" ]]; then
