@@ -7,14 +7,13 @@ ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 # ZSH_THEME="af-magic"
 # ZSH_THEME="kphoen"
-# ZSH_THEME="sunrise"
-# ZSH_THEME="gnzh"
-# ZSH_THEME="norm"
-# ZSH_THEME="nanotech"
-# ZSH_THEME="minimal"
-# ZSH_THEME="mrtazz"
-# ZSH_THEME="imajes"
-ZSH_THEME="dieter"
+# ZSH_THEME="sunrise" ++
+# ZSH_THEME="gnzh" #  +
+# ZSH_THEME="norm" #  +
+# ZSH_THEME="nanotech" #  +
+# ZSH_THEME="minimal" # 
+ZSH_THEME="mrtazz" #  ++
+# ZSH_THEME="dieter" # 
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
