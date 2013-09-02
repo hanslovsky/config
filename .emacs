@@ -16,7 +16,7 @@
 (add-to-list 'custom-theme-load-path "~/.emacs-themes")
 ;; do not load colortheme if started in terminal
 (if window-system
-    (load-theme 'solarized-dark t)
+    (load-theme 'tango t)
   (load-theme 'manoj-dark t))
 
 ;; In every buffer, the line which contains the cursor will be fully
@@ -50,7 +50,7 @@
 (tool-bar-mode -1)
 
 ;; set default cursor
-(set-default 'cursor-type '(hbar . 1))
+(set-default 'cursor-type '(hbar . 3))
 
 ;; enable left hand side line numbers
 (global-linum-mode t)
@@ -93,7 +93,8 @@
 ;; (require 'magit)
 
 ;; blinking cursor
-(load-file "~/.emacs.d/blink-cursor-colors.el")
+;; (load-file "~/.emacs.d/blink-cursor-colors.el")
+(blink-cursor-mode 1)
 
 
 ;; delete file and associated buffer
