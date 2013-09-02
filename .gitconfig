@@ -24,10 +24,12 @@
 
 [alias]
    l = log --graph --all --format=format:'%C(cyan)%h%C(reset) - %C(green)(%ar)%C(reset) %C(white)%s%C(reset) %C(bold red bold)%d%C(reset)' --abbrev-commit --date=relative
-   d = difftool --tool=meld --no-prompt
+   d = difftool --tool=ec --no-prompt
    s = status -s
    c = commit -am
    r = checkout
 [core]
 	excludesfile = $HOME/.gitignore
 	
+[push]
+	default = upstream
