@@ -95,6 +95,14 @@
 ;; blinking cursor
 (load-file "~/.emacs.d/blink-cursor-colors.el")
 
+;; auctex
+(require 'tex-site)
+(setq TeX-parse-self t)
+(add-hook 'LaTeX-mode-hook 'auto-fill-mode)
+(setq LaTeX-indent-level 4)
+(setq LaTeX-item-indent 2)
+(setq TeX-brace-indent-level 4)
+
 
 ;; delete file and associated buffer
 (defun delete-current-buffer-and-file ()
