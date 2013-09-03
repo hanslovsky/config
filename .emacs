@@ -184,6 +184,21 @@
 
 (add-hook 'after-make-frame-functions 'set_theme_after_frame_creation)
 (add-hook 'after-init-hook 'set_theme_graphic_dependent)
+
+;; minimap toggle (taken from http://www.emacswiki.org/emacs/MiniMap)
+(defun minimap-toggle-retain-size ()
+  "Toggle minimap"
+  (interactive)
+  (if (or (not (boundp 'minimap-exists))
+	  (not minimap-exists))
+      (progn (minimap-create)
+	     (setf minimap-exists t)
+	     (set-frame-width (selected-frame) 100))
+    (progn (minimap-kill)
+	   (setf minimap-exists nil)
+	   (set-frame-width (selected-frame) 80))))
+
+(global-set-key (kbd "<f7>") 'minimap-toggle-retain-size)
   
     
 
@@ -208,7 +223,6 @@
 ;; cedet & ede (built-in)
 (semantic-mode 1)
 (global-ede-mode 1)
-
 
 ;; tramp
 (require 'tramp)
