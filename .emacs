@@ -1,5 +1,5 @@
 ;; ===== Set the highlight cpurrent line minor mode =====
-(message (getenv "PATH"))
+;; (message (getenv "PATH"))
 
 ;; ========== Color themes                     ==========
 ;;(require 'color-theme)
@@ -18,13 +18,15 @@
 ;; (if window-system
 ;;    (load-theme 'tango t)
 ;;  (load-theme 'manoj-dark t))
-(load-theme 'tango t)
+;; (load-theme 'tango t)
+
+(setq WINDOW_THEME 'tango-dark)
+(setq TERMINAL_THEME 'tango)
+(setq CURRENT_THEME nil)
 
 ;; In every buffer, the line which contains the cursor will be fully
 ;; highlighted
-; (if window-system
-;    (global-hl-line-mode 1))
-(global-hl-line-mode 1)
+(global-hl-line-mode 0)
 
 
 ;; Specify default font
@@ -65,6 +67,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(column-number-mode t)
+ '(custom-enabled-themes nil)
  '(inhibit-startup-screen t)
  '(menu-bar-mode nil)
  '(preview-gs-options (quote ("-q" "-dNOPAUSE" "-DNOPLATFONTS" "-dPrinted" "-dTextAlphaBits=4" "-dGraphicsAlphaBits=4")))
@@ -161,20 +164,24 @@
   (setq default_license_type default_license_type))
 
 (defun set_theme_graphic_dependent()
+  (when CURRENT_THEME
+    (disable-theme CURRENT_THEME))
   (if (display-graphic-p)
-      ((disable-theme 'tango)
-       (load-theme 'tango-dark t))
-    ((disable-theme 'tango-dark)
-     (load-theme 'tango t))))
+      (progn
+        (load-theme WINDOW_THEME t)
+        (setq CURRENT_THEME WINDOW_THEME))
+    (progn
+      (load-theme TERMINAL_THEME t)
+      (setq CURRENT_THEME TERMINAL_THEME))))
 
-(defun set_theme_after_frame_creation(frame)
-  (set_theme_graphic_dependent))
-  ;; (message "FRAME CREATED!"))
+(defun set_theme_after_frame_creation(new-frame)
+  (select-frame new-frame)
+  (set_theme_graphic_dependent)
+  (message "FRAME CREATED!"))
 
-;; (add-hook 'find-file-hook
-;;        (set_theme_graphic_dependent))
 
-(add-hook 'after-make-frame-functions 'set_theme_after_frame_creation t)
+(add-hook 'after-make-frame-functions 'set_theme_after_frame_creation)
+(add-hook 'after-init-hook 'set_theme_graphic_dependent)
   
     
 
@@ -203,6 +210,5 @@
 
 ;; tramp
 (require 'tramp)
-
 
 
