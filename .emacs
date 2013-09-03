@@ -70,6 +70,8 @@
  '(custom-enabled-themes nil)
  '(inhibit-startup-screen t)
  '(menu-bar-mode nil)
+ '(minimap-always-recenter t)
+ '(minimap-dedicated-window t)
  '(preview-gs-options (quote ("-q" "-dNOPAUSE" "-DNOPLATFONTS" "-dPrinted" "-dTextAlphaBits=4" "-dGraphicsAlphaBits=4")))
  '(show-paren-mode t)
  '(tool-bar-mode nil))
@@ -78,7 +80,8 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "DejaVu Sans Mono" :foundry "unknown" :slant normal :weight normal :height 83 :width normal)))))
+ '(default ((t (:family "DejaVu Sans Mono" :foundry "unknown" :slant normal :weight normal :height 83 :width normal))))
+ '(minimap-font-face ((t (:height 50 :family "DejaVu Sans Mono")))))
 
 ;; ===== Matlab Mode =====
 (autoload 'matlab-mode "matlab" "Matlab Editing Mode" t)
