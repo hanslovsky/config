@@ -34,6 +34,8 @@ export ALTERNATE_EDITOR=""
 export DEBEMAIL="Philipp.Hanslovsky@gmail.com"
 export DEBFULLNAME="Philipp Hanslovsky"
 
+export TERM=xterm-256color
+
 
 unset CPLEX_INCLUDE
 unset CPLEX_LIB
