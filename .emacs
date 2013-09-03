@@ -157,6 +157,21 @@
     (setq default_license_type "GPL"))
   (setq default_license_type default_license_type))
 
+(defun set_theme_graphic_dependent()
+  (if (display-graphic-p)
+      ((disable-theme 'tango)
+       (load-theme 'tango-dark t))
+    ((disable-theme 'tango-dark)
+     (load-theme 'tango t))))
+
+(defun set_theme_after_frame_creation(frame)
+  (set_theme_graphic_dependent))
+  ;; (message "FRAME CREATED!"))
+
+;; (add-hook 'find-file-hook
+;;        (set_theme_graphic_dependent))
+
+(add-hook 'after-make-frame-functions 'set_theme_after_frame_creation t)
   
     
 
@@ -177,6 +192,10 @@
 
 ;; ede
 ;; (load-file "~/.emacs.d/ede_config.el")
+
+;; cedet & ede (built-in)
+(semantic-mode 1)
+(global-ede-mode 1)
 
 
 ;; tramp
