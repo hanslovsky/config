@@ -228,3 +228,13 @@
 (require 'tramp)
 
 
+;; display time in tray
+(display-time-mode 1)
+
+;; remaining working time
+(timeclock-mode-line-display)
+(add-hook 'after-init-hook 'timeclock-in)
+;; (add-hook 'kill-emacs-hook 'timeclock-out) not neccessary: timeclock asks on kill
+(global-set-key (kbd "<f8>") 'timeclock-status-string)
+
+
