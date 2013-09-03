@@ -15,9 +15,10 @@
 ;; (setq custom-theme-path "~/.emacs-themes/")
 (add-to-list 'custom-theme-load-path "~/.emacs-themes")
 ;; do not load colortheme if started in terminal
-(if window-system
-    (load-theme 'tango t)
-  (load-theme 'manoj-dark t))
+;; (if window-system
+;;    (load-theme 'tango t)
+;;  (load-theme 'manoj-dark t))
+(load-theme 'tango t)
 
 ;; In every buffer, the line which contains the cursor will be fully
 ;; highlighted
@@ -61,9 +62,9 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(column-number-mode t)
- '(custom-safe-themes (quote ("fc5fcb6f1f1c1bc01305694c59a1a861b008c534cae8d0e48e4d5e81ad718bc6" "1e7e097ec8cb1f8c3a912d7e1e0331caeed49fef6cff220be63bd2a6ba4cc365" default)))
  '(inhibit-startup-screen t)
  '(menu-bar-mode nil)
+ '(preview-gs-options (quote ("-q" "-dNOPAUSE" "-DNOPLATFONTS" "-dPrinted" "-dTextAlphaBits=4" "-dGraphicsAlphaBits=4")))
  '(show-paren-mode t)
  '(tool-bar-mode nil))
 (custom-set-faces
@@ -98,6 +99,8 @@
 
 ;; auctex
 (require 'tex-site)
+(load "auctex.el" nil t t)
+(load "preview-latex.el" nil t t)
 (setq TeX-parse-self t)
 (add-hook 'LaTeX-mode-hook 'auto-fill-mode)
 (setq LaTeX-indent-level 4)
