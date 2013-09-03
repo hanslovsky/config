@@ -176,7 +176,7 @@
 
 (defun set_theme_after_frame_creation(new-frame)
   (select-frame new-frame)
-  (set_theme_graphic_dependent)
+  (set_theme_graphic_dependent))
 
 
 (add-hook 'after-make-frame-functions 'set_theme_after_frame_creation)
