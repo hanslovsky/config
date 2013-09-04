@@ -232,7 +232,6 @@
 (iswitchb-mode t)
 (setq iswitchb-buffer-ignore '("^ " "*Completions*" "Shell Command Output*"
                                "*Messages*" "Async Shell Command"))
-
 ;; display time in tray
 (display-time-mode 1)
 
