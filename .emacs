@@ -72,7 +72,7 @@
  '(column-number-mode t)
  '(cursor-color "#808080")
  '(custom-enabled-themes nil)
- '(custom-safe-themes (quote ("817ce7168851955b2d67a9dfb2f4bb283504e3be87b17932bd8a3ee4b43cfeb1" "fc5fcb6f1f1c1bc01305694c59a1a861b008c534cae8d0e48e4d5e81ad718bc6" "1e7e097ec8cb1f8c3a912d7e1e0331caeed49fef6cff220be63bd2a6ba4cc365" "050beead9159996a613ba4bc734de8b13b882f1c6596d1dffa4f51d096662cf6" "4c9ba94db23a0a3dea88ee80f41d9478c151b07cb6640b33bfc38be7c2415cc4" "3ad55e40af9a652de541140ff50d043b7a8c8a3e73e2a649eb808ba077e75792" default)))
+;; '(custom-safe-themes (quote ("817ce7168851955b2d67a9dfb2f4bb283504e3be87b17932bd8a3ee4b43cfeb1" "fc5fcb6f1f1c1bc01305694c59a1a861b008c534cae8d0e48e4d5e81ad718bc6" "1e7e097ec8cb1f8c3a912d7e1e0331caeed49fef6cff220be63bd2a6ba4cc365" "050beead9159996a613ba4bc734de8b13b882f1c6596d1dffa4f51d096662cf6" "4c9ba94db23a0a3dea88ee80f41d9478c151b07cb6640b33bfc38be7c2415cc4" "3ad55e40af9a652de541140ff50d043b7a8c8a3e73e2a649eb808ba077e75792" default)))
  '(fci-rule-color "#383838")
  '(foreground-color "#808080")
  '(inhibit-startup-screen t)
