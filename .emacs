@@ -259,6 +259,7 @@
 
 
 ;; google style
+(require 'google-c-style)
 (add-hook 'c-mode-common-hook 'google-set-c-style)
 
 
@@ -303,5 +304,13 @@
       weather-metno-location-latitude 49
       weather-metno-location-longitude 8)
 (require 'org-weather-metno)
+
+
+;; punishment for using arrow keys or other 1 char keys for scrolling:
+(require 'annoying-arrows-mode)
+(global-annoying-arrows-mode)
+(setq visible-bell t) ;; no system beep but visible signal instead
+(setq annoying-arrows-too-far-count 15) ;; set the number of 1 char moves before signal
+
 
 
