@@ -117,14 +117,7 @@
 (blink-cursor-mode 1)
 
 ;; auctex
-(require 'tex-site)
-(load "auctex.el" nil t t)
-(load "preview-latex.el" nil t t)
-(setq TeX-parse-self t)
-(add-hook 'LaTeX-mode-hook 'auto-fill-mode)
-(setq LaTeX-indent-level 4)
-(setq LaTeX-item-indent 2)
-(setq TeX-brace-indent-level 4)
+(load-file "~/.emacs.d/config/auctex-conf.el")
 
 
 ;; delete file and associated buffer
