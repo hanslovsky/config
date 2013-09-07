@@ -1,0 +1,5 @@
+* LEARN THE BASICS OF ORG
+  org seems to be a great tool for taking notes and also creating
+  to-do lists
+** TODO Learn the basics of org!
+   DEADLINE: <2013-09-08 Sun>

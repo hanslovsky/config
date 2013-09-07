@@ -40,19 +40,37 @@ ZSH_THEME="mrtazz" #  ++
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git)
 
-source $ZSH/oh-my-zsh.sh
+# prompts
+# enable the use of tramp with zsh
+# cannot have too fancy stuff!
+if [[ $TERM == "dumb" ]]; then	# in emacs
+    PS1='%(?..[%?])%!:%~%# '
+    # for tramp to not hang, need the following. cf:
+    # http://www.emacswiki.org/emacs/TrampMode
+    unsetopt zle
+    unsetopt prompt_cr
+    unsetopt prompt_subst
+    # unfunction precmd
+    # unfunction preexec
+else
+    # your prompt stuff
 
-# enable autocompletion for special directories
-zstyle -e ':completion:*' special-dirs '[[ $PREFIX = (../)#(|.|..) ]] && reply=(..)'
+    plugins=(git)
 
-# Customize to your needs...
+    source $ZSH/oh-my-zsh.sh
 
-# special directory completion
-zstyle -e ':completion:*' special-dirs '[[ $PREFIX = (../)#(|.|..) ]] && reply=(..)'
+    # enable autocompletion for special directories
+    zstyle -e ':completion:*' special-dirs '[[ $PREFIX = (../)#(|.|..) ]] && reply=(..)'
 
-# additional aliases
+    # Customize to your needs...
+
+    # special directory completion
+    zstyle -e ':completion:*' special-dirs '[[ $PREFIX = (../)#(|.|..) ]] && reply=(..)'
+
+    # additional aliases
+fi
+
 if [ -f ~/.sh/sh_aliases ]; then
     . ~/.sh/sh_aliases
 fi
