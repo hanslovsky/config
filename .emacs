@@ -330,7 +330,6 @@
 
 (setq installed-packages-home '("annoying-arrows-mode-20130515.1534"
                                 "anti-zenburn-theme-20130901.236"
-                                "archives"
                                 "auto-complete-20130724.1750"
                                 "calfw-20130202.2206"
                                 "calfw-gcal-20120111.1900"
