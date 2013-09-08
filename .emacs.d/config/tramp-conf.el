@@ -1,0 +1,2 @@
+;; tramp
+(require 'tramp)
