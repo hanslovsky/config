@@ -19,3 +19,6 @@
 ;; make scrolling smooth
 (setq sublimity-scroll-weight 5
       sublimity-scroll-drift-length 10)
+
+;; no timer for sublimity
+(sublimity-map-set-delay 5)
