@@ -76,7 +76,9 @@
         (kill-buffer buffer)
         (message "File '%s' successfully removed" filename)))))
 
-(global-set-key (kbd "<f8>") 'delete-current-buffer-and-file)
+;; used to be f8, but use a keybinding less prone to be hit by accident
+;; for this fatal command
+(global-set-key (kbd "M-<f12>") 'delete-current-buffer-and-file)
 
 ;; set fonts and faces
 (custom-set-faces
