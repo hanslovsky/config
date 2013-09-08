@@ -21,4 +21,4 @@
       sublimity-scroll-drift-length 10)
 
 ;; no timer for sublimity
-(sublimity-map-set-delay 5)
+(sublimity-map-set-delay 2)

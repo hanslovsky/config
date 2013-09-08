@@ -17,3 +17,6 @@
 
 ;; speedbar should appear on the left
 (setq sr-speedbar-right-side nil)
+
+;; add speedbar to after-init-hook
+(add-hook 'after-init-hook 'sr-speedbar-toggle)
