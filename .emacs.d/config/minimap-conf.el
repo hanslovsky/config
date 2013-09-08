@@ -17,4 +17,5 @@
 	   (setf minimap-exists nil)
 	   (set-frame-width (selected-frame) 80))))
 
-(global-set-key (kbd "<f7>") 'minimap-toggle-retain-size)
+;; (global-set-key (kbd "<f7>") 'minimap-toggle-retain-size)
+;; no key binding as I prefer sublimity right now
