@@ -23,6 +23,9 @@
 ;; minimap
 (load-file "~/.emacs.d/config/minimap-conf.el")
 
+;; sublimity - might be better than minimap
+(load-file "~/.emacs.d/config/sublimity-conf.el")
+
 ;; c++ settings
 (load-file "~/.emacs.d/config/cxx-conf.el")
 
