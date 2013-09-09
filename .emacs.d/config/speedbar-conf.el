@@ -19,4 +19,6 @@
 (setq sr-speedbar-right-side nil)
 
 ;; add speedbar to after-init-hook
-(add-hook 'after-init-hook 'sr-speedbar-toggle)
+;; need to call function directyl instead of adding to hook:
+;; emacs will hang on startup otherwise
+(sr-speedbar-toggle)

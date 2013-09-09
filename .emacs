@@ -50,8 +50,8 @@
 ;; drills
 (load-file "~/.emacs.d/config/emacs-drills-conf.el")
 
-;; speedbar
-(load-file "~/.emacs.d/config/speedbar-conf.el")
+;; speedbar - deactivate now due to a bug with emacsclient
+;; (load-file "~/.emacs.d/config/speedbar-conf.el")
 
 ;; cedet
 (load-file "~/.emacs.d/config/cedet-conf.el")
