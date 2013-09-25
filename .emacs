@@ -57,6 +57,10 @@
 ;; cedet
 (load-file "~/.emacs.d/config/cedet-conf.el")
 
+;; Emacs-IDE
+(load-file "~/.emacs.d/config/ide-conf.el")
+
+
 
 
 ;; add license text as file heading
