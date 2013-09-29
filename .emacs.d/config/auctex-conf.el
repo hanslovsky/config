@@ -1,5 +1,5 @@
-(load "auctex.el" nil t t)
-(load "preview-latex.el" nil t t)
+;; (load "auctex.el" nil t t)
+;; (load "preview-latex.el" nil t t)
 (require 'tex-site)
 
 ;; use a more sophisticated algorithm to find master file; prompt on failure
