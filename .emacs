@@ -60,6 +60,9 @@
 ;; Emacs-IDE
 (load-file "~/.emacs.d/config/ide-conf.el")
 
+;; kill functions
+(load-file "~/.emacs.d/functions/kill.el")
+
 
 
 
