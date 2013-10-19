@@ -60,9 +60,13 @@
 ;; Emacs-IDE
 (load-file "~/.emacs.d/config/ide-conf.el")
 
+
+;; mu4e
+(load-file "~/.emacs.d/config/mu4e-conf.el")
+
+
 ;; kill functions
 (load-file "~/.emacs.d/functions/kill.el")
-
 
 
 
