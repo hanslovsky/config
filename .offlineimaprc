@@ -1,0 +1,20 @@
+[general]
+accounts = Gmail
+maxsyncaccounts = 3
+
+[Account Gmail]
+localrepository = Local
+remoterepository = Gmail-Remote
+
+[Repository Local]
+type = Maildir
+localfolders = ~/Maildir
+
+[Repository Gmail-Remote]
+type = IMAP
+remotehost = imap.gmail.com
+remoteuser = Philipp.Hanslovsky@gmail.com
+ssl = yes
+cert_fingerprint = 89091347184d41768bfc0da9fad94bfe882dd358
+maxconnections = 1
+realdelete = no
