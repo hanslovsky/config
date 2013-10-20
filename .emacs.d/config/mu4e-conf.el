@@ -1,4 +1,7 @@
- ;; example configuration for mu4e
+;; example configuration for mu4e
+;; adding path to mu4e might be neccessary:
+(when (file-exists-p "/usr/share/emacs24/site-lisp/mu4e")
+  (add-to-list 'load-path "/usr/share/emacs24/site-lisp/mu4e"))
 (require 'mu4e)
 
 ;; path to our Maildir directory
