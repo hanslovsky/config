@@ -30,6 +30,7 @@
 ;; c++ settings
 (load-file "~/.emacs.d/config/cxx-conf.el")
 
+sdlfgjdsalfgsa
 ;; theme related settings
 (load-file "~/.emacs.d/config/themes-conf.el")
 
