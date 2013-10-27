@@ -92,3 +92,9 @@
 ;; magit status screen
 (global-set-key (kbd "C-x g") 'magit-status)
 
+;; auto fill
+(add-hook 'text-mode-hook 'turn-on-auto-fill)
+
+;; set fill column to 100
+(setq-default fill-column 100)
+

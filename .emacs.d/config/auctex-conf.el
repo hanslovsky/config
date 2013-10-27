@@ -41,3 +41,8 @@
 ;; setup okular as the default pdf viewer
 (setq TeX-view-p-list '(("Okular" "okular –unique %o#src:%n%b")))
 (setq TeX-view-program-selection '((output-pdf "Okular")))
+
+;; turn on auto fill -> line breaks
+(add-hook 'LaTeX-mode-hook 'turn-on-auto-fill)
+(add-hook 'latex-mode-hook 'turn-on-auto-fill)
+
