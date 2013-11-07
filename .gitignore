@@ -4,3 +4,7 @@
 *.a
 *.out
 fonts.dir
+_*_.el
+_*_.tex
+auto
+*_region_*
