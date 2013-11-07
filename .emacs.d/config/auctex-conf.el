@@ -46,3 +46,27 @@
 (add-hook 'LaTeX-mode-hook 'turn-on-auto-fill)
 (add-hook 'latex-mode-hook 'turn-on-auto-fill)
 
+;; enable latexmk support
+(add-hook 'LaTeX-mode-hook(lambda()
+                            (push
+                             '("LatexMK" "latexmk %(PDF) %s" TeX-run-TeX nil t
+                               :help "Use latexmk for compilation")
+                             TeX-command-list)))
+;; use LatexMK per default
+(add-hook 'LaTeX-mode-hook (lambda()
+                             (when
+                                 (and
+                                  (eq TeX-engine 'default)
+                                  (or TeX-PDF-mode TeX-DVI-via-PDFTeX))
+                               (setq TeX-command-default "LatexMK"))))
+;; create new substition %(-PDF) for TeX-expand-list
+;; (push
+;;  '("%(-PDF)"
+;;    (lambda()
+;;      (if (and (not TeX-Omega-mode)
+;;               (or TeX-PDF-mode TeX-DVI-via-PDFTeX))
+;;          "-pdf"
+;;        "")))
+;;  TeX-expand-list)
+
+         
