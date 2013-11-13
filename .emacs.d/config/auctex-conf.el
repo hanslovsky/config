@@ -49,7 +49,7 @@
 ;; enable latexmk support
 (add-hook 'LaTeX-mode-hook(lambda()
                             (push
-                             '("LatexMK" "latexmk %(PDF) %s" TeX-run-TeX nil t
+                             '("LatexMK" "latexmk -%(PDF) %s %t" TeX-run-TeX nil t
                                :help "Use latexmk for compilation")
                              TeX-command-list)))
 ;; use LatexMK per default
