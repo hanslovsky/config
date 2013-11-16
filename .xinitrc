@@ -17,8 +17,8 @@ wmaker)
 blackbox)
 	exec blackbox
 	;;
-i3wm)
-        exec i3wm
+i3)
+        exec i3
         ;;
 *)
 	exec $DEFAULT_SESSION
