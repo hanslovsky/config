@@ -98,3 +98,7 @@
 ;; set fill column to 100
 (setq-default fill-column 100)
 
+;; set split variables to force horizontal split
+(setq split-height-threshold nil)
+(setq split-width-threshold 0)
+
