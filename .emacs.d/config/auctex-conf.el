@@ -53,12 +53,13 @@
                                :help "Use latexmk for compilation")
                              TeX-command-list)))
 ;; use LatexMK per default
+;; rather use LaTeX!!
 (add-hook 'LaTeX-mode-hook (lambda()
                              (when
                                  (and
                                   (eq TeX-engine 'default)
                                   (or TeX-PDF-mode TeX-DVI-via-PDFTeX))
-                               (setq TeX-command-default "LatexMK"))))
+                               (setq TeX-command-default "LaTeX"))))
 ;; create new substition %(-PDF) for TeX-expand-list
 ;; (push
 ;;  '("%(-PDF)"
