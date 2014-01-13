@@ -65,6 +65,10 @@
 (load-file "~/.emacs.d/config/mu4e-conf.el")
 
 
+;; undo tree
+(load-file "~/.emacs.d/config/undo-tree-conf.el")
+
+
 ;; kill functions
 (load-file "~/.emacs.d/functions/kill.el")
 
