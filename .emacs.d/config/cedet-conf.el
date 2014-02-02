@@ -18,13 +18,21 @@
 
 ;; CC-mode
 (add-hook 'c-mode-hook '(lambda ()
-        (setq ac-sources (append '(ac-source-semantic) ac-sources))
-        (semantic-mode t)))
+                          (setq ac-sources (append '(ac-source-semantic) ac-sources))
+                          (semantic-mode t)))
 
 ;; Autocomplete
+
+(install_if_missing 'auto-complete)
+
+(when (not (boundp 'elpa-packages-list))
+  (setq elpa-packages-list '())
+  )
+(add-to-list 'elpa-packages-list 'auto-complete)
+
 (require 'auto-complete-config)
 (add-to-list 'ac-dictionary-directories (expand-file-name
-             "~/.emacs.d/elpa/auto-complete-20130724.1750"))
+                                         "~/.emacs.d/elpa/auto-complete-20130724.1750"))
 (setq ac-comphist-file (expand-file-name
-             "~/.emacs.d/ac-comphist.dat"))
+                        "~/.emacs.d/ac-comphist.dat"))
 (ac-config-default)

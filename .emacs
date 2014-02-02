@@ -62,11 +62,14 @@
 
 
 ;; mu4e
-(load-file "~/.emacs.d/config/mu4e-conf.el")
+;; (load-file "~/.emacs.d/config/mu4e-conf.el")
 
 
 ;; undo tree
 (load-file "~/.emacs.d/config/undo-tree-conf.el")
+
+;; magit
+(load-file "~/.emacs.d/config/magit-conf.el")
 
 
 ;; kill functions

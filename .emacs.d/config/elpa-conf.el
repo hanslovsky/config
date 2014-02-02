@@ -41,3 +41,16 @@
                                 "windresize-0.1"
                                 "yasnippet-20130902.1201"
                                 "zenburn-theme-20130831.739"))
+
+
+;; update package information
+(package-refresh-contents)
+
+;; list of packages to be installed
+(when (not (boundp 'elpa-packages-list))
+  (setq elpa-packages-list '())
+  )
+
+;; install packages automatically
+(load-file "~/.emacs.d/functions/acquire_packages_if_neccessary.el")
+(add-hook 'after-init-hook '(lambda () (acquire_elpa_packages elpa-packages-list)))

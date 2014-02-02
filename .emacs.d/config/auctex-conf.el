@@ -1,3 +1,6 @@
+(install_if_missing 'auctex)
+(install_if_missing 'auctex-latexmk)
+
 ;; (load "auctex.el" nil t t)
 ;; (load "preview-latex.el" nil t t)
 (require 'tex-site)
@@ -70,4 +73,14 @@
 ;;        "")))
 ;;  TeX-expand-list)
 
-         
+
+
+;; add auctex to package list to be installed if not present
+(when (not (boundp 'elpa-packages-list))
+  (setq elpa-packages-list '())
+  )
+(add-to-list 'elpa-packages-list 'auctex)
+(add-to-list 'elpa-packages-list 'auctex-latexmk)
+
+
+
