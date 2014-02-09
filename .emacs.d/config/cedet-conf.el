@@ -41,8 +41,8 @@
 
 ;; CC-mode
 (add-hook 'c-mode-hook '(lambda ()
-                          (setq ac-sources (append '(ac-source-semantic) ac-sources))
-                          (semantic-mode t)))
+                          (setq ac-sources (append '(ac-source-semantic) ac-sources))))
+;; (semantic-mode t)))
 
 ;; Autocomplete
 
