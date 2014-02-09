@@ -71,6 +71,12 @@
 ;; magit
 (load-file "~/.emacs.d/config/magit-conf.el")
 
+;; flymake
+(load-file "~/.emacs.d/config/flymake-conf.el")
+
+;; yasnippet
+(load-file "~/.emacs.d/config/yasnippet-conf.el")
+
 
 ;; kill functions
 (load-file "~/.emacs.d/functions/kill.el")
