@@ -60,10 +60,8 @@
 ;; Emacs-IDE
 (load-file "~/.emacs.d/config/ide-conf.el")
 
-
 ;; mu4e
 ;; (load-file "~/.emacs.d/config/mu4e-conf.el")
-
 
 ;; undo tree
 (load-file "~/.emacs.d/config/undo-tree-conf.el")
@@ -77,9 +75,13 @@
 ;; yasnippet
 (load-file "~/.emacs.d/config/yasnippet-conf.el")
 
+;; python-mode
+(load-file "~/.emacs.d/config/python-conf.el")
 
 ;; kill functions
 (load-file "~/.emacs.d/functions/kill.el")
+
+
 
 
 
