@@ -13,7 +13,7 @@ alias et='emacsclient -t -s term'
 alias e='emacsclient'
 ecs() { ec "/sudo::$@"; }
 ets() { et "/sudo::$@"; }
-es() {e "/sudo::$@"; }
+es() { e "/sudo::$@"; }
 
 # quilt for deb pkg
 alias dquilt="quilt --quiltrc=${HOME}/.quiltrc-dpkg"
