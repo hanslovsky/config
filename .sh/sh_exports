@@ -36,6 +36,17 @@ export DEBFULLNAME="Philipp Hanslovsky"
 
 export TERM=xterm-256color
 
+# less (see man less for more details)
+export LESS='-RS#3NM~g'
+# -R:  output ANSI color escape sequences in raw form
+# -S:  Toggle Chop long lines (defulat: fold)
+# -#N: specify the horizontal scrolling step size to N
+# -N:  show line numbers
+# -M:  verbose prompt
+# -~:  display lines after EOF as blank lines rather than tilde
+# -g:  highlight only the particular string which was found by last search
+
+
 
 unset CPLEX_INCLUDE
 unset CPLEX_LIB
