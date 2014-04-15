@@ -1,30 +1,41 @@
-CPLEX_INCLUDE="$HOME/local/ILOG/cplex/include"
-CPLEX_LIB="$HOME/local/ILOG/cplex/lib/x86-64_sles10_4.1/static_pic"
+LOCAL_NAME='local'
+HOSTNAME=`hostname`
+if [ "${HOSTNAME/.int.janelia.org}" = "$HOSTNAME" ];
+then
+    LOCAL_NAME='local'
+else
+    LOCAL_NAME='cluster'
+fi
 
-CONCERT_INCLUDE="$HOME/local/ILOG/concert/include"
-CONCERT_LIB="$HOME/local/ILOG/concert/lib/x86-64_sles10_4.1/static_pic"
+CPLEX_INCLUDE="$HOME/$LOCAL_NAME/ILOG/cplex/include"
+CPLEX_LIB="$HOME/$LOCAL_NAME/ILOG/cplex/lib/x86-64_sles10_4.1/static_pic"
 
-SITE_PACKAGES="$HOME/local/lib/python2.7/site-packages"
-DIST_PACKAGES="$HOME/local/lib/python2.7/dist-packages"
+CONCERT_INCLUDE="$HOME/$LOCAL_NAME/ILOG/concert/include"
+CONCERT_LIB="$HOME/$LOCAL_NAME/ILOG/concert/lib/x86-64_sles10_4.1/static_pic"
 
-GOOGLE_APP="$HOME/local/google_appengine"
+SITE_PACKAGES="$HOME/$LOCAL_NAME/lib/python2.7/site-packages"
+DIST_PACKAGES="$HOME/$LOCAL_NAME/lib/python2.7/dist-packages"
 
-TEX_BIN_DIR="$HOME/local/texlive/2012/bin/x86_64-linux"
+GOOGLE_APP="$HOME/$LOCAL_NAME/google_appengine"
+
+TEX_BIN_DIR="$HOME/$LOCAL_NAME/texlive/2012/bin/x86_64-linux"
 
 export GIT_REPO_DIR=$HOME/git
 
+
+
 ### PATH Variablen
-export C_INCLUDE_PATH="$CPLEX_INCLUDE:$CONCERT_INCLUDE:$HOME/local/include:$C_INCLUDE_PATH"
+export C_INCLUDE_PATH="$CPLEX_INCLUDE:$CONCERT_INCLUDE:$HOME/$LOCAL_NAME/include:$C_INCLUDE_PATH"
 
 export ILOG_LICENSE_FILE="$HOME/.ilog_license/acces.ilm"
 
-export CPLUS_INCLUDE_PATH="$CPLEX_INCLUDE:$CONCERT_INCLUDE:$HOME/local/include:/usr/include/mpi:$HOME/local/include:$CPLUS_INCLUDE_PATH"
+export CPLUS_INCLUDE_PATH="$CPLEX_INCLUDE:$CONCERT_INCLUDE:$HOME/$LOCAL_NAME/include:/usr/include/mpi:$HOME/$LOCAL_NAME/include:$CPLUS_INCLUDE_PATH"
 
-export LIBRARY_PATH="$CPLEX_LIB:$CONCERT_LIB:$HOME/local/lib:$LIBRARY_PATH"
+export LIBRARY_PATH="$CPLEX_LIB:$CONCERT_LIB:$HOME/$LOCAL_NAME/lib:$LIBRARY_PATH"
 
-export PATH="$TEX_BIN_DIR:$GOOGLE_APP:$HOME/local/bin:/home/phil/scripts:$PATH"
+export PATH="$TEX_BIN_DIR:$GOOGLE_APP:$HOME/$LOCAL_NAME/bin:/home/phil/scripts:$PATH"
 
-export LD_LIBRARY_PATH="$HOME/local/lib:$SITE_PACKAGES:$LD_LIBRARY_PATH"
+export LD_LIBRARY_PATH="$HOME/$LOCAL_NAME/lib:$SITE_PACKAGES:$LD_LIBRARY_PATH"
 
 export PYTHONPATH="$DIST_PACKAGES:$SITE_PACKAGES:$PYTHONPATH"
 
