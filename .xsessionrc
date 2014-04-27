@@ -1,4 +1,4 @@
 # environment variables for xsession
-if [ -f ~/.sh/sh_exports ]; then
-    . ~/.sh/sh_exports
-fi
+# if [ -f ~/.sh/sh_exports ]; then
+#     . ~/.sh/sh_exports
+# fi
