@@ -7,6 +7,8 @@ else
     LOCAL_NAME='cluster'
 fi
 
+export LOCAL=$LOCAL_NAME
+
 CPLEX_INCLUDE="$HOME/$LOCAL_NAME/ILOG/cplex/include"
 CPLEX_LIB="$HOME/$LOCAL_NAME/ILOG/cplex/lib/x86-64_sles10_4.1/static_pic"
 
@@ -36,6 +38,17 @@ export LIBRARY_PATH="$CPLEX_LIB:$CONCERT_LIB:$HOME/$LOCAL_NAME/lib:$LIBRARY_PATH
 export PATH="$TEX_BIN_DIR:$GOOGLE_APP:$HOME/$LOCAL_NAME/bin:/home/phil/scripts:$PATH"
 
 export LD_LIBRARY_PATH="$HOME/$LOCAL_NAME/lib:$SITE_PACKAGES:$LD_LIBRARY_PATH"
+
+CUDA_PARENT_DIR=/usr/local
+CUDA_BASE_DIRS="$(find $CUDA_PARENT_DIR -maxdepth 1 -name 'cuda*' -type d)"
+# check if CUDA_BASE_DIRS is not empty
+if [[ -n "$CUDA_BASE_DIRS" ]]; then
+echo $CUDA_BASE_DIRS
+   LATEST_CUDA_BASE_PATH="$(echo -e "$CUDA_BASE_DIRS" | sort -n  | tail -n1)"
+   export PATH="$LATEST_CUDA_BASE_PATH/bin:$PATH"
+   export LD_LIBRARY_PATH="$LATEST_CUDA_BASE_PATH/lib:$LATEST_CUDA_BASE_PATH/lib64:$LD_LIBRARY_PATH"
+fi
+
 
 export PYTHONPATH="$DIST_PACKAGES:$SITE_PACKAGES:$PYTHONPATH"
 
