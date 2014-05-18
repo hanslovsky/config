@@ -1,0 +1,19 @@
+pacman -S xorg-server
+pacman -S xf86-video-intel
+pacman -S kdebase-workspace
+pacman -S kde-wallpapers
+systemctl enable kdm.service
+pacman -S zsh
+useradd -m -G wheel -s /bin/zsh phil
+pacman -S sudo
+pacman -S emacs
+# uncomment %wheel ALL=(ALL) ALL in visudo / /etc/sudoers
+pacman -S git
+pacman -S cmake
+pacman -S gcc
+pacman -S clang
+pacman -S ipython ipython2
+pacman -S openssh
+systemctl enable sshd
+systemctl start sshd
+pacman -S chromium
