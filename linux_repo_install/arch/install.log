@@ -17,3 +17,6 @@ pacman -S openssh
 systemctl enable sshd
 systemctl start sshd
 pacman -S chromium
+pacman -S xf86-input-synaptics
+pacman -S make
+pacman -S base-devel
