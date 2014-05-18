@@ -20,3 +20,11 @@ pacman -S chromium
 pacman -S xf86-input-synaptics
 pacman -S make
 pacman -S base-devel
+pacman -S gstreamer
+pacman -S gst-plugins-base gst-plugins-good
+pacman -S kdemultimedia-kmix
+pacman -S pulseaudio
+pacman -S alsa-utils
+pacman -S cmus
+pacman -S wget
+pacman -S tmux
