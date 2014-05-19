@@ -30,3 +30,4 @@ pacman -S wget
 pacman -S tmux
 pacman -S lsof
 pacman -S texlive-most texlive-lang
+pacman -S acpi
