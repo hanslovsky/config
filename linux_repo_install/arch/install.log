@@ -28,3 +28,5 @@ pacman -S alsa-utils
 pacman -S cmus
 pacman -S wget
 pacman -S tmux
+pacman -S lsof
+pacman -S texlive-most texlive-lang
