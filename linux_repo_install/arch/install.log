@@ -34,3 +34,4 @@ pacman -S acpi
 pacman -S ntp
 pacman -S kdegraphics-okular
 pacman -S mlocate
+pacman -S poppler-qt4
