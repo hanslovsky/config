@@ -33,3 +33,4 @@ pacman -S texlive-most texlive-lang
 pacman -S acpi
 pacman -S ntp
 pacman -S kdegraphics-okular
+pacman -S mlocate
