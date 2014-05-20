@@ -32,3 +32,4 @@ pacman -S lsof
 pacman -S texlive-most texlive-lang
 pacman -S acpi
 pacman -S ntp
+pacman -S kdegraphics-okular
