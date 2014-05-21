@@ -40,3 +40,4 @@ pacman -S kdeplasma-applets-plasma-nm
 pacman -S kdegraphics-gwenview
 pacman -S archiso
 pacman -S kscreen
+pacman -S python2-scikit-learn
