@@ -41,3 +41,4 @@ pacman -S kdegraphics-gwenview
 pacman -S archiso
 pacman -S kscreen
 pacman -S python2-scikit-learn
+pacman -S python2-matplotlib
