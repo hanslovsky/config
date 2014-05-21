@@ -37,3 +37,4 @@ pacman -S mlocate
 pacman -S poppler-qt4
 pacman -S kdeplasma-applets-plasma-nm
 #systemctl enable NetworkManager.service # enable NM
+pacman -S kdegraphics-gwenview
