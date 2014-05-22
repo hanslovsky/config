@@ -44,3 +44,4 @@ pacman -S python2-scikit-learn
 pacman -S python2-matplotlib
 pacman -S digikam
 pacman -S kipi-plugins
+pacman -S ntfs-3g
