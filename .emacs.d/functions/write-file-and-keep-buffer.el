@@ -3,7 +3,7 @@
 
 (defun write-file-and-keep-buffer (filename)
   "Write the current buffer into FILENAME and keep original buffer"
-  (interactive "Write to file: ")
+  (interactive "FWrite to file: ")
   (save-restriction
     (widen)
     (write-region (point-min) (point-max) filename nil nil nil 'confirm))
