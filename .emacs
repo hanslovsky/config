@@ -78,9 +78,12 @@
 ;; python-mode
 (load-file "~/.emacs.d/config/python-conf.el")
 
-;; kill functions
+;; functions
+;; kill
 (load-file "~/.emacs.d/functions/kill.el")
 
+;; write to file and keep buffer
+(load-file "~/.emacs.d/functions/write-file-and-keep-buffer.el")
 
 
 
