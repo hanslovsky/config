@@ -27,3 +27,20 @@ alias -g nllpath='${LIBRARY_PATH//:/
 # PYTHON_PATH, as above
 alias -g nlppath='${PYTHONPATH//:/
 }'
+
+# word count
+alias -g WC='| wc -l'
+
+
+# suffix alias
+# C / C++
+alias -s cxx=ec
+alias -s cpp=ec
+alias -s c=ec
+alias -s hxx=ec
+alias -s hpp=ec
+alias -s h=ec
+
+# python
+alias -s py=ec
+
