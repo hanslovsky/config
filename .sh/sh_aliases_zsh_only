@@ -31,6 +31,9 @@ alias -g nlppath='${PYTHONPATH//:/
 # word count
 alias -g WC='| wc -l'
 
+# grep -E
+alias -g G='| grep -E'
+
 
 # suffix alias
 # C / C++
