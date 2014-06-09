@@ -101,7 +101,7 @@ fi
 
 # from http://blog.patshead.com/2012/11/automatically-expaning-zsh-global-aliases---simplified.html
 globalias() {
-   if [[ $LBUFFER =~ '[A-Z0-9_]+$' ]]; then
+   if [[ $LBUFFER =~ ' [A-Z0-9_]+$' ]]; then # =~ allows for regexp
      zle _expand_alias
      zle expand-word
    fi
