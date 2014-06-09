@@ -1,0 +1,13 @@
+# global aliases, only work wit zsh
+
+# no standard out
+alias -g NO_OUT='1>/dev/null'
+
+# no standard err
+alias -g NO_ERR='2>/dev/null'
+
+# no output at all
+alias -g SILENCE='1>/dev/null 2>&1'
+
+# copy to clipboard
+alias -g CLIPBOARD='| xclip -selection clipboard'

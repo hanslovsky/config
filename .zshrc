@@ -75,6 +75,11 @@ if [ -f ~/.sh/sh_aliases ]; then
     . ~/.sh/sh_aliases
 fi
 
+# global aliases
+if [ -f ~/.sh/sh_aliases_zsh_only ]; then
+    . ~/.sh/sh_aliases_zsh_only
+fi
+
 # set environment variables
 if [ -f ~/.sh/sh_exports ]; then
     . ~/.sh/sh_exports
