@@ -17,15 +17,15 @@ alias -g nlpath='${PATH//:/
 }'
 
 # LD_LIBARARY_PATH, as above
-alias -g nlldpath='${LD_LIBRARY_PATH//:/
+alias -g NLLDPATH='${LD_LIBRARY_PATH//:/
 }'
 
 # LIBRARY_PATH, as above
-alias -g nllpath='${LIBRARY_PATH//:/
+alias -g NLLPATH='${LIBRARY_PATH//:/
 }'
 
 # PYTHON_PATH, as above
-alias -g nlppath='${PYTHONPATH//:/
+alias -g NLPPATH='${PYTHONPATH//:/
 }'
 
 # word count
