@@ -11,3 +11,19 @@ alias -g SILENCE='1>/dev/null 2>&1'
 
 # copy to clipboard
 alias -g CLIPBOARD='| xclip -selection clipboard'
+
+# PATH, single line for each entry
+alias -g nlpath='${PATH//:/
+}'
+
+# LD_LIBARARY_PATH, as above
+alias -g nlldpath='${LD_LIBRARY_PATH//:/
+}'
+
+# LIBRARY_PATH, as above
+alias -g nllpath='${LIBRARY_PATH//:/
+}'
+
+# PYTHON_PATH, as above
+alias -g nlppath='${PYTHONPATH//:/
+}'
