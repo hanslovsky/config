@@ -114,5 +114,8 @@ bindkey " " globalias
 bindkey "^ " magic-space           # control-space to bypass completion
 bindkey -M isearch " " magic-space # normal space during searches
 
+# enable zmv
+autoload zmv
+
 
 
