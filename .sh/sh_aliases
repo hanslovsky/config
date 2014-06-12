@@ -50,3 +50,6 @@ alias pdfmake="latexmk -pvc"
 
 # make htop work properly in tmux (check if it helps with cmus)
 alias htop='TERM=screen htop'
+
+# works for cmus as well
+alias cmus='TERM=screen cmus'
