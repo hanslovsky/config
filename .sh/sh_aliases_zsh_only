@@ -34,6 +34,12 @@ alias -g WC='| wc -l'
 # grep -E
 alias -g G='| grep -E'
 
+# grep -e
+alias -g EGREP='| grep -E'
+
+# grep -i
+alias -g IGREP='| grep -i'
+
 
 # suffix alias
 # C / C++
