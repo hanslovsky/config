@@ -53,3 +53,5 @@ alias -s h=ec
 # python
 alias -s py=ec
 
+# shell
+alias -s sh=ec
