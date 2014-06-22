@@ -59,6 +59,9 @@ export DEBFULLNAME="Philipp Hanslovsky"
 
 export TERM=xterm-256color
 
+# qtselector information
+export QT_SELECT=4
+
 # less (see man less for more details)
 export LESS='-RS#3NM~g'
 # -R:  output ANSI color escape sequences in raw form
