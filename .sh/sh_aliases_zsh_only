@@ -51,7 +51,7 @@ alias -s hpp=ec
 alias -s h=ec
 
 # python
-alias -s py=ec
+# alias -s py=ec
 
 # shell
-alias -s sh=ec
+# alias -s sh=ec
