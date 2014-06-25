@@ -17,6 +17,9 @@
 ;; general config
 (load-file "~/.emacs.d/config/general-conf.el")
 
+;; iedit
+(load-file "~/.emacs.d/config/iedit-conf.el")
+
 ;; jabber
 (load-file "~/.emacs.d/config/jabber-conf.el")
 
