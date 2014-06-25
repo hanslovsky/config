@@ -27,9 +27,20 @@
   (require 'auto-complete-c-headers)
   (add-to-list 'ac-sources 'ac-source-c-headers)
   
-  ;; add paths from environment
-  (setq my:c++-headers (split-string (getenv "CPLUS_INCLUDE_PATH") ":" t ) )
-  (setq my:c-headers (split-string (getenv "C_INCLUDE_PATH") ":" t ) )
+  ;; add paths from environment (use gcc to find out include search directories)
+  (setq my:c++-headers
+        (split-string
+         (shell-command-to-string
+          "echo -e \"$(`gcc -print-prog-name=cc1plus` -v 2>&1&)\" | grep -E '^ [A-Za-z\./]' | grep -v ':' | sed 's/^ //'")
+         "\n" t)
+        )
+
+  (setq my:c-headers
+        (split-string
+         (shell-command-to-string
+          "echo -e \"$(`gcc -print-prog-name=cc1` -v 2>&1&)\" | grep -E '^ [A-Za-z\./]' | grep -v ':' | sed 's/^ //'")
+         "\n" t)
+        )
 
   (dolist (element my:c++-headers)
     (when (file-exists-p element)
