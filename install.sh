@@ -17,7 +17,7 @@ find . ! -path . -type d -exec mkdir -p "$HOME/"{} \;
 if [ -z "$BACKUP_SUFFIX" ]; then
     find . -type f -exec rm -f "$HOME/"{} \; -exec ln -s "$PWD/"{} "$HOME/"{} \;
 else
-    find . -type f -exec test -f "$HOME/"{} \; -exec mv -n "$HOME/"{} "$HOME/"{}"$BACKUP_SUFFIX" \; -exec ln -s "$PWD/"{} "$HOME/"{} \;
+    find . -type f \( \( -exec test -f "$HOME/"{} \; -a -exec mv -n "$HOME/"{} "$HOME/"{}"$BACKUP_SUFFIX" \; \) , -exec ln -s "$PWD/"{} "$HOME/"{} \; \)
 fi
 
 cd "$OLD_CWD"
