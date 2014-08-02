@@ -87,6 +87,9 @@
 ;; jedi
 (load-file "~/.emacs.d/config/jedi-conf.el")
 
+;; gnuplot
+(load-file "~/.emacs.d/config/gnuplot-conf.el")
+
 ;; functions
 ;; kill
 (load-file "~/.emacs.d/functions/kill.el")
