@@ -1,11 +1,15 @@
 (install_if_missing 'google-c-style)
 
- ;; open *.h in c++ mode instead of c mode
- (add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
+
+   
+
+;; open *.h in c++ mode instead of c mode
+(add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
  
- ;; google style
- (require 'google-c-style)
- (add-hook 'c-mode-common-hook 'google-set-c-style)
+;; google style
+(require 'google-c-style)
+(add-hook 'c-mode-hook 'google-set-c-style)
+(add-hook 'c++-mode-hook 'google-set-c-style)
 
 
 ;; add google-c-style to package list to be installed if not present
