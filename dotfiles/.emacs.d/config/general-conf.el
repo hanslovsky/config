@@ -81,9 +81,14 @@
 (global-set-key (kbd "M-<f12>") 'delete-current-buffer-and-file)
 
 ;; set fonts and faces
+;; (custom-set-faces                                                     
+;;  '(default ((t (:family "DejaVu Sans Mono" :foundry "unknown" :slant normal :weight normal :height 83 :width normal))))
+;;  '(minimap-font-face ((t (:height 50 :family "DejaVu Sans Mono"))) t))
+
 (custom-set-faces
- '(default ((t (:family "DejaVu Sans Mono" :foundry "unknown" :slant normal :weight normal :height 83 :width normal))))
+ '(default ((t (:family "monofur" :foundry "unknown" :slant normal :weight normal :height 83 :width normal))))
  '(minimap-font-face ((t (:height 50 :family "DejaVu Sans Mono"))) t))
+
 
 ;; make buffers referring to files with the same name more distinguishable
 (require 'uniquify)
