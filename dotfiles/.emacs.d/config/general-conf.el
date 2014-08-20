@@ -87,7 +87,7 @@
 
 (custom-set-faces
  '(default ((t (:family "monofur" :foundry "unknown" :slant normal :weight normal :height 83 :width normal))))
- '(minimap-font-face ((t (:height 50 :family "DejaVu Sans Mono"))) t))
+ '(minimap-font-face ((t (:height 50 :family "monofur"))) t))
 
 
 ;; make buffers referring to files with the same name more distinguishable
