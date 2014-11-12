@@ -1,0 +1,21 @@
+[$Version]
+update_info=konsole.upd:2.9.0-global-options
+
+[Desktop Entry]
+DefaultProfile=tmux.profile
+
+[Favorite Profiles]
+Favorites=tmux.profile,Shell.profile
+
+[MainWindow]
+Height 1080=1081
+Height 1600=1601
+State=AAAA/wAAAAD9AAAAAAAACgAAAAXjAAAABAAAAAQAAAAIAAAACPwAAAAA
+ToolBarsMovable=Disabled
+Width 1920=1921
+Width 2560=2561
+Width 5120=5121
+
+[Profile Shortcuts]
+Ctrl+Shift+D=Shell.profile
+Ctrl+Shift+X=tmux.profile
