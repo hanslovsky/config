@@ -80,6 +80,11 @@ if [ -f ~/.sh/sh_aliases_zsh_only ]; then
     . ~/.sh/sh_aliases_zsh_only
 fi
 
+# convenience function
+if [ -f ~/.sh/sh_convenience_functions.sh ]; then
+    . ~/.sh/sh_convenience_functions.sh
+fi
+
 # set environment variables
 if [ -f ~/.sh/sh_exports ]; then
     . ~/.sh/sh_exports
