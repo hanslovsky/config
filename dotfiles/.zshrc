@@ -71,8 +71,8 @@ else
     # additional aliases
 fi
 
-if [ -f ~/.sh/sh_aliases ]; then
-    . ~/.sh/sh_aliases
+if [ -f ~/.sh/common_aliases.sh ]; then
+    . ~/.sh/common_aliases.sh
 fi
 
 # global aliases
