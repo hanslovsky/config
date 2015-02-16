@@ -7,13 +7,27 @@ DefaultProfile=tmux.profile
 [Favorite Profiles]
 Favorites=tmux.profile,Shell.profile
 
+[KFileDialog Settings]
+Height 900=428
+Width 1600=800
+
 [MainWindow]
+Height 1024=828
 Height 1080=1081
 Height 1600=1601
-State=AAAA/wAAAAD9AAAAAAAACgAAAAXjAAAABAAAAAQAAAAIAAAACPwAAAAA
+Height 1920=1921
+Height 720=835
+Height 768=769
+Height 900=901
+State=AAAA/wAAAAD9AAAAAAAABkAAAANVAAAABAAAAAQAAAAIAAAACPwAAAAA
 ToolBarsMovable=Disabled
+Width 1024=1025
+Width 1200=1201
+Width 1280=1596
+Width 1600=1601
 Width 1920=1921
 Width 2560=2561
+Width 2800=2801
 Width 5120=5121
 
 [Profile Shortcuts]

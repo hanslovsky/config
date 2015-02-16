@@ -2,6 +2,8 @@
 update_info=kscreenlocker_locksession-shortcut.upd:4.9-locksession-shortcut,ksmserver_shortcuts.upd:kde4.10,ksmserver_shortcuts.upd:kde4.10-remove-group-kscreenlocker,plasma-to-plasmadesktop-shortcuts.upd:4.3plasma-desktop-shortcuts,konsole_remove_background_mode.upd:2.11.0-remove-background-mode
 
 [KDE Keyboard Layout Switcher]
+Switch keyboard layout to English (US)=none,none,Switch keyboard layout to English (US)
+Switch keyboard layout to EurKEY (US based layout with european letters)=none,none,Switch keyboard layout to EurKEY (US based layout with european letters)
 Switch to Next Keyboard Layout=Ctrl+Alt+K,Ctrl+Alt+K,Switch to Next Keyboard Layout
 _k_friendly_name=KDE Keyboard Layout Switcher
 
@@ -31,8 +33,12 @@ toggleMainWindow=none,none,Toggle Main Window
 
 [kactivitymanagerd]
 _k_friendly_name=KDE Activity Manager
+switch-to-activity-0edd4ec3-26d6-4daf-bfed-df6872550bcc=none,none,Switch to activity "Emacs"
 switch-to-activity-29c799b0-308b-465a-a977-0f3a475e950d=none,none,Switch to activity "Desktop"
+switch-to-activity-63b1c1fd-4826-49dc-b95a-e013251684eb=none,none,Switch to activity "Photos Activity"
 switch-to-activity-70282d3e-6c92-44eb-9e7b-ac31296c5992=none,none,Switch to activity "New Activity"
+switch-to-activity-be9ca34d-fc2c-4b8a-b733-d2fe6152e74f=none,none,Switch to activity "Search and Launch"
+switch-to-activity-f8de80b9-df4e-4f1b-bfde-ab107eedc4ce=none,none,Switch to activity "Music"
 
 [kded]
 Decrease Keyboard Brightness=Keyboard Brightness Down,Keyboard Brightness Down,Decrease Keyboard Brightness
@@ -289,5 +295,14 @@ Previous Activity=Meta+Shift+Tab,Meta+Shift+Tab,Previous Activity
 Show Dashboard=Ctrl+F12,Ctrl+F12,Show Dashboard
 Stop Activity=Meta+S,Meta+S,Stop Current Activity
 SystemTray-Klipper-6=Ctrl+Alt+V,Ctrl+Alt+V,
+SystemTray-Klipper-81=,Ctrl+Alt+V,
 _k_friendly_name=Plasma Desktop Shell
+activate widget 83=none,none,Activate Network Management Widget
+activate widget 84=none,none,Activate Device Notifier Widget
+activate widget 85=none,none,Activate Notifications Widget
+activate widget 86=none,none,Activate Battery Monitor Widget
 manage activities=Meta+Q,Meta+Q,Activities...
+
+[yakuake]
+_k_friendly_name=yakuake
+toggle-window-state=F12,F12,Open/Retract Yakuake
