@@ -115,8 +115,8 @@ fi
 
 
 
-if [ -f ~/.sh/sh_exports ]; then
-    . ~/.sh/sh_exports
+if [ -f ~/.sh/common_exports.sh ]; then
+    . ~/.sh/common_exports.sh
 fi
 
 

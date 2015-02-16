@@ -86,8 +86,8 @@ if [ -f ~/.sh/sh_convenience_functions.sh ]; then
 fi
 
 # set environment variables
-if [ -f ~/.sh/sh_exports ]; then
-    . ~/.sh/sh_exports
+if [ -f ~/.sh/common_exports.sh ]; then
+    . ~/.sh/common_exports.sh
 fi
 
 if [[ -n "$DISPLAY" ]]; then
