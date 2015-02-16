@@ -81,8 +81,8 @@ if [ -f ~/.sh/zsh_aliases.sh ]; then
 fi
 
 # convenience function
-if [ -f ~/.sh/sh_convenience_functions.sh ]; then
-    . ~/.sh/sh_convenience_functions.sh
+if [ -f ~/.sh/convenience_functions.sh ]; then
+    . ~/.sh/convenience_functions.sh
 fi
 
 # set environment variables
