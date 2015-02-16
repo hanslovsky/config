@@ -76,8 +76,8 @@ if [ -f ~/.sh/common_aliases.sh ]; then
 fi
 
 # global aliases
-if [ -f ~/.sh/sh_aliases_zsh_only ]; then
-    . ~/.sh/sh_aliases_zsh_only
+if [ -f ~/.sh/zsh_aliases.sh ]; then
+    . ~/.sh/zsh_aliases.sh
 fi
 
 # convenience function
