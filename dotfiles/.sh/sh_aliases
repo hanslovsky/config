@@ -1,9 +1,3 @@
-### Programme ###
-
-
-# latex compile script
-alias texpile='/home/phil/scripts/latex_compile.sh'
-
 # get bounding box of postscript
 alias getbb='gs -dNOPAUSE -dBATCH -q -sDEVICE=bbox'
 
@@ -15,32 +9,14 @@ ecs() { ec "/sudo::$@"; }
 ets() { et "/sudo::$@"; }
 es() { e "/sudo::$@"; }
 
-# quilt for deb pkg
-alias dquilt="quilt --quiltrc=${HOME}/.quiltrc-dpkg"
-
 # copy terminal output to clipboard
 alias termclip="xclip -sel clip"
 
-# gnome keyboard config for clementine
-alias gnome-keybinding-properties="gnome-control-center keyboard"
-
-# matlab
-alias matlab="$HOME/Tools/matlab/bin/matlab -nosplash"
-
 # pdflatex
-alias pdflatex="pdflatex --enable-write18"
+alias pdflatex="pdflatex -shell-escape"
 
 # conky orange
 alias ckyorange="conky -c $HOME/.conky/conky_orange/conkyrc_orange"
-
-# cheddar
-alias cheddar="rdesktop -u phanslovsky -g 1024x768 cheddar.iwr.uni-heidelberg.de"
-
-# desktop logout
-alias desklo="dbus-send --session --type=method_call --print-reply --dest=org.gnome.SessionManager /org/gnome/SessionManager org.gnome.SessionManager.Logout uint32:1"
-
-# vpn
-alias vpn_client="/opt/cisco/anyconnect/bin/vpnui"
 
 # standard cmake
 alias cmake_std="cmake -DCMAKE_INSTALL_PREFIX=$HOME/local"
