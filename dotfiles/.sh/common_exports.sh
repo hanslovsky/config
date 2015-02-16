@@ -3,9 +3,9 @@ LOCAL_NAME='$HOME/local'
 HOSTNAME=`hostname`
 if [ "${HOSTNAME/.int.janelia.org}" = "$HOSTNAME" ];
 then
-    LOCAL_NAME='$HOME/local'
+    LOCAL_NAME="$HOME/local"
 else
-    LOCAL_NAME='$HOME/cluster'
+    LOCAL_NAME="$HOME/cluster"
 fi
 
 export LOCAL=$LOCAL_NAME
