@@ -24,6 +24,10 @@ export CONCERT_INCLUDE_DIR=$LOCAL/ILOG/cplex-current//concert/include
 export CONCERT_LIB_DIR=$LOCAL/ILOG/cplex-current/concert/lib/x86-64_sles10_4.1/static_pic
 
 
+# git
+export GIT_REPO_DIR=$HOME/git
+
+
 # env
 export C_INCLUDE_PATH=$CPLEX_INCLUDE_DIR:$CONCERT_INCLUDE_DIR:$LOCAL/include:$C_INCLUDE_PATH
 export CPLUS_INCLUDE_PATH=$CPLEX_INCLUDE_DIR:$CONCERT_INCLUDE_DIR:$LOCAL/include:$CPLUS_INCLUDE_PATH
@@ -34,10 +38,6 @@ export PYTHONPATH=$DIST_PACKAGES:$SITE_PACKAGES:$PYTHONPATH
 export EDITOR="emacsclient -c"
 export ALTERNATE_EDITOR=""
 export TERM=xterm-256color
-
-
-# git
-export GIT_REPO_DIR=$HOME/git
 
 
 # cuda - export only if present
