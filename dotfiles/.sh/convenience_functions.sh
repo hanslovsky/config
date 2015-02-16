@@ -19,3 +19,8 @@ function find-extensions {
     sh -c "$COMMAND"
     return 0
 }
+
+# print environment of process: envof procid
+function envof {
+    sed 's/\x0/\n/g' /proc/${1}/environ;
+}
