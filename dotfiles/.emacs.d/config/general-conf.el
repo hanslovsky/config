@@ -16,7 +16,7 @@
 (tool-bar-mode -1)
 
 ;; set default cursor
-(set-default 'cursor-type '(hbar . 3))
+(set-default 'cursor-type '(hbar . 10))
 
 ;; enable left hand side line numbers
 (global-linum-mode t)
