@@ -86,7 +86,7 @@
 ;;  '(minimap-font-face ((t (:height 50 :family "DejaVu Sans Mono"))) t))
 
 (custom-set-faces
- '(default ((t (:family "monofur" :foundry "unknown" :slant normal :weight normal :height 83 :width normal))))
+ '(default ((t (:family "monofur" :foundry "unknown" :slant normal :weight normal :height 113 :width normal))))
  '(minimap-font-face ((t (:height 50 :family "monofur"))) t))
 
 
