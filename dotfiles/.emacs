@@ -21,7 +21,7 @@
 (load-file "~/.emacs.d/config/iedit-conf.el")
 
 ;; jabber
-(load-file "~/.emacs.d/config/jabber-conf.el")
+;; (load-file "~/.emacs.d/config/jabber-conf.el")
 
 ;; tramp
 (load-file "~/.emacs.d/config/tramp-conf.el")
