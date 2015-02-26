@@ -5,6 +5,9 @@
 ;; see: http://stackoverflow.com/questions/17598801/emacs-sometimes-cant-open-load-file
 (package-initialize)
 
+;; this is here because emacs doesn't know oxygen font and fucks up
+(setq default-frame-alist '((font . "monofur-15")))
+
 ;; elpa
 (load-file "~/.emacs.d/config/elpa-conf.el")
 
