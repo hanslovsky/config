@@ -20,6 +20,9 @@
 ;; general config
 (load-file "~/.emacs.d/config/general-conf.el")
 
+;; ido
+(load-file "~/.emacs.d/config/ido-conf.el")
+
 ;; iedit
 (load-file "~/.emacs.d/config/iedit-conf.el")
 
