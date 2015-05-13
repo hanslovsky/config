@@ -1,4 +1,4 @@
-;; This is my emacs.d file. It has grown over time and will certainly do so in future
+;; This is my emacs file. It has grown over time and will certainly do so in future
 ;; To put some structure in my config I decided to split it up into smaller config files
 
 ;; this has to go before any packae is loaded that has been installed using elpa
