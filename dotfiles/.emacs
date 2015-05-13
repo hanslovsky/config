@@ -106,6 +106,9 @@
 ;; write to file and keep buffer
 (load-file "~/.emacs.d/functions/write-file-and-keep-buffer.el")
 
+;; show color for color representations
+(load-file "~/.emacs.d/config/rainbow-conf.el")
+
 
 
 
