@@ -16,7 +16,10 @@
 (tool-bar-mode -1)
 
 ;; set default cursor
-(set-default 'cursor-type '(hbar . 10))
+(set-default 'cursor-type '(hbar . 100))
+
+;; set cursor color
+;; (set-cursor-color "black")
 
 ;; enable left hand side line numbers
 (global-linum-mode t)
