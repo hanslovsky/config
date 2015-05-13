@@ -82,13 +82,16 @@
 
 ;; set fonts and faces
 ;; (custom-set-faces                                                     
-;;  '(default ((t (:family "DejaVu Sans Mono" :foundry "unknown" :slant normal :weight normal :height 83 :width normal))))
+;;  '(default ((t (:family "Source Code Pro" :foundry "unknown" :slant normal :weight normal :height 83 :width normal))))
 ;;  '(minimap-font-face ((t (:height 50 :family "DejaVu Sans Mono"))) t))
 
 (custom-set-faces
- '(default ((t (:family "monofur" :foundry "unknown" :slant normal :weight normal :height 113 :width normal))))
- '(minimap-font-face ((t (:height 50 :family "monofur"))) t))
+ '(default ((t (:family "Source Code Pro" :foundry "unknown" :slant normal :weight normal :height 113 :width normal))))
+ '(minimap-font-face ((t (:height 50 :family "Source Code Pro"))) t))
 
+;; monofur for nice variety
+(add-to-list 'default-frame-alist '(font . "Source Code Pro"))
+(set-face-attribute 'default t :font  "Source Code Pro")
 
 ;; make buffers referring to files with the same name more distinguishable
 (require 'uniquify)
