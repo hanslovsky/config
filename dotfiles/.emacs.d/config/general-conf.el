@@ -45,8 +45,9 @@
 
 ;; autocomplete switch buffers on C-x b
 ;; http://stackoverflow.com/questions/7394289/how-can-i-more-easily-switch-between-buffers-in-emacs
-(iswitchb-mode t)
-(setq iswitchb-buffer-ignore '("^ " "*Completions*" "Shell Command Output*"
+;; (iswitchb-mode t)
+(ido-mode 1)
+(setq ido-ignore-buffers '("^ " "*Completions*" "Shell Command Output*"
                                "*Messages*" "Async Shell Command"))
 
 ;; settings for backup files (*~):
