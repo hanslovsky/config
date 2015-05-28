@@ -6,14 +6,18 @@ ZSH=$HOME/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 # ZSH_THEME="af-magic"
-# ZSH_THEME="kphoen"
-# ZSH_THEME="sunrise" ++
+# ZSH_THEME="kphoen" # ++
+# ZSH_THEME="sunrise" # ++
 # ZSH_THEME="gnzh" #  +
 # ZSH_THEME="norm" #  +
 # ZSH_THEME="nanotech" #  +
 # ZSH_THEME="minimal" # 
-ZSH_THEME="mrtazz" #  ++
-# ZSH_THEME="dieter" # 
+# ZSH_THEME="mrtazz" #  ++
+# ZSH_THEME="dieter" # ++
+# ZSH_THEME="bureau" # ++
+# ZSH_THEME="kolo" # +
+# ZSH_THEME="miloshadzic" # +
+ZSH_THEME="sunaku" # ++
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
