@@ -97,8 +97,8 @@
 
 ;; use this instead
 ;; this is here because emacs doesn't know oxygen font and fucks up
-(setq initial-frame-alist '((font . "Source Code Pro-10")))
-(setq default-frame-alist '((font . "Source Code Pro-10")))
+(add-to-list 'initial-frame-alist '(font . "Source Code Pro-10"))
+(add-to-list 'default-frame-alist '(font . "Source Code Pro-10"))
 
 ;; make buffers referring to files with the same name more distinguishable
 (require 'uniquify)
