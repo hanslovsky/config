@@ -84,13 +84,21 @@
 ;;  '(default ((t (:family "Source Code Pro" :foundry "unknown" :slant normal :weight normal :height 83 :width normal))))
 ;;  '(minimap-font-face ((t (:height 50 :family "DejaVu Sans Mono"))) t))
 
-(custom-set-faces
- '(default ((t (:family "Source Code Pro" :foundry "unknown" :slant normal :weight normal :height 113 :width normal))))
- '(minimap-font-face ((t (:height 50 :family "Source Code Pro"))) t))
+;; while emacs fucks up, comment this:
+;; (custom-set-faces
+;;  '(default ((t (:family "Source Code Pro" :foundry "unknown" :slant normal :weight normal :height 113 :width normal))))
+;;  '(minimap-font-face ((t (:height 50 :family "Source Code Pro"))) t))
 
-;; monofur for nice variety
-(add-to-list 'default-frame-alist '(font . "Source Code Pro"))
-(set-face-attribute 'default t :font  "Source Code Pro")
+;; monofur ;; ++
+;; Souce Code Pro ;; ++
+;; and comment this while emacs fucks up:
+;; (add-to-list 'default-frame-alist '(font . "Source Code Pro"))
+;; (set-face-attribute 'default t :font  "Source Code Pro")
+
+;; use this instead
+;; this is here because emacs doesn't know oxygen font and fucks up
+(setq initial-frame-alist '((font . "Source Code Pro-10")))
+(setq default-frame-alist '((font . "Source Code Pro-10")))
 
 ;; make buffers referring to files with the same name more distinguishable
 (require 'uniquify)

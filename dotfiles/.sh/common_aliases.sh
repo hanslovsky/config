@@ -2,7 +2,6 @@
 alias getbb='gs -dNOPAUSE -dBATCH -q -sDEVICE=bbox'
 
 # emacs
-alias emacs='emacs -fn monofur' # this needs to go here because emacs fucks up oxygen font
 alias ec='emacsclient -c -n'
 alias et='emacsclient -t -s term'
 alias e='emacsclient -n'
