@@ -73,6 +73,9 @@
 ;;        "")))
 ;;  TeX-expand-list)
 
+;; enable flyspell for auctex by default
+(add-hook 'LaTeX-mode-hook #'turn-on-flyspell)
+
 
 
 ;; add auctex to package list to be installed if not present
