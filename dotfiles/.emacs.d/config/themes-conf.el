@@ -1,6 +1,8 @@
 (install_if_missing 'theme-changer)
 (install_if_missing 'gandalf-theme)
 (install_if_missing 'zenburn-theme)
+(install_if_missing 'railscasts-theme)
+(install_if_missing 'hipster-theme)
 
 ;; setup for sun set/rise theme changer
 ;; (setq calendar-location-name "Heidelberg, Germany")
