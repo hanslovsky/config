@@ -109,6 +109,9 @@
 ;; show color for color representations
 (load-file "~/.emacs.d/config/rainbow-conf.el")
 
+;; parantheses highlighting and completion
+(load-file "~/.emacs.d/config/parens-conf.el")
+
 
 
 
