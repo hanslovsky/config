@@ -7,7 +7,9 @@
 
 (my-global-rainbow-mode 1)
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
-(add-hook 'prog-mode-hook #'rainbow-identifiers-mode)
+;; (add-hook 'prog-mode-hook #'rainbow-identifiers-mode)
+
+(add-hook 'LaTeX-mode-hook #'rainbow-delimiters-mode)
 
 ;; make own conf file for lisp?
 (add-hook 'prog-mode-hook #'rainbow-blocks-mode)
