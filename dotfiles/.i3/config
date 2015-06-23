@@ -11,15 +11,16 @@
 
 
 set $mod Mod4
+set $TERMINAL '/usr/bin/konsole'
 
 # font for window titles. ISO 10646 = Unicode
-font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+# font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 
 # Use Mouse+$mod to drag floating windows to their wanted position
-floating_modifier $mod
+# floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec konsole # i3-sensible-terminal # i3-sensible-terminal does not seem to read $TERMINAL
 
 # kill focused window
 bindsym $mod+Shift+Q kill
@@ -171,21 +172,9 @@ bar {
 }
 
 
-# put workspaces 1,2 on left monitor, 3,4 on right
-workspace  1 output DVI1
-workspace  2 output DVI1
-workspace  4 output VGA1
-workspace  5 output VGA1
-
 # bind lock screen to
 # bindsym $mod+Shift+W exec --no-startup-id i3lock -i $HOME/wp.png -p win -t
 # bindsym $mod+Shift+W exec --no-startup-id i3lock -i $HOME/lock2.png -p win -t
-bindsym $mod+Shift+W exec --no-startup-id i3lock -i $HOME/bs.png -t
-
-# set correct number of screen (hostname dependend)
-# exec --no-starup-id bash $HOME/git/scripts/set_nr_screens_hostname_dependend.sh
-
-# set desktop wallpaper
-exec  --no-startup-id feh --bg-fill /usr/share/wallpapers/Fog_on_the_West_Lake/contents/images/1600x1200.jpg
+# bindsym $mod+Shift+W exec --no-startup-id i3lock -i $HOME/bs.png -t
 
 
