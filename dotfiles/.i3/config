@@ -171,10 +171,25 @@ bar {
         status_command i3status
 }
 
+# start nm-applet
+exec --no-startup-id nm-applet
+
 
 # bind lock screen to
 # bindsym $mod+Shift+W exec --no-startup-id i3lock -i $HOME/wp.png -p win -t
 # bindsym $mod+Shift+W exec --no-startup-id i3lock -i $HOME/lock2.png -p win -t
 # bindsym $mod+Shift+W exec --no-startup-id i3lock -i $HOME/bs.png -t
 
+# change keyboard layout
+setxkbmap -layout eu
 
+# Multimedia keys:
+# https://faq.i3wm.org/question/3747/enabling-multimedia-keys/
+# Pulse Audio controls
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -- -5% #decrease sound volume
+bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle # mute sound
+
+# Sreen brightness controls
+bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
