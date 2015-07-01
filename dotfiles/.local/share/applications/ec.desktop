@@ -1,0 +1,6 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Name=ec
+Exec=emacsclient -c -n
+Type=Application
+Icaon=emacs
