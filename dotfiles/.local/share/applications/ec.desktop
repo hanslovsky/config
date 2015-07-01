@@ -1,6 +1,10 @@
-#!/usr/bin/env xdg-open
 [Desktop Entry]
 Name=ec
-Exec=emacsclient -c -n
+Exec=emacsclient -c -n %F
 Type=Application
-Icaon=emacs
+Terminal=false
+Icon=/usr/share/icons/hicolor/scalable/apps/emacs.svg
+GenericName=Text Editor
+Comment=View and edit files
+Categories=Utility;Development;TextEditor;
+StartupWMClass=Emacs
