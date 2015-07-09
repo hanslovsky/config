@@ -64,3 +64,9 @@ export LESS='-RS#3NM~g'
 
 # qtselector information
 export QT_SELECT=4
+
+# go
+export GOPATH=$LOCAL/go
+
+# buildem
+export BUILDEM_DIR=$LOCAL/buildem
