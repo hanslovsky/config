@@ -1,10 +1,16 @@
 [Desktop Entry]
-Name=ec
-Exec=emacsclient -c -n %F
-Type=Application
-Terminal=false
-Icon=/usr/share/icons/hicolor/scalable/apps/emacs.svg
-GenericName=Text Editor
-Comment=View and edit files
 Categories=Utility;Development;TextEditor;
+Comment=View and edit files
+Exec=emacsclient -c -n %F
+GenericName=Text Editor
+Icon=/usr/share/icons/hicolor/scalable/apps/emacs.svg
+Name=ec
+NoDisplay=false
+Path[$e]=
+StartupNotify=true
 StartupWMClass=Emacs
+Terminal=0
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=
