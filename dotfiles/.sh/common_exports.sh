@@ -1,3 +1,10 @@
+remove_duplicates()
+{
+    SEPARATOR=$1
+    PATH_VAR=$2
+    echo -n $PATH_VAR | tr $SEPARATOR '\n' | awk '!a[$0]++' | perl -pe 'chomp if eof' | tr '\n' $SEPARATOR
+}
+
 # set local dir ot either $HOME/local or $HOME/cluster
 LOCAL_NAME='$HOME/local'
 HOSTNAME=`hostname`
