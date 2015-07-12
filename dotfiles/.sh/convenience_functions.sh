@@ -51,8 +51,8 @@ function pick_line_and_modify
     while ; do
         echo 'Modify(m)/Delete(d)/No-Action(n)/Quit(q)?' >&2
         read CHOICE
-        CHOICE=`echo -n $CHOICE | sed 's/[^dmnqDMNQ]//g' | tr '[:upper:]' '[:lower:]'`
-        if [ ! $CHOICE = "" ]; then
+        CHOICE=`echo -n $CHOICE | tr '[:upper:]' '[:lower:]'`
+        if [ -n "$CHOICE" ]; then
             if [ $CHOICE = d -o $CHOICE = m -o $CHOICE = n -o $CHOICE = q ]; then
                 break
             fi
