@@ -3,7 +3,7 @@ function show-only-common {
     comm -12 <( sort $1 )  <( sort $2 )
 }
 
-# find all files with given extensions: find -extensions ext1 [ ext2 ... ]
+# find all files with given extensions: find-extensions ext1 [ ext2 ... ]
 function find-extensions {
     USAGE="$0 <dir> <extension> [<extension> ...]"
     if [[ "$#" -lt "2" ]]; then
