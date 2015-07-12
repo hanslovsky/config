@@ -35,11 +35,16 @@ function pick_line_and_modify
     echo $ENUM >&2
     MAX_NUM=`echo -n $ENUM | tail -n1 | sed -r 's/^[[:space:]]+//' | sed -r 's/[[:space:]]+.*$//'`
     LINE=0
-    while [ $LINE -lt 1 -o $LINE -gt $MAX_NUM ]; do
+    while ; do
         echo -e "Pick 1 $LTE number $LTE $MAX_NUM to modify line" >&2
         read LINE
         echo >&2
-        LINE=`echo $LINE | sed 's/[^0-9]+//g'`
+        NON_NUMERIC=`echo $LINE | grep '[^0-9]'`
+        if [ -z $NON_NUMERIC ]; then
+            if [ $LINE -ge 1 -a $LINE -le $MAX_NUM ]; then
+                break
+            fi
+        fi
     done
     CHOICE=''
     while ; do
