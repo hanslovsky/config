@@ -58,8 +58,8 @@ CUDA_BASE_DIRS="$(find $CUDA_PARENT_DIR -maxdepth 1 -name 'cuda*' -type d)"
 # check if CUDA_BASE_DIRS is not empty
 if [[ -n "$CUDA_BASE_DIRS" ]]; then
    LATEST_CUDA_BASE_PATH="$(echo -e "$CUDA_BASE_DIRS" | sort -V  | tail -n1)"
-   export PATH="$LATEST_CUDA_BASE_PATH/bin:$PATH"
-   export LD_LIBRARY_PATH="$LATEST_CUDA_BASE_PATH/lib:$LATEST_CUDA_BASE_PATH/lib64:$LD_LIBRARY_PATH"
+   export PATH=`fix_path $LATEST_CUDA_BASE_PATH/bin:$PATH`
+   export LD_LIBRARY_PATH=`fix_path $LATEST_CUDA_BASE_PATH/lib:$LATEST_CUDA_BASE_PATH/lib64:$LD_LIBRARY_PATH`
 fi
 
 
