@@ -5,6 +5,11 @@ remove_duplicates()
     echo -n $PATH_VAR | tr $SEPARATOR '\n' | awk '!a[$0]++' | perl -pe 'chomp if eof' | tr '\n' $SEPARATOR
 }
 
+fix_path()
+{
+    remove_duplicates : $@
+}
+
 # set local dir ot either $HOME/local or $HOME/cluster
 LOCAL_NAME='$HOME/local'
 HOSTNAME=`hostname`
@@ -36,12 +41,12 @@ export GIT_REPO_DIR=$HOME/git
 
 
 # env
-export C_INCLUDE_PATH=$CPLEX_INCLUDE_DIR:$CONCERT_INCLUDE_DIR:$LOCAL/include:$C_INCLUDE_PATH
-export CPLUS_INCLUDE_PATH=$CPLEX_INCLUDE_DIR:$CONCERT_INCLUDE_DIR:$LOCAL/include:$CPLUS_INCLUDE_PATH
-export LIBRARY_PATH=$CPLEX_LIB_DIR:$CONCERT_LIB_DIR:$LOCAL/lib:$LIBRARY_PATH
-export LD_LIBRARY_PATH=$LOCAL/lib:$SITE_PACKAGES:$LD_LIBRARY_PATH
-export PATH=$GIT_REPO_DIR/scripts:$LOCAL/bin:$PATH
-export PYTHONPATH=$DIST_PACKAGES:$SITE_PACKAGES:$PYTHONPATH
+export C_INCLUDE_PATH=`fix_path $CPLEX_INCLUDE_DIR:$CONCERT_INCLUDE_DIR:$LOCAL/include:$C_INCLUDE_PATH`
+export CPLUS_INCLUDE_PATH=`fix_path $CPLEX_INCLUDE_DIR:$CONCERT_INCLUDE_DIR:$LOCAL/include:$CPLUS_INCLUDE_PATH`
+export LIBRARY_PATH=`fix_path $CPLEX_LIB_DIR:$CONCERT_LIB_DIR:$LOCAL/lib:$LIBRARY_PATH`
+export LD_LIBRARY_PATH=`fix_path $LOCAL/lib:$SITE_PACKAGES:$LD_LIBRARY_PATH`
+export PATH=`fix_path $GIT_REPO_DIR/scripts:$LOCAL/bin:$PATH`
+export PYTHONPATH=`fix_path $DIST_PACKAGES:$SITE_PACKAGES:$PYTHONPATH`
 export EDITOR="emacsclient -c"
 export ALTERNATE_EDITOR=""
 export TERM=xterm-256color
