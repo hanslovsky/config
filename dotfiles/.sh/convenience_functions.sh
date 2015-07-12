@@ -38,19 +38,19 @@ function pick_line_and_modify
     while ; do
         echo -e "Pick 1 $LTE number $LTE $MAX_NUM to modify line" >&2
         read LINE
-        echo >&2
+        LINE=`echo -n $LINE | sed -r -e 's/^[ \t\n]+//' -e 's/[ \t\n]+$//'`
         NON_NUMERIC=`echo $LINE | grep '[^0-9]'`
-        if [ -z $NON_NUMERIC ]; then
+        if [ -n "$LINE" -a -z "$NON_NUMERIC" ]; then
             if [ $LINE -ge 1 -a $LINE -le $MAX_NUM ]; then
                 break
             fi
         fi
     done
+    echo >&2
     CHOICE=''
     while ; do
         echo 'Modify(m)/Delete(d)/No-Action(n)/Quit(q)?' >&2
         read CHOICE
-        echo >&2
         CHOICE=`echo -n $CHOICE | sed 's/[^dmnqDMNQ]//g' | tr '[:upper:]' '[:lower:]'`
         if [ ! $CHOICE = "" ]; then
             if [ $CHOICE = d -o $CHOICE = m -o $CHOICE = n -o $CHOICE = q ]; then
@@ -58,6 +58,7 @@ function pick_line_and_modify
             fi
         fi
     done
+    echo >&2
     case "$CHOICE" in
         m)
             CONTENT=`echo $VAL | sed -n "${LINE}p"`
