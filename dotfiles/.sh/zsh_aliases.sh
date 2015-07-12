@@ -38,7 +38,7 @@ alias -g G='| grep -E'
 alias -g EGREP='| grep -E'
 
 # grep -i
-alias -g IGREP='| grep -i'
+alias -g IGREP='| grep -iE'
 
 
 # suffix alias
