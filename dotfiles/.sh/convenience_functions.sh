@@ -81,6 +81,7 @@ function pick_line_and_modify
             RESULT=$VAL
             ;;
     esac
+    echo $RESULT
     export $EXPORTED_RESULT=$RESULT
 }
 
