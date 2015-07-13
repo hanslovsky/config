@@ -94,4 +94,5 @@ function modify_line_in_path
 }"
     pick_line_and_modify <(echo -n $NL_PATH_VAR) MODIFIED
     export $PATH_VAR_NAME="$MODIFIED"
+    unset MODIFIED
 }
