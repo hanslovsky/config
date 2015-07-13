@@ -13,7 +13,7 @@ fix_path()
 # set local dir ot either $HOME/local or $HOME/cluster
 LOCAL_NAME='$HOME/local'
 HOSTNAME=`hostname`
-if [ "${HOSTNAME/.int.janelia.org}" = "$HOSTNAME" ];
+if [ 1 -o "${HOSTNAME/.int.janelia.org}" = "$HOSTNAME" ];
 then
     LOCAL_NAME="$HOME/local"
 else
