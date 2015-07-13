@@ -93,6 +93,6 @@ function modify_line_in_path
     NL_PATH_VAR="${PATH_VAR//:/
 }"
     pick_line_and_modify <(echo -n $NL_PATH_VAR) MODIFIED
-    export $PATH_VAR_NAME="$MODIFIED"
+    export $PATH_VAR_NAME=$( echo -n -e "$MODIFIED" | tr '\n' ':' )
     unset MODIFIED
 }
