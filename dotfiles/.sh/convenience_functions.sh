@@ -82,7 +82,7 @@ function pick_line_and_modify
             ;;
     esac
     echo $RESULT
-    export $EXPORTED_RESULT="$RESULT"
+    eval $EXPORTED_RESULT=\$RESULT
 }
 
 
