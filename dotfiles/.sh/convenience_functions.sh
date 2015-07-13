@@ -29,14 +29,15 @@ function envof {
 # pick line and modify
 function pick_line_and_modify
 {
-    LTE='\xe2\x89\xa4'
     VAL=$(cat $1)
+    EXPORTED_RESULT=${2:-RESULT}
+    LTE='\xe2\x89\xa4'
     ENUM=$(nl <(echo $VAL))
-    echo $ENUM >&2
+    echo $ENUM
     MAX_NUM=`echo -n $ENUM | tail -n1 | sed -r 's/^[[:space:]]+//' | sed -r 's/[[:space:]]+.*$//'`
     LINE=0
     while ; do
-        echo -e "Pick 1 $LTE number $LTE $MAX_NUM to modify line" >&2
+        echo -e "Pick 1 $LTE number $LTE $MAX_NUM to modify line"
         read LINE
         LINE=`echo -n $LINE | sed -r -e 's/^[ \t\n]+//' -e 's/[ \t\n]+$//'`
         NON_NUMERIC=`echo $LINE | grep '[^0-9]'`
@@ -46,10 +47,10 @@ function pick_line_and_modify
             fi
         fi
     done
-    echo >&2
+    echo
     CHOICE=''
     while ; do
-        echo 'Modify(m)/Delete(d)/No-Action(n)/Quit(q)?' >&2
+        echo 'Modify(m)/Delete(d)/No-Action(n)/Quit(q)?'
         read CHOICE
         CHOICE=`echo -n $CHOICE | tr '[:upper:]' '[:lower:]'`
         if [ -n "$CHOICE" ]; then
@@ -58,28 +59,29 @@ function pick_line_and_modify
             fi
         fi
     done
-    echo >&2
+    echo
     case "$CHOICE" in
         m)
             CONTENT=`echo $VAL | sed -n "${LINE}p"`
-            echo "Please specify replacement for line $LINE: $CONTENT" >&2
+            echo "Please specify replacement for line $LINE: $CONTENT"
             read REPLACEMENT
-            echo >&2
-            echo -n $VAL | sed "${LINE}s#^.*#$REPLACEMENT#"
+            echo
+            RESULT=$(echo -n -e "$VAL" | sed "${LINE}s#^.*#$REPLACEMENT#")
             ;;
         d)
-            echo -e $VAL | sed -e "${LINE}d"
+            RESULT=$(echo -n -e "$VAL" | sed -e "${LINE}d")
             ;;
         n)
-            echo $VAL
+            RESULT=$VAL
             ;;
         q)
-            echo $VAL
+            RESULT=$VAL
             ;;
         *)
-            echo $VAL
+            RESULT=$VAL
             ;;
     esac
+    export $EXPORTED_RESULT=$RESULT
 }
 
 
@@ -89,7 +91,6 @@ function modify_line_in_path
     PATH_VAR=`eval echo $"$PATH_VAR_NAME"`
     NL_PATH_VAR="${PATH_VAR//:/
 }"
-    MODIFIED=$(pick_line_and_modify <(echo -n $NL_PATH_VAR) )
-    export $PATH_VAR_NAME=$(echo -n $MODIFIED | tr '\n' ':' )
-    PATH_VAR=`eval echo $"$PATH_VAR_NAME"`
+    pick_line_and_modify <(echo -n $NL_PATH_VAR) MODIFIED
+    export $PATH_VAR_NAME=$MODIFIED
 }
