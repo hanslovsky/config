@@ -30,10 +30,10 @@ export DIST_PACKAGES=$LOCAL/lib/python2.7/dist-packages
 
 # cplex
 export CPLEX_INCLUDE_DIR=$LOCAL/ILOG/cplex-current/cplex/include
-export CPLEX_LIB_DIR=$LOCAL/ILOG/cplex-current/cplex/lib/x86-64_sles10_4.1/static_pic
+export CPLEX_LIB_DIR=$LOCAL/ILOG/cplex-current/cplex/lib/x86-64_linux/static_pic
 
-export CONCERT_INCLUDE_DIR=$LOCAL/ILOG/cplex-current//concert/include
-export CONCERT_LIB_DIR=$LOCAL/ILOG/cplex-current/concert/lib/x86-64_sles10_4.1/static_pic
+export CONCERT_INCLUDE_DIR=$LOCAL/ILOG/cplex-current/concert/include
+export CONCERT_LIB_DIR=$LOCAL/ILOG/cplex-current/concert/lib/x86-64_linux/static_pic
 
 
 # git
