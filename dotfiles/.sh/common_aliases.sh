@@ -19,7 +19,7 @@ alias pdflatex="pdflatex -shell-escape"
 alias ckyorange="conky -c $HOME/.conky/conky_orange/conkyrc_orange"
 
 # standard cmake
-alias cmake_std="cmake -DCMAKE_INSTALL_PREFIX=$HOME/local"
+alias cmake_std="cmake -DCMAKE_INSTALL_PREFIX=$LOCAL"
 
 # latexmk pdf
 alias pdfmake="latexmk -pvc"
