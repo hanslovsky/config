@@ -29,3 +29,6 @@ alias htop='TERM=screen htop'
 
 # works for cmus as well
 alias cmus='TERM=screen cmus'
+
+# pip install with --prefix=$LOCAL
+alias pinstall="pip install --install-option=\"--prefix=$LOCAL\""
