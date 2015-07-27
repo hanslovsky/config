@@ -10,7 +10,10 @@ alias -g NO_ERR='2>/dev/null'
 alias -g SILENCE='1>/dev/null 2>&1'
 
 # copy to clipboard
-alias -g CLIPBOARD='| xclip -selection clipboard'
+alias -g NL_CLIPBOARD='| xclip -selection clipboard'
+
+# copy to clipboard w/o trailing new line
+alias -g CLIPBOARD='| xargs -d "\n" printf %s | xclip -selection clipboard'
 
 # PATH, single line for each entry
 alias -g NLPATH='${PATH//:/
