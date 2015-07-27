@@ -45,6 +45,9 @@
 ;; blinking cursor
 (blink-cursor-mode 1)
 
+;; smart cursor (cursor color equals text color)
+(smart-cursor-color-mode 1)
+
 ;; settings for backup files (*~):
 (setq backup-directory-alist '(("." . "~/.emacs.d/backup"))
   backup-by-copying t    ; Don't delink hardlinks
