@@ -12,6 +12,9 @@ es() { e "/sudo::$@"; }
 # copy terminal output to clipboard
 alias termclip="xclip -sel clip"
 
+# remove trailing newlines from clipboard content and store result in clipboard
+alias clip_rm_nl='printf "%s" "$(xclip -o -selection clipboard)" | xclip -selection clipboard'
+
 # pdflatex
 alias pdflatex="pdflatex -shell-escape"
 
