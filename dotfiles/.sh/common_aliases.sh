@@ -34,4 +34,7 @@ alias htop='TERM=screen htop'
 alias cmus='TERM=screen cmus'
 
 # pip install with --prefix=$LOCAL
-alias pinstall="pip install --install-option=\"--prefix=$LOCAL\""
+alias pinstall='pip install --install-option="--prefix=$LOCAL"'
+
+# perl-rename if it exists, 
+hash perl-rename 2>/dev/null && alias rename='perl-rename'
