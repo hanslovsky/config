@@ -46,6 +46,7 @@
 (blink-cursor-mode 1)
 
 ;; smart cursor (cursor color equals text color)
+(install_if_missing 'smart-cursor-color)
 (smart-cursor-color-mode 1)
 
 ;; settings for backup files (*~):
