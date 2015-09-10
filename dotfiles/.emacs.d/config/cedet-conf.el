@@ -24,13 +24,14 @@
 
 (global-semanticdb-minor-mode 1)
 
-(global-ede-mode 1)
+(global-ede-mode 0)
 
 
 (semantic-add-system-include "~/local/include" 'c++-mode)
 (semantic-add-system-include "~/local/include" 'c-mode)
 
 (defun my-c-mode-cedet-hook ()
+  (ede-minor-mode)
   (local-set-key "." 'semantic-complete-self-insert)
   (local-set-key ">" 'semantic-complete-self-insert)
   (local-set-key (kbd "C-c , -") 'senator-fold-tag)
