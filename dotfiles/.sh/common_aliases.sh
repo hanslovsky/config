@@ -41,4 +41,4 @@ hash perl-rename 2>/dev/null && alias rename='perl-rename'
 
 # list unstage changes in git repo, sorted by modification time
 # inspired by https://jayenashar.wordpress.com/2014/03/07/git-status-sorted-by-last-modified-timestamp/
-list-unstaged() { [ "$1" = "all" ] && MATCH="?M" || MATCH="??"; ls -lrtd $(git status --porcelain | grep "^.[$MATCH]" | sed "s/^.. //"); }
+#list-unstaged() { [ "$1" = "all" ] && MATCH="?M" || MATCH="??"; ls -lrtd $(git status --porcelain | grep "^.[$MATCH]" | sed "s/^.. //"); }
