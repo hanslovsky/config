@@ -11,3 +11,9 @@
 ;; (add-to-list 'org-latex-packages-alist 'tabularx)
 ;; (add-to-list 'org-latex-packages-alist 'tabu)
 
+(install_if_missing 'org)
+(install_if_missing 'org-bullets)
+(install_if_missing 'org-gcal)
+(install_if_missing 'org-autolist)
+(install_if_missing 'org-beautify-theme)
+(install_if_missing 'org-present)
