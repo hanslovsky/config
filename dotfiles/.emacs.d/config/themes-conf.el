@@ -3,6 +3,7 @@
 (install_if_missing 'zenburn-theme)
 (install_if_missing 'railscasts-theme)
 (install_if_missing 'hipster-theme)
+(install_if_missing 'moe-theme) ;; https://github.com/kuanyui/moe-theme.el
 
 ;; setup for sun set/rise theme changer
 ;; (setq calendar-location-name "Heidelberg, Germany")
