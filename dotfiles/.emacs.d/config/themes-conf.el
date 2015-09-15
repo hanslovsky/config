@@ -19,6 +19,7 @@
 (require 'theme-changer)
 (change-theme 'gandalf 'zenburn)
 ;; good themes: gandalf (light), (n)zenburn(dark), adawaita (light), tango(-dark), wombat (dark), tsdh-light(light)
+;; good themes: moe-{light,dark}
 
 ;; add theme-changer to package list to be installed if not present
 (when (not (boundp 'elpa-packages-list))
