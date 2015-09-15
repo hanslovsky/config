@@ -5,6 +5,8 @@
 (install_if_missing 'hipster-theme)
 (install_if_missing 'moe-theme) ;; https://github.com/kuanyui/moe-theme.el
 
+(require 'moe-theme)
+
 ;; setup for sun set/rise theme changer
 ;; (setq calendar-location-name "Heidelberg, Germany")
 ;; (setq calendar-latitude 49.25)
