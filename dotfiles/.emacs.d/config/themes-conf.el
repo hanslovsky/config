@@ -3,9 +3,15 @@
 (install_if_missing 'zenburn-theme)
 (install_if_missing 'railscasts-theme)
 (install_if_missing 'hipster-theme)
+(install_if_missing 'powerline) ;; https://github.com/milkypostman/powerline ;; not sure if wanna use it
 (install_if_missing 'moe-theme) ;; https://github.com/kuanyui/moe-theme.el
 
+(require 'powerline) ;; needs to come before moe-theem
 (require 'moe-theme)
+ ;; Show highlighted buffer-id as decoration. (Default: nil)
+(setq moe-theme-highlight-buffer-id t)
+(setq moe-theme-resize-org-title nil) ;; (setq moe-theme-resize-org-title '(1.5 1.4 1.3 1.2 1.1 1.0 1.0 1.0 1.0))
+(moe-light)
 
 ;; setup for sun set/rise theme changer
 ;; (setq calendar-location-name "Heidelberg, Germany")
@@ -17,7 +23,7 @@
 (setq calendar-longitude -77.47)
 
 (require 'theme-changer)
-(change-theme 'gandalf 'zenburn)
+(change-theme 'moe-light 'moe-dark)
 ;; good themes: gandalf (light), (n)zenburn(dark), adawaita (light), tango(-dark), wombat (dark), tsdh-light(light)
 ;; good themes: moe-{light,dark}
 
