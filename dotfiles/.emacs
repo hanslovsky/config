@@ -115,3 +115,6 @@
 ;; parantheses highlighting and completion
 (load-file "~/.emacs.d/config/parens-conf.el")
 
+;; json
+(load-file "~/.emacs.d/config/json-conf.el")
+
