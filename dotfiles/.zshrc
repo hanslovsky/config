@@ -94,7 +94,7 @@ if [ -f ~/.sh/common_exports.sh ]; then
     . ~/.sh/common_exports.sh
 fi
 
-if [[ -n "$DISPLAY" ]]; then
+if [[ -n "$DISPLAY" && -n "" ]]; then
     CURR_DIR=$(pwd)
     cd ~/.sh/greet_dir
     fn=$(ls -1 | shuf -n1)
