@@ -118,3 +118,6 @@
 ;; json
 (load-file "~/.emacs.d/config/json-conf.el")
 
+;; google
+(load-file "~/.emacs.d/config/google-conf.el")
+
