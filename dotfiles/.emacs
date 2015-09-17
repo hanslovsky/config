@@ -121,3 +121,6 @@
 ;; google
 (load-file "~/.emacs.d/config/google-conf.el")
 
+;; nyan cat
+(load-file "~/.emacs.d/config/nyan-conf.el")
+
