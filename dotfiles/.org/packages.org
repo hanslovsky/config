@@ -1,0 +1,7 @@
+#+TITLE: List of Packages to Be Installed
+
+* TODO Packages to be installed and configured [0%]
+  - [ ] helm [0%]
+    - [ ]  ac-helm
+    - [ ] replace ido
+    - [ ] bind M-x to helm-M-x
