@@ -19,6 +19,10 @@
                         "~/.emacs.d/ac-comphist.dat"))
 (ac-config-default)
 
+(set-default
+ 'ac-sources
+ (append ac-sources '(ac-source-filename ac-source-files-in-current-dir)))
+
 ;; define include search patterns
 (setq achead:include-patterns '("\\.\\(h\\|hpp\\|hh\\|hxx\\)$" "/[a-zA-Z-_]+$") )
 
