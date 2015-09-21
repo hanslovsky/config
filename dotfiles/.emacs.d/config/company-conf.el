@@ -25,6 +25,11 @@
 
 (add-hook 'after-init-hook 'global-company-mode)
 
+;; Load with `irony-mode` as a grouped backend
+(eval-after-load 'company
+  '(add-to-list
+    'company-backends '(company-irony-c-headers company-irony)))
+
 (eval-after-load 'company
   '(progn
      (define-key company-mode-map (kbd "C-.") 'company-files)
