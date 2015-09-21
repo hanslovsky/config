@@ -9,13 +9,19 @@
 (load-file "~/.emacs.d/config/elpa-conf.el")
 
 ;; smart indent (tabs+space)
-(load-file "~/.emacs.d/config/smart-tabs-conf.el")
+;; (load-file "~/.emacs.d/config/smart-tabs-conf.el")
 
 ;; auctex
 (load-file "~/.emacs.d/config/auctex-conf.el")
 
 ;; auto-complete
-(load-file "~/.emacs.d/config/auto-complete-conf.el")
+;; (load-file "~/.emacs.d/config/auto-complete-conf.el")
+
+;; irony and company instead of auto-complete
+(load-file "~/.emacs.d/config/irony-conf.el")
+
+;; company
+(load-file "~/.emacs.d/config/company-conf.el")
 
 ;; general config
 (load-file "~/.emacs.d/config/general-conf.el")
@@ -71,7 +77,7 @@
 ;; (load-file "~/.emacs.d/config/speedbar-conf.el")
 
 ;; cedet
-(load-file "~/.emacs.d/config/cedet-conf.el")
+;; (load-file "~/.emacs.d/config/cedet-conf.el")
 
 ;; Emacs-IDE
 (load-file "~/.emacs.d/config/ide-conf.el")
@@ -101,7 +107,7 @@
 (load-file "~/.emacs.d/config/gnuplot-conf.el")
 
 ;; emacs-eclim
-(load-file "~/.emacs.d/config/emacs-eclim-conf.el")
+;; (load-file "~/.emacs.d/config/emacs-eclim-conf.el")
 
 ;; c-mode-common
 (load-file "~/.emacs.d/config/c-mode-common-conf.el")
