@@ -134,3 +134,6 @@
 ;; nyan cat
 (load-file "~/.emacs.d/config/nyan-conf.el")
 
+;; perspective
+(load-file "~/.emacs.d/config/persperctive-conf.el" )
+
