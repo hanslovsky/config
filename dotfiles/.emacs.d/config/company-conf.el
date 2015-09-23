@@ -1,5 +1,6 @@
 (install_if_missing 'company)
 (install_if_missing 'company-auctex)
+(install_if_missing 'company-c-headers)
 (install_if_missing 'company-irony)
 (install_if_missing 'company-irony-c-headers)
 (install_if_missing 'company-quickhelp)
@@ -28,12 +29,13 @@
 ;; Load with `irony-mode` as a grouped backend
 (eval-after-load 'company
   '(add-to-list
-    'company-backends '(company-irony-c-headers company-irony)))
+    'company-backends '(company-c-headers company-irony-c-headers company-irony)))
 
 (eval-after-load 'company
   '(progn
      (define-key company-mode-map (kbd "C-.") 'company-files)
-     ;; (define-key company-mode-map [tab] 'company-complete)
+     (define-key company-mode-map (kbd "C-:") 'company-complete)
+     (define-key company-active-map (kbd "tab") 'company-complete)
      (define-key company-active-map (kbd "C-n") 'company-select-next)
      (define-key company-active-map (kbd "C-p") 'company-select-previous)
      (define-key company-active-map (kbd "C-d") 'company-show-doc-buffer)
