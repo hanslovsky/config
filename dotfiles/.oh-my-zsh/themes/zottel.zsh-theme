@@ -1,5 +1,6 @@
-# Git-centric variation of the "fishy" theme.
-# See screenshot at http://ompldr.org/vOHcwZg
+# Inspired by sunaku
+
+
 ZSH_THEME_GIT_PROMPT_ADDED="%{$fg_bold[green]%}A"   
 ZSH_THEME_GIT_PROMPT_MODIFIED="%{$fg_bold[yellow]%}M"  
 ZSH_THEME_GIT_PROMPT_DELETED="%{$fg_bold[red]%}D"   
