@@ -37,7 +37,7 @@ git_colored_prompt() {
 # '%(n?.exit==n.exit!=n)' # do action on exit code n
 PROMPT='%(?..%{$fg_bold[red]%}exit %?
 %{$reset_color%})'\
-'%{$fg_bold[$user_color]%}%D %T %{$reset_color%}'\
+'%{$fg_bold[$user_color]%}%D %* %{$reset_color%}'\
 '%{$fg_bold[blue]%}%n@%M:%{$reset_color%}'\
 '%{$fg_bold[$user_color]%}%~%{$reset_color%}'\
 '%(!. #. %{$fg_bold[grey]%}>%{$reset_color%}%{$fg[$user_color]%}>%{$fg_bold[$user_color]%}>) '\
