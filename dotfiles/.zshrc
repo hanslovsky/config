@@ -17,7 +17,8 @@ ZSH=$HOME/.oh-my-zsh
 # ZSH_THEME="bureau" # ++
 # ZSH_THEME="kolo" # +
 # ZSH_THEME="miloshadzic" # +
-ZSH_THEME="sunaku" # ++
+# ZSH_THEME="sunaku" # ++
+ZSH_THEME="zottel" # +++
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
