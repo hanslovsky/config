@@ -45,7 +45,7 @@ PROMPT='%(?..%{$fg_bold[red]%}exit %?
 '%{$fg_bold[$user_color]%}$(date +%a) %D %* %{$reset_color%}'\
 '%{$fg_bold[blue]%}%n@%M:%{$reset_color%}'\
 '%{$fg_bold[$user_color]%}$(collapse_pwd)%{$reset_color%}'\
-'%(!. #. %{$fg_bold[grey]%}>%{$reset_color%}%{$fg[$user_color]%}>%{$fg_bold[$user_color]%}>) '\
+'%(!.  %{$fg_bold[grey]%}#%{$reset_color%}%{$fg[$user_color]%}#%{$fg_bold[$user_color]%}#. %{$fg_bold[grey]%}>%{$reset_color%}%{$fg[$user_color]%}>%{$fg_bold[$user_color]%}>) '\
 '%{$reset_colors%}%{$fg[white]%}'
 
 RPROMPT='$(git_colored_prompt)%{$fg[white]%}'
