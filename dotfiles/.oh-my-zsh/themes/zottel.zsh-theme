@@ -32,14 +32,19 @@ git_colored_prompt() {
   echo -n "$BRANCH_COLOR$(git_prompt_info)%{$reset_color%}"
 }
 
+collapse_pwd () {
+  # use instead of %~ to replace own home directory but no other named directories
+  echo $(pwd | sed -e "s,^$HOME,~,")
+}
+
 # http://zsh.sourceforge.net/Doc/Release/Prompt-Expansion.html
 # %(x.true-text.false-text) # test character x, left parense preceded or followed by n (defaults to 0)
 # '%(n?.exit==n.exit!=n)' # do action on exit code n
 PROMPT='%(?..%{$fg_bold[red]%}exit %?
 %{$reset_color%})'\
-'%{$fg_bold[$user_color]%}%D %* %{$reset_color%}'\
+'%{$fg_bold[$user_color]%}$(date +%a) %D %* %{$reset_color%}'\
 '%{$fg_bold[blue]%}%n@%M:%{$reset_color%}'\
-'%{$fg_bold[$user_color]%}%~%{$reset_color%}'\
+'%{$fg_bold[$user_color]%}$(collapse_pwd)%{$reset_color%}'\
 '%(!. #. %{$fg_bold[grey]%}>%{$reset_color%}%{$fg[$user_color]%}>%{$fg_bold[$user_color]%}>) '\
 '%{$reset_colors%}%{$fg[white]%}'
 
