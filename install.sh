@@ -7,7 +7,6 @@ ROOT_DIR="$(git rev-parse --show-toplevel)"
 BACKUP_SUFFIX="${BACKUP_SUFFIX:-}"
 NO_ZSH="${NO_ZSH:-}"
 
-
 cd "$ROOT_DIR/dotfiles"
 
 # create directories if neccessary
@@ -24,16 +23,12 @@ cd "$OLD_CWD"
 
 if [ -z "$NO_ZSH" ]; then
     # check for oh-my-zsh
-    if [[ -d "$HOME/git/oh-my-zsh" ]]; then
-        if [[ -e "$HOME/.oh-my-zsh" ]]; then
-	    echo "~/.oh-my-zsh already exists"
-        else
-	    echo "linking oh-my-zsh"
-	    ln -s "$HOME/git/oh-my-zsh" "$HOME/.oh-my-zsh"
-        fi
+    if [[ -e "$HOME/.oh-my-zsh" ]]; then
+	echo "~/.oh-my-zsh already exists"
     else
-        echo "$HOME/git/oh-my-zsh does not exist"
-        echo "  type \"git clone git://github.com/robbyrussell/oh-my-zsh.git\" to get it"
+	echo "linking oh-my-zsh"
+        (cd oh-my-zsh && git submodule init && git submodule update )
+	ln -s "$PWD/oh-my-zsh" "$HOME/.oh-my-zsh"
     fi
 
     # set standard shell
