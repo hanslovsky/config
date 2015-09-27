@@ -6,7 +6,7 @@
 (install_if_missing 'company-quickhelp)
 (install_if_missing 'helm-company)
 
-(setq company-idle-delay 0.1)
+(setq company-idle-delay 0.3)
 (setq company-show-numbers t)
 (setq company-minimum-prefix-length 1) ;; default is 3
 (setq company-tooltip-limit 30)
