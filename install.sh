@@ -27,7 +27,7 @@ if [ -z "$NO_ZSH" ]; then
 	echo "~/.oh-my-zsh already exists"
     else
 	echo "linking oh-my-zsh"
-        (cd oh-my-zsh && git submodule init && git submodule update)
+        git submodule init oh-my-zsh >/dev/null && git submodule update >/dev/null
 	ln -s "$PWD/oh-my-zsh" "$HOME/.oh-my-zsh"
     fi
 
