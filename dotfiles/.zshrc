@@ -96,6 +96,11 @@ if [ -f ~/.sh/common_exports.sh ]; then
     . ~/.sh/common_exports.sh
 fi
 
+# set environment variables
+if [ -f ~/.sh/zsh_exports.sh ]; then
+    . ~/.sh/zsh_exports.sh
+fi
+
 if [[ -n "$DISPLAY" && -n "" ]]; then
     CURR_DIR=$(pwd)
     cd ~/.sh/greet_dir
