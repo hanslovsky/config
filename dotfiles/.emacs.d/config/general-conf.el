@@ -118,3 +118,5 @@
 ;; (setq split-height-threshold nil)
 ;; (setq split-width-threshold 0)
 
+(install_if_missing 'restart-emacs)
+
