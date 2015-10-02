@@ -133,5 +133,11 @@ bindkey -M isearch " " magic-space # normal space during searches
 # enable zmv
 autoload zmv
 
+# fish like syntax highlighting; must go at end of file
+SYNTAX_HIGHLIGHT_FILE=/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+if [ -f $SYNTAX_HIGHLIGHT_FILE ]; then
+    source $SYNTAX_HIGHLIGHT_FILE
+fi
+
 
 
