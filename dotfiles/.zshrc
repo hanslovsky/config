@@ -131,7 +131,7 @@ bindkey "^ " magic-space           # control-space to bypass completion
 bindkey -M isearch " " magic-space # normal space during searches
 
 # enable zmv
-autoload zmv
+autoload -U zmv
 
 # fish like syntax highlighting; must go at end of file
 SYNTAX_HIGHLIGHT_FILE=/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
