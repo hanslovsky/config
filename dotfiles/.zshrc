@@ -137,6 +137,9 @@ autoload -U zmv
 SYNTAX_HIGHLIGHT_FILE=/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 if [ -f $SYNTAX_HIGHLIGHT_FILE ]; then
     source $SYNTAX_HIGHLIGHT_FILE
+    ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
+    # To disable highlighting of globbing expressions
+    ZSH_HIGHLIGHT_STYLES[globbing]='none'
 fi
 
 
