@@ -120,3 +120,8 @@
 
 (install_if_missing 'restart-emacs)
 
+;; get environment variables from shell
+(install_if_missing 'exec-path-from-shell)
+(when (or (eq system-type 'darwin) (eq system-type 'gnu/linux))
+  (exec-path-from-shell-initialize))
+
