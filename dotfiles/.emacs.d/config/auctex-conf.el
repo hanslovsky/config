@@ -50,11 +50,27 @@
 (add-hook 'latex-mode-hook 'turn-on-auto-fill)
 
 ;; enable latexmk support
-(add-hook 'LaTeX-mode-hook(lambda()
-                            (push
-                             '("LatexMK" "latexmk -%(PDF) %s %t" TeX-run-TeX nil t
-                               :help "Use latexmk for compilation")
-                             TeX-command-list)))
+(add-hook 'LaTeX-mode-hook (lambda()
+            (delete-dups
+             (push
+              '("LatexMK" "latexmk -%(PDF) %s %t" TeX-run-TeX t t
+                :help "Use latexmk for compilation")
+              TeX-command-list))))
+
+(add-hook 'LaTeX-mode-hook (lambda()
+            (delete-dups
+             (push
+              '("custom" "%`%l%(mode) -shell-escape %' %t" TeX-run-TeX t (latex-mode doctex-mode)
+                :help "Run LaTeX")
+              TeX-command-list))))
+
+(add-hook 'LaTeX-mode-hook (lambda()
+            (delete-dups
+             (push
+              '("-shell-escape" "%`%l%(mode) -shell-escape %' %t" TeX-run-TeX nil (latex-mode doctex-mode)
+                :help "Run LaTeX")
+              TeX-command-list))))
+
 ;; use LatexMK per default
 ;; rather use LaTeX!!
 (add-hook 'LaTeX-mode-hook (lambda()
@@ -62,7 +78,7 @@
                                  (and
                                   (eq TeX-engine 'default)
                                   (or TeX-PDF-mode TeX-DVI-via-PDFTeX))
-                               (setq TeX-command-default "LaTeX"))))
+                               (setq TeX-command-default "-shell-escape"))))
 ;; create new substition %(-PDF) for TeX-expand-list
 ;; (push
 ;;  '("%(-PDF)"
