@@ -138,5 +138,5 @@
 (load-file "~/.emacs.d/config/persperctive-conf.el" )
 
 ;; golang
-(load-file "~/.emacs.d/config/golang-conf.el")
+;; (load-file "~/.emacs.d/config/golang-conf.el")
 
