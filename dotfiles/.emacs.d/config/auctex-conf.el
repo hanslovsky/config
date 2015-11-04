@@ -67,8 +67,15 @@
 (add-hook 'LaTeX-mode-hook (lambda()
             (delete-dups
              (push
-              '("-shell-escape" "%`%l%(mode) -shell-escape %' %t" TeX-run-TeX nil (latex-mode doctex-mode)
+              '("--shell-escape" "%`%l%(mode) -shell-escape %' %t" TeX-run-TeX nil (latex-mode doctex-mode)
                 :help "Run LaTeX")
+              TeX-command-list))))
+
+(add-hook 'LaTeX-mode-hook (lambda()
+            (delete-dups
+             (push
+              '("XeLaTeX" "xelatex --shell-escape %t" TeX-run-TeX t t
+                :help "Run XeLaTeX")
               TeX-command-list))))
 
 ;; use LatexMK per default
@@ -78,7 +85,7 @@
                                  (and
                                   (eq TeX-engine 'default)
                                   (or TeX-PDF-mode TeX-DVI-via-PDFTeX))
-                               (setq TeX-command-default "-shell-escape"))))
+                               (setq TeX-command-default "XeLaTeX"))))
 ;; create new substition %(-PDF) for TeX-expand-list
 ;; (push
 ;;  '("%(-PDF)"
