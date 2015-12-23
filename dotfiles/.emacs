@@ -116,6 +116,9 @@
 ;; kill
 (load-file "~/.emacs.d/functions/kill.el")
 
+;; utility
+(load-file "~/.emacs.d/functions/utility.el")
+
 ;; write to file and keep buffer
 (load-file "~/.emacs.d/functions/write-file-and-keep-buffer.el")
 
