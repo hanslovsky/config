@@ -10,6 +10,10 @@ fix_path()
     remove_duplicates : $@
 }
 
+
+# go
+export GOPATH=$LOCAL/go
+
 # set local dir ot either $HOME/local or $HOME/cluster
 LOCAL_NAME='$HOME/local'
 HOSTNAME=`hostname`
@@ -45,7 +49,7 @@ export C_INCLUDE_PATH=`fix_path $CPLEX_INCLUDE_DIR:$CONCERT_INCLUDE_DIR:$LOCAL/i
 export CPLUS_INCLUDE_PATH=`fix_path $CPLEX_INCLUDE_DIR:$CONCERT_INCLUDE_DIR:$LOCAL/include:$CPLUS_INCLUDE_PATH`
 export LIBRARY_PATH=`fix_path $CPLEX_LIB_DIR:$CONCERT_LIB_DIR:$LOCAL/lib:$LIBRARY_PATH`
 export LD_LIBRARY_PATH=`fix_path $LOCAL/lib:$SITE_PACKAGES:$LD_LIBRARY_PATH`
-export PATH=`fix_path $GIT_REPO_DIR/scripts:$LOCAL/bin:$PATH`
+export PATH=`fix_path $GIT_REPO_DIR/scripts:$LOCAL/bin:$GOPATH/bin:$PATH`
 export PYTHONPATH=`fix_path $DIST_PACKAGES:$SITE_PACKAGES:$PYTHONPATH`
 export EDITOR="emacsclient -c"
 export ALTERNATE_EDITOR=""
@@ -76,9 +80,6 @@ export LESS='-RS#3NM~g'
 
 # qtselector information
 export QT_SELECT=4
-
-# go
-export GOPATH=$LOCAL/go
 
 # buildem
 export BUILDEM_DIR=$LOCAL/buildem
