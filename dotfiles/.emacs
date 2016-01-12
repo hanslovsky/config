@@ -9,7 +9,7 @@
 (load-file "~/.emacs.d/config/elpa-conf.el")
 
 ;; smart indent (tabs+space)
-;; (load-file "~/.emacs.d/config/smart-tabs-conf.el")
+(load-file "~/.emacs.d/config/smart-tabs-conf.el")
 
 ;; auctex
 (load-file "~/.emacs.d/config/auctex-conf.el")

@@ -7,9 +7,9 @@
 (add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
  
 ;; google style
-(require 'google-c-style)
-(add-hook 'c-mode-hook 'google-set-c-style)
-(add-hook 'c++-mode-hook 'google-set-c-style)
+;; (require 'google-c-style)
+;; (add-hook 'c-mode-hook 'google-set-c-style)
+;; (add-hook 'c++-mode-hook 'google-set-c-style)
 
 
 ;; add google-c-style to package list to be installed if not present
