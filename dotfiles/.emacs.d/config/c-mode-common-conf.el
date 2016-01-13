@@ -1,3 +1,5 @@
+(install-if-missing 'cpputils-cmake)
+
 ;; set-up hook
 (defun my-c-mode-common-hook ()
 
