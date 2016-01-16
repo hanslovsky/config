@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: license
+# key: lic
+# --
+`(my:insert-and-comment-file-contents (message "%s/%s" my:licenses-path (yas-choose-value (directory-files my:licenses-path nil "^[^.{1,2}]"))))`
