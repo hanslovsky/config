@@ -125,3 +125,5 @@
 (when (or (eq system-type 'darwin) (eq system-type 'gnu/linux))
   (exec-path-from-shell-initialize))
 
+(setq user-full-name  "Philipp Hanslovsky")
+
