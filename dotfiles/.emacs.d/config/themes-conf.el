@@ -5,6 +5,8 @@
 (install_if_missing 'hipster-theme)
 (install_if_missing 'powerline) ;; https://github.com/milkypostman/powerline ;; not sure if wanna use it
 (install_if_missing 'moe-theme) ;; https://github.com/kuanyui/moe-theme.el
+(install_if_missing 'material-theme) ;; pretty good theme
+(install_if_missing 'minimal-theme)
 
 (require 'powerline) ;; needs to come before moe-theem
 (require 'moe-theme)
