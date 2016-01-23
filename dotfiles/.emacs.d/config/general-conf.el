@@ -127,3 +127,7 @@
 
 (setq user-full-name  "Philipp Hanslovsky")
 
+;; math stuff
+(install_if_missing 'math-symbol-lists)
+(install_if_missing 'math-symbols)
+
