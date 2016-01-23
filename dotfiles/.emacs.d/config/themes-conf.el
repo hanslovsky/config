@@ -7,6 +7,7 @@
 (install_if_missing 'moe-theme) ;; https://github.com/kuanyui/moe-theme.el
 (install_if_missing 'material-theme) ;; pretty good theme
 (install_if_missing 'minimal-theme)
+(install_if_missing 'abyss-theme)
 
 (require 'powerline) ;; needs to come before moe-theem
 (require 'moe-theme)
