@@ -28,8 +28,8 @@ export LOCAL=$LOCAL_NAME
 
 
 # python local packages
-export SITE_PACKAGES=$LOCAL/lib/python2.7/site-packages
-export DIST_PACKAGES=$LOCAL/lib/python2.7/dist-packages
+export SITE_PACKAGES=$LOCAL/lib/python3.5/site-packages
+export DIST_PACKAGES=$LOCAL/lib/python3.5/dist-packages
 
 
 # cplex
