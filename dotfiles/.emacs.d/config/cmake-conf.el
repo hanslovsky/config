@@ -1,4 +1,5 @@
 (install_if_missing 'cmake-mode)
+(install_if_missing 'cmake-font-lock)
 
 
 
@@ -15,4 +16,9 @@
 (when (not (boundp 'elpa-packages-list))
   (setq elpa-packages-list '())
   )
+
+(autoload 'cmake-font-lock-activate "cmake-font-lock" nil t)
+;; (add-hook 'cmake-mode-hook 'cmake-font-lock-activate)
+
+
 (add-to-list 'elpa-packages-list 'cmake-mode)

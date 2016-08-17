@@ -1,7 +1,7 @@
 ;; set repositories for elpa
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
-                         ("marmalade" . "http://marmalade-repo.org/packages/")
-                         ("melpa" . "http://melpa.milkbox.net/packages/")))
+                         ("melpa" . "http://melpa.milkbox.net/packages/")
+                         ("marmalade" . "http://marmalade-repo.org/packages/")))
 
 ;; list of installed packages - there should be a better way to store it
 (setq installed-packages-home '("annoying-arrows-mode-20130515.1534"
