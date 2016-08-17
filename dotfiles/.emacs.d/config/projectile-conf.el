@@ -2,6 +2,9 @@
 (install_if_missing 'helm-projectile)
 (install_if_missing 'org-projectile)
 (install_if_missing 'persp-projectile)
+(install_if_missing 'speedbar)
+(install_if_missing 'sr-speedbar)
+(install_if_missing 'projectile-speedbar)
 
 (projectile-global-mode)
 (setq projectile-enable-caching t)
