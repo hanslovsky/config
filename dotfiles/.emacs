@@ -140,6 +140,9 @@
 ;; perspective
 (load-file "~/.emacs.d/config/persperctive-conf.el" )
 
+;; projectile
+(load-file "~/.emacs.d/config/projectile-conf.el" )
+
 ;; golang
 ;; (load-file "~/.emacs.d/config/golang-conf.el")
 
