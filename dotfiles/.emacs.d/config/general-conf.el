@@ -17,8 +17,8 @@
 
 ;; set default cursor
 ;; (set-default 'cursor-type '(hbar . 100)) ;; bar, [0-100%]
-;; (set-default 'cursor-type 'box) ;; box
-(set-default 'cursor-type 'hollow) ;; hollow box
+(set-default 'cursor-type 'box) ;; box
+;; (set-default 'cursor-type 'hollow) ;; hollow box
 
 ;; set cursor color
 ;; (set-cursor-color "black")
