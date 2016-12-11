@@ -73,9 +73,6 @@
 ;; weather
 (load-file "~/.emacs.d/config/weather-conf.el")
 
-;; drills
-(load-file "~/.emacs.d/config/emacs-drills-conf.el")
-
 ;; speedbar - deactivate now due to a bug with emacsclient
 ;; (load-file "~/.emacs.d/config/speedbar-conf.el")
 
