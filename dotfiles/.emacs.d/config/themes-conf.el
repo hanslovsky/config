@@ -11,6 +11,7 @@
 
 (require 'powerline) ;; needs to come before moe-theem
 (require 'moe-theme)
+(require 'json)
  ;; Show highlighted buffer-id as decoration. (Default: nil)
 (setq moe-theme-highlight-buffer-id t)
 (setq moe-theme-resize-org-title nil) ;; (setq moe-theme-resize-org-title '(1.5 1.4 1.3 1.2 1.1 1.0 1.0 1.0 1.0))
@@ -21,9 +22,16 @@
 ;; (setq calendar-latitude 49.25)
 ;; (setq calendar-longitude 8.42)
 
-(setq calendar-location-name "Janelia, VA")
-(setq calendar-latitude 39.07)
-(setq calendar-longitude -77.47)
+(defun update-my:location-info()
+  (interactive)
+  (makunbound 'my:location-info)
+  (defvar my:location-info (json-read-from-string (shell-command-to-string "curl -s \"freegeoip.net/json/$(curl http://ipecho.net/plain -s)\"" )))
+  )
+
+(update-my:location-info)
+(setq calendar-location-name (concat (alist-get 'country_code my:location-info) "_" (alist-get 'city  my:location-info)))
+(setq calendar-latitude (alist-get 'latitude my:location-info))
+(setq calendar-longitude (alist-get 'longitude my:location-info))
 
 (require 'theme-changer)
 (change-theme 'moe-light 'moe-dark)
