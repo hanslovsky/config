@@ -84,3 +84,6 @@ export QT_SELECT=4
 # buildem
 export BUILDEM_DIR=$LOCAL/buildem
 
+# eclipse
+export ECLIPSE_HOME=$HOME/.eclipse
+
