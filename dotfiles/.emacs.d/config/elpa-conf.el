@@ -1,6 +1,7 @@
 ;; set repositories for elpa
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
-                         ("melpa" . "http://melpa.milkbox.net/packages/")
+                         ("melpa" . "http://melpa.org/packages/")
+                         ("melpa-stable" . "https://stable.melpa.org/packages/")
                          ("marmalade" . "http://marmalade-repo.org/packages/")))
 
 ;; list of installed packages - there should be a better way to store it
@@ -46,6 +47,14 @@
 ;; list of packages to be installed
 (when (not (boundp 'elpa-packages-list))
   (setq elpa-packages-list '())
+  )
+
+(when (not (boundp 'package--old-archive-priorities))
+  (setq package-archive-priorities
+        '(("melpa-stable" . 30)
+          ("melpa" . 35)
+          ("marmalade" . 20)
+          ("gnu" . 10)))
   )
 
 ;; install packages automatically
