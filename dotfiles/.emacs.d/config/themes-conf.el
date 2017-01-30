@@ -8,6 +8,7 @@
 (install_if_missing 'material-theme) ;; pretty good theme
 (install_if_missing 'minimal-theme)
 (install_if_missing 'abyss-theme)
+(install_if_missing 'seti-theme) ;; pretty good dark theme
 
 (require 'powerline) ;; needs to come before moe-theem
 (require 'moe-theme)
@@ -34,7 +35,7 @@
 (setq calendar-longitude (alist-get 'longitude my:location-info))
 
 (require 'theme-changer)
-(change-theme 'moe-light 'moe-dark)
+(change-theme 'moe-light 'seti)
 ;; good themes: gandalf (light), (n)zenburn(dark), adawaita (light), tango(-dark), wombat (dark), tsdh-light(light)
 ;; good themes: moe-{light,dark}
 
