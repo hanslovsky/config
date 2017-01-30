@@ -9,6 +9,11 @@
 (install_if_missing 'minimal-theme)
 (install_if_missing 'abyss-theme)
 (install_if_missing 'seti-theme) ;; pretty good dark theme
+(install_if_missing 'ample-theme) ;; dark theme (flat version is pretty good, light might lack contrast)
+(install_if_missing 'monokai-theme) ;; dark theme, seems to be sublime inspired
+(install_if_missing 'color-theme-sanityinc-tomorrow) ;; eighties, night seem good, day is a good light theme
+(install_if_missing 'alect-themes) ;; alect-dark-alt seems to be nice dark theme
+(install_if_missing 'hemisu-theme) ;; try these for now
 
 (require 'powerline) ;; needs to come before moe-theem
 (require 'moe-theme)
@@ -35,7 +40,8 @@
 (setq calendar-longitude (alist-get 'longitude my:location-info))
 
 (require 'theme-changer)
-(change-theme 'moe-light 'seti)
+;; (change-theme 'moe-light 'seti)
+(change-theme 'hemisu-light 'hemisu-dark)
 ;; good themes: gandalf (light), (n)zenburn(dark), adawaita (light), tango(-dark), wombat (dark), tsdh-light(light)
 ;; good themes: moe-{light,dark}
 
