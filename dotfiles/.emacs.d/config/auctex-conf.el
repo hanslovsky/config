@@ -46,8 +46,9 @@
 (setq TeX-view-program-selection '((output-pdf "Okular")))
 
 ;; turn on auto fill -> line breaks
-(add-hook 'LaTeX-mode-hook 'turn-on-auto-fill)
-(add-hook 'latex-mode-hook 'turn-on-auto-fill)
+;; no auto fill mode, use visual line mode instead!
+;; (add-hook 'LaTeX-mode-hook 'turn-on-auto-fill)
+;; (add-hook 'latex-mode-hook 'turn-on-auto-fill)
 
 ;; enable latexmk support
 (add-hook 'LaTeX-mode-hook (lambda()
