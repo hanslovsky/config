@@ -14,6 +14,7 @@
 (install_if_missing 'color-theme-sanityinc-tomorrow) ;; eighties, night seem good, day is a good light theme
 (install_if_missing 'alect-themes) ;; alect-dark-alt seems to be nice dark theme
 (install_if_missing 'hemisu-theme) ;; try these for now
+(install_if_missing 'waher-theme ) ;; too much contrast!
 
 (require 'powerline) ;; needs to come before moe-theem
 (require 'moe-theme)
