@@ -109,10 +109,25 @@
 (setq uniquify-buffer-name-style 'forward)
 
 ;; auto fill
-(add-hook 'text-mode-hook 'turn-on-auto-fill)
+;; no auto fill, use visual line mode instead
+;; (add-hook 'text-mode-hook 'turn-on-auto-fill)
+
+(install_if_missing 'visual-fill-column)
+(global-visual-line-mode)
+(global-visual-fill-column-mode)
 
 ;; set fill column to 100
 (setq-default fill-column 100)
+
+(install_if_missing 'visible-mark)
+(global-visible-mark-mode 1)
+
+(install_if_missing 'visual-regexp)
+(install_if_missing 'visual-regexp-steroids)
+(define-key global-map (kbd "C-c r") 'vr/replace)
+(define-key global-map (kbd "C-c q") 'vr/query-replace)
+(define-key esc-map (kbd "C-r") 'vr/isearch-backward) ;; C-M-r
+(define-key esc-map (kbd "C-s") 'vr/isearch-forward) ;; C-M-s
 
 ;; set split variables to force horizontal split
 ;; (setq split-height-threshold nil)
