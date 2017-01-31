@@ -148,17 +148,5 @@
 
 ;; clojure
 (load-file "~/.emacs.d/config/clojure-conf.el")
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   (quote
-    (aggressive-indent clj-refactor cljr-helm clojure-cheatsheet cider zenburn-theme weather-metno wc-mode undo-tree theme-changer tabbar sr-speedbar spinner smart-tabs-mode smart-cursor-color rtags restart-emacs rainbow-mode rainbow-identifiers rainbow-delimiters rainbow-blocks railscasts-theme queue python-mode projectile-speedbar powerline persp-projectile org-projectile org-present org-gcal org-bullets org-beautify-theme org-autolist nyan-mode moe-theme minimal-theme minimal-session-saver maxframe math-symbols math-symbol-lists material-theme markdown-preview-eww markdown-mode+ magit julia-shell json-mode jedi iedit ido-vertical-mode ido-ubiquitous hipster-theme highlight-parentheses helm-themes helm-swoop helm-projectile helm-ls-git helm-gtags helm-company helm-commandlinefu helm-ack google-translate google-this google-c-style go-eldoc gnuplot gandalf-theme flymake-go flycheck-irony exec-path-from-shell emacs-eclim cpputils-cmake company-quickhelp company-qml company-jedi company-irony-c-headers company-irony company-go company-c-headers company-auctex cmake-project cmake-ide cmake-font-lock clojure-mode calfw-gcal calfw autopair auto-yasnippet auto-complete-clang-async auto-complete-clang auto-complete-c-headers auto-complete-auctex auctex-latexmk annoying-arrows-mode ac-helm ac-clang abyss-theme))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+
+
