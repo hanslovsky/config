@@ -8,6 +8,9 @@
 ;; elpa
 (load-file "~/.emacs.d/config/elpa-conf.el")
 
+;; installs without config
+(load-file "~/.emacs.d/config/installs-conf.el")
+
 ;; smart indent (tabs+space)
 (load-file "~/.emacs.d/config/smart-tabs-conf.el")
 
