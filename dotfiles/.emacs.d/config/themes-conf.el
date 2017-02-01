@@ -43,7 +43,7 @@
 
 (require 'theme-changer)
 ;; (change-theme 'moe-light 'seti)
-(change-theme 'hemisu-light 'hemisu-dark)
+(change-theme 'hemisu-light 'seti)
 ;; good themes: gandalf (light), (n)zenburn(dark), adawaita (light), tango(-dark), wombat (dark), tsdh-light(light)
 ;; good themes: moe-{light,dark}
 
