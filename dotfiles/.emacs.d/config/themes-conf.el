@@ -29,6 +29,7 @@
 ;; (setq calendar-latitude 49.25)
 ;; (setq calendar-longitude 8.42)
 
+;; read longitute and latitude from freegeoip
 (defun update-my:location-info()
   (interactive)
   (makunbound 'my:location-info)
