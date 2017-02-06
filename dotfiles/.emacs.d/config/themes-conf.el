@@ -29,6 +29,7 @@
 ;; (setq calendar-latitude 49.25)
 ;; (setq calendar-longitude 8.42)
 
+;; read longitute and latitude from freegeoip
 (defun update-my:location-info()
   (interactive)
   (makunbound 'my:location-info)
@@ -42,7 +43,7 @@
 
 (require 'theme-changer)
 ;; (change-theme 'moe-light 'seti)
-(change-theme 'hemisu-light 'hemisu-dark)
+(change-theme 'hemisu-light 'seti)
 ;; good themes: gandalf (light), (n)zenburn(dark), adawaita (light), tango(-dark), wombat (dark), tsdh-light(light)
 ;; good themes: moe-{light,dark}
 
