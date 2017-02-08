@@ -15,6 +15,12 @@ alias -g NL_CLIPBOARD='| xclip -selection clipboard'
 # copy to clipboard w/o trailing new line
 alias -g CLIPBOARD='| xargs -d "\n" printf %s | xclip -selection clipboard'
 
+# copy to clipboard
+alias -g NLCP='| xclip -selection clipboard'
+
+# copy to clipboard w/o trailing new line
+alias -g CP='| xargs -d "\n" printf %s | xclip -selection clipboard'
+
 # PATH, single line for each entry
 alias -g NLPATH='${PATH//:/
 }'
