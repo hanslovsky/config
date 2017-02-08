@@ -19,7 +19,21 @@ ZSH=$HOME/.oh-my-zsh
 # ZSH_THEME="miloshadzic" # +
 # ZSH_THEME="sunaku" # ++
 # ZSH_THEME="amuse" # ++
-ZSH_THEME="zottel" # +++
+# ZSH_THEME="zottel" # +++
+ZSH_THEME="geometry/geometry"
+
+# themes to test:
+# xxf
+# cordial
+# gitster
+# haribo
+# lambda-mod
+# Node
+# Spaceship
+# Nodeys
+# geometry
+# Bunnyruni
+# lambda pure
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
