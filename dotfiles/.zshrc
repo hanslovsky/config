@@ -51,6 +51,7 @@ zplug "frmendes/geometry"
 # virtualenv plugin fails with
 # basename: missing operand
 export GEOMETRY_PROMPT_PLUGINS=(docker_machine exec_time git hg)
+export GEOMETRY_COLOR_ROOT="red"
 
 # zplug "sindresorhus/pure", use:pure.zsh, from:github, as:theme
 
