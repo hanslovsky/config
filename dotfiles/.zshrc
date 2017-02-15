@@ -32,10 +32,13 @@ zplug "zsh-users/zaw"
 # fzy vs fzf? Maybe install through arch repos?
 zplug "junegunn/fzf-bin", from:gh-r, as:command, rename-to:fzf
 
+zplug "junegunn/fzf", as:command, use:"bin/fzf-tmux"
+
 zplug "jhawthorn/fzy", as:command, rename-to:fzy, hook-build:"make && sudo make install"
 
 # enhanced cd command
 zplug "b4b4r07/enhancd", use:init.sh
+export ENHANCD_FILTER=fzy:fzf-tmux:fzf
 
 # zplug "peco/peco", as:command, from:gh-r
 
@@ -44,6 +47,10 @@ zplug "b4b4r07/enhancd", use:init.sh
 zplug "frmendes/geometry"
 
 # zplug "sindresorhus/pure", use:pure.zsh, from:github, as:theme
+
+if ! zplug check; then
+    zplug install
+fi
 
 zplug load
 
