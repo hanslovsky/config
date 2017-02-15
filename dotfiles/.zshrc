@@ -5,6 +5,9 @@
 
 # login1 crashes when starting zsh, thus go back to this commit there: 734ce7d
 
+# good fonts: source-code-pro roboto
+# get them at ttf-google-fonts-git
+
 export ZPLUG_HOME=$HOME/.zplug
 
 source $ZPLUG_HOME/init.zsh
@@ -30,18 +33,18 @@ zplug "plugins/emoji-clock",   from:oh-my-zsh
 
 zplug "lib/completion", from:oh-my-zsh
 
-# # fuzzy matchers
-# # definitely manage this with .zshrc
+# fuzzy matchers
+# definitely manage this with .zshrc
 zplug "zsh-users/zaw"
 
-# # fzy vs fzf? Maybe install through arch repos?
+# fzy vs fzf? Maybe install through arch repos?
 zplug "junegunn/fzf-bin", from:gh-r, as:command, rename-to:fzf
 
 zplug "junegunn/fzf", as:command, use:"bin/fzf-tmux"
 
 zplug "jhawthorn/fzy", as:command, rename-to:fzy, hook-build:"make && sudo make install"
 
-# # enhanced cd command
+# enhanced cd command
 zplug "b4b4r07/enhancd", use:init.sh
 export ENHANCD_FILTER=fzy:fzf-tmux:fzf
 
