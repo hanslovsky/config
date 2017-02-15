@@ -21,14 +21,14 @@ fi
 
 cd "$OLD_CWD"
 
+ZPLUG_HOME=${ZPLUG_HOME:-$HOME/.zplug}
+
 if [ -z "$NO_ZSH" ]; then
-    # check for oh-my-zsh
-    if [[ -e "$HOME/.oh-my-zsh" ]]; then
-	echo "~/.oh-my-zsh already exists"
+    # check for zplug
+    if [[ -e "$ZPLUG_HOME" ]]; then
+	echo "$ZPLUG_HOME already exists"
     else
-	echo "linking oh-my-zsh"
-        git submodule init oh-my-zsh >/dev/null && git submodule update >/dev/null
-	ln -s "$PWD/oh-my-zsh" "$HOME/.oh-my-zsh"
+	git clone https://github.com/zplug/zplug $ZPLUG_HOME
     fi
 
     # set standard shell
