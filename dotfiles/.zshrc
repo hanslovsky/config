@@ -3,6 +3,8 @@
 
 # a lot of stuff in here: https://github.com/b4b4r07/dotfiles/blob/master/.zsh/zplug.zsh
 
+# login1 crashes when starting zsh, thus go back to this commit there: 734ce7d
+
 export ZPLUG_HOME=$HOME/.zplug
 
 source $ZPLUG_HOME/init.zsh
@@ -26,6 +28,7 @@ zplug "plugins/git",   from:oh-my-zsh
 
 zplug "lib/completion", from:oh-my-zsh
 
+# fuzzy matchers
 # definitely manage this with .zshrc
 zplug "zsh-users/zaw"
 
@@ -45,6 +48,9 @@ export ENHANCD_FILTER=fzy:fzf-tmux:fzf
 # themes
 
 zplug "frmendes/geometry"
+# virtualenv plugin fails with
+# basename: missing operand
+export GEOMETRY_PROMPT_PLUGINS=(docker_machine exec_time git hg)
 
 # zplug "sindresorhus/pure", use:pure.zsh, from:github, as:theme
 
