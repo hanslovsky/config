@@ -26,20 +26,22 @@ zplug "k4rthik/git-cal", as:command
 
 zplug "plugins/git",   from:oh-my-zsh
 
+zplug "plugins/emoji-clock",   from:oh-my-zsh
+
 zplug "lib/completion", from:oh-my-zsh
 
-# fuzzy matchers
-# definitely manage this with .zshrc
+# # fuzzy matchers
+# # definitely manage this with .zshrc
 zplug "zsh-users/zaw"
 
-# fzy vs fzf? Maybe install through arch repos?
+# # fzy vs fzf? Maybe install through arch repos?
 zplug "junegunn/fzf-bin", from:gh-r, as:command, rename-to:fzf
 
 zplug "junegunn/fzf", as:command, use:"bin/fzf-tmux"
 
 zplug "jhawthorn/fzy", as:command, rename-to:fzy, hook-build:"make && sudo make install"
 
-# enhanced cd command
+# # enhanced cd command
 zplug "b4b4r07/enhancd", use:init.sh
 export ENHANCD_FILTER=fzy:fzf-tmux:fzf
 
@@ -47,17 +49,17 @@ export ENHANCD_FILTER=fzy:fzf-tmux:fzf
 
 # themes
 
-zplug "frmendes/geometry"
+# zplug "frmendes/geometry"
 # virtualenv plugin fails with
 # basename: missing operand
-export GEOMETRY_PROMPT_PLUGINS=(docker_machine exec_time git hg)
-export GEOMETRY_COLOR_ROOT="red"
+# export GEOMETRY_PROMPT_PLUGINS=(exec_time git)
+# export GEOMETRY_COLOR_ROOT="red"
 
 # zplug "sindresorhus/pure", use:pure.zsh, from:github, as:theme
 
-if ! zplug check; then
-    zplug install
-fi
+# if ! zplug check; then
+#     zplug install
+# fi
 
 zplug load
 
