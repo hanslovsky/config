@@ -52,11 +52,12 @@ export ENHANCD_FILTER=fzy:fzf-tmux:fzf
 
 # themes
 
-# zplug "frmendes/geometry"
+zplug "frmendes/geometry"
+# requires Ctrl - D at startup
 # virtualenv plugin fails with
 # basename: missing operand
-# export GEOMETRY_PROMPT_PLUGINS=(exec_time git)
-# export GEOMETRY_COLOR_ROOT="red"
+export GEOMETRY_PROMPT_PLUGINS=(docker_machine exec_time git hg)
+export GEOMETRY_COLOR_ROOT="red"
 
 # zplug "sindresorhus/pure", use:pure.zsh, from:github, as:theme
 
