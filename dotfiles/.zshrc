@@ -1,19 +1,46 @@
 # Path to your oh-my-zsh configuration.
 # ZSH=$HOME/.oh-my-zsh
 
+# a lot of stuff in here: https://github.com/b4b4r07/dotfiles/blob/master/.zsh/zplug.zsh
+
 export ZPLUG_HOME=$HOME/.zplug
 
 source $ZPLUG_HOME/init.zsh
 
-zplug "zsh-users/zsh-history-substring-search"
+zplug "mafredri/zsh-async", from:github, defer:0
 
-zplug "zsh-users/zsh-syntax-highlighting", defer:2
+zplug "zsh-users/zsh-history-substring-search", defer:3
+
+zplug "zsh-users/zsh-completions"
+
+zplug "zsh-users/zsh-autosuggestions"
+
+zplug "zsh-users/zsh-syntax-highlighting", from:github, defer:3
 
 zplug "k4rthik/git-cal", as:command
 
 zplug "plugins/git",   from:oh-my-zsh
 
+zplug "lib/completion", from:oh-my-zsh
+
+# definitely manage this with .zshrc
+zplug "zsh-users/zaw"
+
+# fzy vs fzf? Maybe install through arch repos?
+zplug "junegunn/fzf-bin", from:gh-r, as:command, rename-to:fzf
+
+zplug "jhawthorn/fzy", as:command, rename-to:fzy, hook-build:"make && sudo make install"
+
+# enhanced cd command
+zplug "b4b4r07/enhancd", use:init.sh
+
+# zplug "peco/peco", as:command, from:gh-r
+
+# themes
+
 zplug "frmendes/geometry"
+
+# zplug "sindresorhus/pure", use:pure.zsh, from:github, as:theme
 
 zplug load
 
