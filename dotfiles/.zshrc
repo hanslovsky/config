@@ -15,7 +15,10 @@ zplug "zsh-users/zsh-completions"
 
 zplug "zsh-users/zsh-autosuggestions"
 
-zplug "zsh-users/zsh-syntax-highlighting", from:github, defer:3
+# from https://github.com/zsh-users/zsh-syntax-highlighting/issues/286#issuecomment-271486864
+if [[ $ZSH_EVAL_CONTEXT == 'file' ]]; then
+    zplug "zsh-users/zsh-syntax-highlighting", from:github, defer:3
+fi
 
 zplug "k4rthik/git-cal", as:command
 
