@@ -31,6 +31,8 @@ zplug "plugins/git",   from:oh-my-zsh
 
 zplug "lib/functions",   from:oh-my-zsh
 
+zplug "lib/theme-and-appearance",   from:oh-my-zsh
+
 zplug "plugins/emoji-clock",   from:oh-my-zsh
 
 zplug "lib/completion", from:oh-my-zsh
