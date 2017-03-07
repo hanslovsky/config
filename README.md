@@ -1,7 +1,7 @@
 config
 ======
 
-linux mint config files
+linux config files
 
 INSTALLATION:
 
