@@ -27,8 +27,6 @@ fi
 export LOCAL=$LOCAL_NAME
 
 
-
-
 # cplex
 export CPLEX_INCLUDE_DIR=$LOCAL/ILOG/cplex-current/cplex/include
 export CPLEX_LIB_DIR=$LOCAL/ILOG/cplex-current/cplex/lib/x86-64_linux/static_pic
