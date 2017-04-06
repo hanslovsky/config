@@ -35,6 +35,8 @@ zplug "lib/theme-and-appearance",   from:oh-my-zsh
 
 zplug "lib/directories",   from:oh-my-zsh
 
+zplug "lib/history",   from:oh-my-zsh
+
 zplug "plugins/emoji-clock",   from:oh-my-zsh
 
 zplug "lib/completion", from:oh-my-zsh
