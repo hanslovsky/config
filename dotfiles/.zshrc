@@ -64,8 +64,10 @@ zplug "frmendes/geometry"
 # requires Ctrl - D at startup
 # virtualenv plugin fails with
 # basename: missing operand
-export GEOMETRY_PROMPT_PLUGINS=(docker_machine exec_time git hg)
+# https://github.com/fribmendes/geometry/tree/master/plugins
+export GEOMETRY_PROMPT_PLUGINS=(exec_time jobs conda virtualenv git)
 export GEOMETRY_COLOR_ROOT="red"
+export GEOMETRY_COLOR_CONDA="red"
 
 # zplug "sindresorhus/pure", use:pure.zsh, from:github, as:theme
 
