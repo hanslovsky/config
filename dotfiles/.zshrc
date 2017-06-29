@@ -208,4 +208,5 @@ bindkey -M isearch " " magic-space # normal space during searches
 autoload -U zmv
 
 
+source ~/.xsh
 
