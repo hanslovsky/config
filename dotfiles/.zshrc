@@ -58,16 +58,23 @@ export ENHANCD_FILTER=fzy:fzf-tmux:fzf
 
 # zplug "peco/peco", as:command, from:gh-r
 
+
 # themes
 
-zplug "frmendes/geometry"
+zplug "fribmendes/geometry"
+
+# community plugins
+zplug "jedahan/geometry-hydrate"
+zplug "desyncr/geometry-pretty-git"
 # requires Ctrl - D at startup
 # virtualenv plugin fails with
 # basename: missing operand
 # https://github.com/fribmendes/geometry/tree/master/plugins
-export GEOMETRY_PROMPT_PLUGINS=(exec_time jobs conda virtualenv git)
+export GEOMETRY_PROMPT_PLUGINS=(exec_time jobs virtualenv git pretty-git hydrate)
 export GEOMETRY_COLOR_ROOT="red"
+export GEOMETRY_COLOR_VIRTUALENV="green"
 export GEOMETRY_COLOR_CONDA="red"
+export GEOMETRY_VIRTUALENV_CONDA_SEPARATOR="~~"
 
 # zplug "sindresorhus/pure", use:pure.zsh, from:github, as:theme
 
@@ -76,6 +83,7 @@ export GEOMETRY_COLOR_CONDA="red"
 # fi
 
 zplug load
+
 
 
 # Set name of the theme to load.
