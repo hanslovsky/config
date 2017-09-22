@@ -44,3 +44,9 @@ hash perl-rename 2>/dev/null && alias rename='perl-rename'
 #list-unstaged() { [ "$1" = "all" ] && MATCH="?M" || MATCH="??"; ls -lrtd $(git status --porcelain | grep "^.[$MATCH]" | sed "s/^.. //"); }
 
 hash mvn >/dev/null 2>&1 && alias artifact-version="mvn -Dexec.executable='echo' -Dexec.args='\${project.version}' --non-recursive exec:exec -q"
+
+# thanks to @ctrueden!
+# https://github.com/imagej/imagej/blob/imagej-2.0.0-rc-61/pom.xml#L395-L626
+# https://imagej.net/Uber-JAR
+hash mvn >/dev/null 2&1 && alias mvn-deps="mvn -Pdeps"
+
