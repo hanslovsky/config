@@ -1,4 +1,4 @@
-personal_ws-1.1 en 32 
+personal_ws-1.1 en 35 
 scalability
 ImgLib
 Philipp
@@ -10,6 +10,7 @@ microcircuitry
 summand
 Janelia
 Acknowledgements
+ortho
 voxel
 regularizer
 parallelized
@@ -23,6 +24,8 @@ affine
 HHMI
 parameterized
 nanometer
+supervoxels
+Supervoxels
 connectome
 drosophila
 PMCC
