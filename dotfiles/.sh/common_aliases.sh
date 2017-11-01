@@ -50,3 +50,5 @@ hash mvn >/dev/null 2>&1 && alias artifact-version="mvn -Dexec.executable='echo'
 # https://imagej.net/Uber-JAR
 hash mvn >/dev/null 2>&1 && alias mvn-deps="mvn -Pdeps"
 
+hash ag >/dev/null 2>&1 && alias ags='ag -s'
+
