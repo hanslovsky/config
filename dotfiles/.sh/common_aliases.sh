@@ -52,3 +52,14 @@ hash mvn >/dev/null 2>&1 && alias mvn-deps="mvn -Pdeps"
 
 hash ag >/dev/null 2>&1 && alias ags='ag -s'
 
+# find out which network device is used for internet
+# https://unix.stackexchange.com/a/14967
+# $ route
+# Kernel IP routing table
+# Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+# 192.168.1.0     *               255.255.255.0   U     1      0        0 eth0
+# link-local      *               255.255.0.0     U     1000   0        0 eth0
+# default         192.168.1.1     0.0.0.0         UG    0      0        0 eth0
+# The Iface column in the line with destination default tells you which interface is used.
+alias internet_interface="route | grep '^default' | grep -o '[^ ]*$'"
+
