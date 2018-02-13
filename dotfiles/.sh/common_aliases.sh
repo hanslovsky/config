@@ -63,3 +63,19 @@ hash ag >/dev/null 2>&1 && alias ags='ag -s'
 # The Iface column in the line with destination default tells you which interface is used.
 alias internet_interface="route | grep '^default' | grep -o '[^ ]*$'"
 
+ghcl() {
+    # clone from github via ssh
+    git clone git@github.com:$1
+}
+
+ghra() {
+    # add and fetch remote (ssh)
+    NAME=$(basename `git rev-parse --show-toplevel`)
+    git remote add -f $1 git@github.com:$2/$NAME
+}
+
+ghrr() {
+    # git remove remote
+    git remote remove $1
+}
+
