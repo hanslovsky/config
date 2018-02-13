@@ -44,7 +44,7 @@ export C_INCLUDE_PATH=`fix_path $CPLEX_INCLUDE_DIR:$CONCERT_INCLUDE_DIR:$LOCAL/i
 export CPLUS_INCLUDE_PATH=`fix_path $CPLEX_INCLUDE_DIR:$CONCERT_INCLUDE_DIR:$LOCAL/include:$CPLUS_INCLUDE_PATH`
 export LIBRARY_PATH=`fix_path $CPLEX_LIB_DIR:$CONCERT_LIB_DIR:$LOCAL/lib:$LIBRARY_PATH`
 export LD_LIBRARY_PATH=`fix_path $LOCAL/lib:$SITE_PACKAGES:$LD_LIBRARY_PATH`
-export PATH=`fix_path $GIT_REPO_DIR/scripts:$LOCAL/bin:$GOPATH/bin:$PATH`
+export PATH=`fix_path $HOME/miniconda3/bin:$GIT_REPO_DIR/scripts:$LOCAL/bin:$GOPATH/bin:$PATH`
 
 # python local packages
 if command -v python 1>/dev/null 2>&1; then
