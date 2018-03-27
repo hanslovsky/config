@@ -26,6 +26,12 @@ fi
 
 export LOCAL=$LOCAL_NAME
 
+# conda
+CONDA_HOME=$HOME/miniconda3
+if [ -d "$CONDA_HOME" ]; then
+    export PATH=`fix_path $CONDA_HOME/bin:$PATH`
+fi
+
 
 # cplex
 export CPLEX_INCLUDE_DIR=$LOCAL/ILOG/cplex-current/cplex/include
