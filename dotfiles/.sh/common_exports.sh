@@ -16,14 +16,6 @@ export GOPATH=$LOCAL/go
 
 # set local dir ot either $HOME/local or $HOME/cluster
 LOCAL_NAME='$HOME/local'
-HOSTNAME=`hostname`
-if [ 1 -o "${HOSTNAME/.int.janelia.org}" = "$HOSTNAME" ];
-then
-    LOCAL_NAME="$HOME/local"
-else
-    LOCAL_NAME="$HOME/cluster"
-fi
-
 export LOCAL=$LOCAL_NAME
 
 # conda
@@ -32,25 +24,16 @@ if [ -d "$CONDA_HOME" ]; then
     export PATH=`fix_path $CONDA_HOME/bin:$PATH`
 fi
 
-
-# cplex
-export CPLEX_INCLUDE_DIR=$LOCAL/ILOG/cplex-current/cplex/include
-export CPLEX_LIB_DIR=$LOCAL/ILOG/cplex-current/cplex/lib/x86-64_linux/static_pic
-
-export CONCERT_INCLUDE_DIR=$LOCAL/ILOG/cplex-current/concert/include
-export CONCERT_LIB_DIR=$LOCAL/ILOG/cplex-current/concert/lib/x86-64_linux/static_pic
-
-
 # git
 export GIT_REPO_DIR=$HOME/git
 
 
 # env
-export C_INCLUDE_PATH=`fix_path $CPLEX_INCLUDE_DIR:$CONCERT_INCLUDE_DIR:$LOCAL/include:$C_INCLUDE_PATH`
-export CPLUS_INCLUDE_PATH=`fix_path $CPLEX_INCLUDE_DIR:$CONCERT_INCLUDE_DIR:$LOCAL/include:$CPLUS_INCLUDE_PATH`
-export LIBRARY_PATH=`fix_path $CPLEX_LIB_DIR:$CONCERT_LIB_DIR:$LOCAL/lib:$LIBRARY_PATH`
+export C_INCLUDE_PATH=`fix_path $LOCAL/include:$C_INCLUDE_PATH`
+export CPLUS_INCLUDE_PATH=`fix_path $LOCAL/include:$CPLUS_INCLUDE_PATH`
+export LIBRARY_PATH=`fix_path $LOCAL/lib:$LIBRARY_PATH`
 export LD_LIBRARY_PATH=`fix_path $LOCAL/lib:$SITE_PACKAGES:$LD_LIBRARY_PATH`
-export PATH=`fix_path $HOME/miniconda3/bin:$GIT_REPO_DIR/scripts:$LOCAL/bin:$GOPATH/bin:$PATH`
+export PATH=`fix_path $GIT_REPO_DIR/scripts:$LOCAL/bin:$GOPATH/bin:$PATH`
 
 # python local packages
 if command -v python 1>/dev/null 2>&1; then
@@ -89,9 +72,6 @@ export LESS='-RS#3NM~g'
 
 # qtselector information
 export QT_SELECT=4
-
-# buildem
-export BUILDEM_DIR=$LOCAL/buildem
 
 # eclipse
 export ECLIPSE_HOME=$HOME/.eclipse
