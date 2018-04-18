@@ -79,3 +79,7 @@ ghrr() {
     git remote remove $1
 }
 
+sum-file() {
+    paste -sd+ $1 | bc
+}
+
