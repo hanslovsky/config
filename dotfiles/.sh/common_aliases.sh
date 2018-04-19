@@ -83,3 +83,10 @@ sum-file() {
     paste -sd+ $1 | bc
 }
 
+calc() {
+    if [ "$#" -eq 0 ]; then
+        bc -il $HOME/.bcrc
+    else
+        bc -l $HOME/.bcrc <<< "$@"
+    fi
+}
