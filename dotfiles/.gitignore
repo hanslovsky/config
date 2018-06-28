@@ -8,6 +8,6 @@ _*_.el
 _*_.tex
 auto
 *_region_*
-*.jar
+target
 *.iml
 .idea/
