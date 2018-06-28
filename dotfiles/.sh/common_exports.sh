@@ -15,7 +15,7 @@ fix_path()
 export GOPATH=$LOCAL/go
 
 # set local dir ot either $HOME/local or $HOME/cluster
-LOCAL_NAME='$HOME/local'
+LOCAL_NAME="$HOME/local"
 export LOCAL=$LOCAL_NAME
 
 # conda
