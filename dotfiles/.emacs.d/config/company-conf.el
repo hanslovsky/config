@@ -44,7 +44,7 @@
 (eval-after-load 'company
   '(add-to-list 'company-backends 'company-irony))
 
-(company-auctex-init)
+;; (company-auctex-init)
 
 ;; quickhelp
 (company-quickhelp-mode 1)
