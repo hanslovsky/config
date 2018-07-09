@@ -1,12 +1,17 @@
-personal_ws-1.1 en 35 
+personal_ws-1.1 en 42 
 scalability
 ImgLib
+Paintera
 Philipp
 bioinformatics
+dataset
 superpixels
+renderer
 natively
 connectomics
+hackathon
 microcircuitry
+ImageJ
 summand
 Janelia
 Acknowledgements
@@ -16,6 +21,7 @@ regularizer
 parallelized
 volumetric
 pre
+SciJava
 multicut
 monotonicity
 voxels
@@ -23,9 +29,10 @@ ultrathin
 affine
 HHMI
 parameterized
+parallelization
 nanometer
 supervoxels
-Supervoxels
+parallelize
 connectome
 drosophila
 PMCC
@@ -34,4 +41,3 @@ reusability
 concorde
 Hanslovsky
 summands
-Philipp
