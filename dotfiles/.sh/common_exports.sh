@@ -76,3 +76,5 @@ export QT_SELECT=4
 # eclipse
 export ECLIPSE_HOME=$HOME/.eclipse
 
+# added by travis gem
+[ -f "$HOME/.travis/travis.sh" ] && source "$HOME/.travis/travis.sh"
