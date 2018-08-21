@@ -31,6 +31,8 @@
 
 (setq my:licenses-path "~/.licenses")
 
+(when (not (boundp 'yas-snippet-dirs))
+  (setq yas-snippet-dirs '()))
 (add-to-list 'yas-snippet-dirs "~/.emacs.d/yasnippets/") 
 (yas-global-mode 1)
 

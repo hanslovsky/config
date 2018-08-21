@@ -6,6 +6,6 @@
 (install_if_missing 'sr-speedbar)
 (install_if_missing 'projectile-speedbar)
 
-(projectile-global-mode)
+;; (projectile-global-mode)
 (setq projectile-enable-caching t)
 (helm-projectile-on)

@@ -2,7 +2,7 @@
 (install_if_missing 'gandalf-theme)
 (install_if_missing 'zenburn-theme)
 (install_if_missing 'railscasts-theme)
-(install_if_missing 'hipster-theme)
+;; (install_if_missing 'hipster-theme) not available currently
 (install_if_missing 'powerline) ;; https://github.com/milkypostman/powerline ;; not sure if wanna use it
 (install_if_missing 'moe-theme) ;; https://github.com/kuanyui/moe-theme.el
 (install_if_missing 'material-theme) ;; pretty good theme
@@ -41,11 +41,13 @@
 (setq calendar-latitude (alist-get 'latitude my:location-info))
 (setq calendar-longitude (alist-get 'longitude my:location-info))
 
-(require 'theme-changer)
+;; theme changer not working as of 2018-07-10
+;; (require 'theme-changer)
 ;; (change-theme 'moe-light 'seti)
-(change-theme 'hemisu-light 'seti)
+;; (change-theme 'hemisu-light 'seti)
 ;; good themes: gandalf (light), (n)zenburn(dark), adawaita (light), tango(-dark), wombat (dark), tsdh-light(light)
 ;; good themes: moe-{light,dark}
+(load-theme 'moe-light t)
 
 ;; add theme-changer to package list to be installed if not present
 (when (not (boundp 'elpa-packages-list))
