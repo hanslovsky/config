@@ -18,12 +18,6 @@ export GOPATH=$LOCAL/go
 LOCAL_NAME="$HOME/local"
 export LOCAL=$LOCAL_NAME
 
-# conda
-CONDA_HOME=$HOME/miniconda3
-if [ -d "$CONDA_HOME" ]; then
-    export PATH=`fix_path $CONDA_HOME/bin:$PATH`
-fi
-
 # git
 export GIT_REPO_DIR=$HOME/git
 
@@ -78,3 +72,6 @@ export ECLIPSE_HOME=$HOME/.eclipse
 
 # added by travis gem
 [ -f "$HOME/.travis/travis.sh" ] && source "$HOME/.travis/travis.sh"
+
+# conda
+[ -f "$HOME/miniconda3/etc/profile.d/conda.sh" ] && source "$HOME/miniconda3/etc/profile.d/conda.sh"
