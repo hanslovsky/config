@@ -18,9 +18,6 @@
 ;; auctex
 (load-file "~/.emacs.d/config/latex.el")
 
-;; irony and company instead of auto-complete
-(load-file "~/.emacs.d/config/irony-conf.el")
-
 ;; company
 (load-file "~/.emacs.d/config/company-conf.el")
 
