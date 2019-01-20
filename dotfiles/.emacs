@@ -143,6 +143,4 @@
 ;; projectile
 (load-file "~/.emacs.d/config/projectile-conf.el" )
 
-;; golang
-;; (load-file "~/.emacs.d/config/golang-conf.el")
 
