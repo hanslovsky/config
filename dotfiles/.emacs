@@ -79,9 +79,6 @@
 ;; speedbar - deactivate now due to a bug with emacsclient
 ;; (load-file "~/.emacs.d/config/speedbar-conf.el")
 
-;; Emacs-IDE
-(load-file "~/.emacs.d/config/ide-conf.el")
-
 ;; undo tree
 (load-file "~/.emacs.d/config/undo-tree-conf.el")
 
