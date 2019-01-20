@@ -109,9 +109,6 @@
 ;; gnuplot
 (load-file "~/.emacs.d/config/gnuplot-conf.el")
 
-;; emacs-eclim
-;; (load-file "~/.emacs.d/config/emacs-eclim-conf.el")
-
 ;; c-mode-common
 (load-file "~/.emacs.d/config/c-mode-common-conf.el")
 
