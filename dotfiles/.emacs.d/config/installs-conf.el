@@ -6,6 +6,4 @@
 
 (install_if_missing 'volatile-highlights)
 
-(install_if_missing 'volume)
-
 (install_if_missing 'vmd-mode)
