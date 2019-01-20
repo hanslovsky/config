@@ -206,7 +206,3 @@ bindkey -M isearch " " magic-space # normal space during searches
 
 # enable zmv
 autoload -U zmv
-
-
-# source ~/.xsh
-
