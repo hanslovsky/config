@@ -15,9 +15,6 @@
 ;; installs without config
 (load-file "~/.emacs.d/config/installs-conf.el")
 
-;; smart indent (tabs+space)
-(load-file "~/.emacs.d/config/smart-tabs-conf.el")
-
 ;; auctex
 (load-file "~/.emacs.d/config/auctex-conf.el")
 
