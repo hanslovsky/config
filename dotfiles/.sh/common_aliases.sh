@@ -90,3 +90,5 @@ calc() {
         bc -l $HOME/.bcrc <<< "$@"
     fi
 }
+
+alias vpn-janelia='sudo openconnect -u hanslovskyp --juniper vpn.janelia.org'
