@@ -1,8 +1,12 @@
-;; This is my emacs file. It has grown over time and will certainly do so in future
+;;; package -- Summary
+;;; Commentary:
+;; This is my Emacs file.  It has grown over time and will certainly do so in future
 ;; To put some structure in my config I decided to split it up into smaller config files
 
 ;; this has to go before any packae is loaded that has been installed using elpa
 ;; see: http://stackoverflow.com/questions/17598801/emacs-sometimes-cant-open-load-file
+
+;;; Code:
 (package-initialize)
 
 ;; elpa
@@ -117,5 +121,7 @@
 
 ;; projectile
 (load-file "~/.emacs.d/config/projectile-conf.el" )
+
+(my/global-company-mode)
 
 
