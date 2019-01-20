@@ -79,9 +79,6 @@
 ;; speedbar - deactivate now due to a bug with emacsclient
 ;; (load-file "~/.emacs.d/config/speedbar-conf.el")
 
-;; cedet
-;; (load-file "~/.emacs.d/config/cedet-conf.el")
-
 ;; Emacs-IDE
 (load-file "~/.emacs.d/config/ide-conf.el")
 
