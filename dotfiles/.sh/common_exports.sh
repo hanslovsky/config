@@ -11,9 +11,6 @@ fix_path()
 }
 
 
-# go
-export GOPATH=$LOCAL/go
-
 # set local dir ot either $HOME/local or $HOME/cluster
 LOCAL_NAME="$HOME/local"
 export LOCAL=$LOCAL_NAME
@@ -21,13 +18,17 @@ export LOCAL=$LOCAL_NAME
 # git
 export GIT_REPO_DIR=$HOME/git
 
+# node
+export NODE_MODULES=$LOCAL/node_modules
+export NODE_MODULES_BIN=${NODE_MODULES}/.bin
+
 
 # env
 export C_INCLUDE_PATH=`fix_path $LOCAL/include:$C_INCLUDE_PATH`
 export CPLUS_INCLUDE_PATH=`fix_path $LOCAL/include:$CPLUS_INCLUDE_PATH`
 export LIBRARY_PATH=`fix_path $LOCAL/lib:$LIBRARY_PATH`
 export LD_LIBRARY_PATH=`fix_path $LOCAL/lib:$SITE_PACKAGES:$LD_LIBRARY_PATH`
-export PATH=`fix_path $GIT_REPO_DIR/scripts:$LOCAL/bin:$GOPATH/bin:$PATH`
+export PATH=`fix_path $GIT_REPO_DIR/scripts:$LOCAL/bin:$NODE_MODULES_BIN:$PATH`
 
 # python local packages
 if command -v python 1>/dev/null 2>&1; then
