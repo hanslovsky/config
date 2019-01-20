@@ -210,5 +210,3 @@ autoload -U zmv
 
 # source ~/.xsh
 
-
-eval $(thefuck --alias)
