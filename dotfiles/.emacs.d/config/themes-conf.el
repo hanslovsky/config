@@ -33,13 +33,14 @@
 (defun update-my:location-info()
   (interactive)
   (makunbound 'my:location-info)
-  (defvar my:location-info (json-read-from-string (shell-command-to-string "curl -s \"freegeoip.net/json/$(curl http://ipecho.net/plain -s)\"" )))
+  (defvar my:location-info (json-read-from-string (shell-command-to-string "curl -s 'http://ip-api.com/json'" )))
   )
 
 (update-my:location-info)
-(setq calendar-location-name (concat (alist-get 'country_code my:location-info) "_" (alist-get 'city  my:location-info)))
-(setq calendar-latitude (alist-get 'latitude my:location-info))
-(setq calendar-longitude (alist-get 'longitude my:location-info))
+
+(setq calendar-location-name (concat (alist-get 'countryCode my:location-info) "_" (alist-get 'city  my:location-info)))
+(setq calendar-latitude (alist-get 'lat my:location-info))
+(setq calendar-longitude (alist-get 'lon my:location-info))
 
 ;; theme changer not working as of 2018-07-10
 ;; (require 'theme-changer)
