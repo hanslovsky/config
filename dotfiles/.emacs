@@ -73,9 +73,6 @@
 ;; org
 (load-file "~/.emacs.d/config/org-conf.el")
 
-;; weather
-(load-file "~/.emacs.d/config/weather-conf.el")
-
 ;; speedbar - deactivate now due to a bug with emacsclient
 ;; (load-file "~/.emacs.d/config/speedbar-conf.el")
 
