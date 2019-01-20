@@ -146,7 +146,3 @@
 ;; golang
 ;; (load-file "~/.emacs.d/config/golang-conf.el")
 
-;; clojure
-(load-file "~/.emacs.d/config/clojure-conf.el")
-
-
