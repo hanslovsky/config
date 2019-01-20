@@ -26,10 +26,6 @@
 ;; general config
 (load-file "~/.emacs.d/config/general-conf.el")
 
-;; use either ido or helm
-;; ido
-;; (load-file "~/.emacs.d/config/ido-conf.el")
-
 ;; helm
 (load-file "~/.emacs.d/config/helm-conf.el")
 
