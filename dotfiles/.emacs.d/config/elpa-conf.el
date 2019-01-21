@@ -51,7 +51,7 @@
 
 (when (not (boundp 'package--old-archive-priorities))
   (setq package-archive-priorities
-        '(("melpa-stable" . 30)
+        '(("melpa-stable" . 40)
           ("melpa" . 35)
           ("marmalade" . 20)
           ("gnu" . 10)))
