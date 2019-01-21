@@ -5,21 +5,21 @@
                          ("marmalade" . "http://marmalade-repo.org/packages/")))
 
 (defvar package-archive-priorities
-      '(("melpa-stable" . 40)
-        ("melpa" . 35)
-        ("marmalade" . 20)
-        ("gnu" . 10)))
+      '(("gnu" . 30)
+        ("melpa-stable" . 20)
+        ("melpa" . 10)))
 
+;; emacs 27 might do that for us anyway
 (defun my/initialize-package-if-necessary ()
   (when (not (boundp 'my/package-initialized))
     (defvar my/package-initialized t)
     (package-initialize)
+    (update_packages_if_neccessary)
     ))
 
 (defun install_if_missing (package_name)
   (my/initialize-package-if-necessary)
   (when (not (package-installed-p package_name))
-    (update_packages_if_neccessary)
     (message "Installing package %s..." package_name)
     (package-install package_name)
     (message "Installing package %s... done" package_name)
@@ -28,7 +28,7 @@
 
 (defun update_packages_if_neccessary ()
   (when (not (boundp 'elpa_update_check))
-    (setq elpa_update_check t)
+    (defvar elpa_update_check t)
     (package-refresh-contents)
     )
   )
