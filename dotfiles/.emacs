@@ -44,9 +44,6 @@
              (setq minimap-dedicated-window t)
              :bind ("<f7>" . minimap-mode))
 
-;; c++ settings
-(load-file "~/.emacs.d/config/cxx-conf.el")
-
 ;; json
 (load-file "~/.emacs.d/config/json-conf.el")
 
