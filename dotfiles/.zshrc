@@ -45,16 +45,11 @@ zplug "lib/completion", from:oh-my-zsh
 # definitely manage this with .zshrc
 zplug "zsh-users/zaw"
 
-# fzy vs fzf? Maybe install through arch repos?
-zplug "junegunn/fzf-bin", from:gh-r, as:command, rename-to:fzf
-
-zplug "junegunn/fzf", as:command, use:"bin/fzf-tmux"
-
 zplug "jhawthorn/fzy", as:command, rename-to:fzy, hook-build:"make && sudo make install"
 
 # enhanced cd command
 zplug "b4b4r07/enhancd", use:init.sh
-export ENHANCD_FILTER=fzy:fzf-tmux:fzf
+export ENHANCD_FILTER=fzy
 
 # zplug "peco/peco", as:command, from:gh-r
 
