@@ -4,3 +4,4 @@
 (install_if_missing 'vline)
 (vline-global-mode)
 (install_if_missing 'volatile-highlights)
+(install_if_missing 'use-package)

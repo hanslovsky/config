@@ -37,11 +37,12 @@
 (load-file "~/.emacs.d/config/tramp-conf.el")
 
 ;; minimap
-(load-file "~/.emacs.d/config/minimap-conf.el")
-
-;; sublimity - might be better than minimap
-;; in the end not of any use
-;; (load-file "~/.emacs.d/config/sublimity-conf.el")
+(use-package minimap
+             :defer t
+             :init
+             (setq minimap-always-recenter t)
+             (setq minimap-dedicated-window t)
+             :bind ("<f7>" . minimap-mode))
 
 ;; c++ settings
 (load-file "~/.emacs.d/config/cxx-conf.el")
