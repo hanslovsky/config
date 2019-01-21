@@ -50,6 +50,7 @@ zplug "jhawthorn/fzy", as:command, rename-to:fzy, hook-build:"make && sudo make 
 # enhanced cd command
 zplug "b4b4r07/enhancd", use:init.sh
 export ENHANCD_FILTER=fzy
+export ENHANCD_COMMAND=ecd
 
 # zplug "peco/peco", as:command, from:gh-r
 
