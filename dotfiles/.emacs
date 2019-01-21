@@ -10,8 +10,14 @@
 ;; elpa
 (load-file "~/.emacs.d/config/elpa-conf.el")
 
-;; installs without config
-(load-file "~/.emacs.d/config/installs-conf.el")
+;; use-package
+(install_if_missing 'use-package)
+
+;; volatile highlights mode
+(use-package volatile-highlights
+  :defer 2
+  :ensure t
+  :bind ("<f8>" . volatile-highlights-mode))
 
 ;; markdown
 (load-file "~/.emacs.d/config/markdown.el")
