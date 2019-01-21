@@ -101,16 +101,7 @@
     ;;  TeX-expand-list)
 
     ;; enable flyspell for auctex by default
-    (add-hook 'LaTeX-mode-hook #'turn-on-flyspell)
-
-
-
-    ;; add auctex to package list to be installed if not present
-    (when (not (boundp 'elpa-packages-list))
-      (setq elpa-packages-list '())
-      )
-    (add-to-list 'elpa-packages-list 'auctex)
-    (add-to-list 'elpa-packages-list 'auctex-latexmk)))
+    (add-hook 'LaTeX-mode-hook #'turn-on-flyspell)))
 
 (add-to-list 'auto-mode-alist '("\\.tex\\'" . my/initialize-auctex))
 

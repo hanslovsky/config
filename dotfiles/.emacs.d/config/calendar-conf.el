@@ -6,8 +6,3 @@
 (require 'calfw-gcal)
 
 ;; add calfw to package list to be installed if not present
-(when (not (boundp 'elpa-packages-list))
-  (setq elpa-packages-list '())
-  )
-(add-to-list 'elpa-packages-list 'calfw)
-(add-to-list 'elpa-packages-list 'calfw-gcal)

@@ -13,12 +13,5 @@
               auto-mode-alist))
 
 ;; add cmake-mode to package list to be installed if not present
-(when (not (boundp 'elpa-packages-list))
-  (setq elpa-packages-list '())
-  )
-
 (autoload 'cmake-font-lock-activate "cmake-font-lock" nil t)
 ;; (add-hook 'cmake-mode-hook 'cmake-font-lock-activate)
-
-
-(add-to-list 'elpa-packages-list 'cmake-mode)

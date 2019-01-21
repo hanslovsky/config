@@ -50,10 +50,3 @@
 ;; good themes: moe-{light,dark}
 (load-theme 'moe-light t)
 
-;; add theme-changer to package list to be installed if not present
-(when (not (boundp 'elpa-packages-list))
-  (setq elpa-packages-list '())
-  )
-(add-to-list 'elpa-packages-list 'theme-changer)
-(add-to-list 'elpa-packages-list 'gandalf-theme)
-(add-to-list 'elpa-packages-list 'zenburn-theme)
