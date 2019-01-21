@@ -41,12 +41,18 @@
 (load-file "~/.emacs.d/config/tramp-conf.el")
 
 ;; minimap
+;; http://elpa.gnu.org/packages/minimap.html
 (use-package minimap
-             :defer t
-             :init
-             (setq minimap-always-recenter t)
-             (setq minimap-dedicated-window t)
-             :bind ("<f7>" . minimap-mode))
+  :defer 2
+  :ensure t
+  :init
+  (setq minimap-always-recenter t)
+  (setq minimap-dedicated-window t)
+  (setq minimap-minimum-width 20)
+  (setq minimum-recreate-window t)
+  (setq minimap-automatically-delete-window t)
+  (setq minimap-update-delay 0.03)
+  :bind ("<f7>" . minimap-mode))
 
 ;; json
 (load-file "~/.emacs.d/config/json-conf.el")
