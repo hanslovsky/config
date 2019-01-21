@@ -6,8 +6,6 @@
 ;; this has to go before any packae is loaded that has been installed using elpa
 ;; see: http://stackoverflow.com/questions/17598801/emacs-sometimes-cant-open-load-file
 
-;;; Code:
-(package-initialize)
 
 ;; elpa
 (load-file "~/.emacs.d/config/elpa-conf.el")

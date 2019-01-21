@@ -10,7 +10,14 @@
         ("marmalade" . 20)
         ("gnu" . 10)))
 
+(defun my/initialize-package-if-necessary ()
+  (when (not (boundp 'my/package-initialized))
+    (defvar my/package-initialized t)
+    (package-initialize)
+    ))
+
 (defun install_if_missing (package_name)
+  (my/initialize-package-if-necessary)
   (when (not (package-installed-p package_name))
     (update_packages_if_neccessary)
     (message "Installing package %s..." package_name)
