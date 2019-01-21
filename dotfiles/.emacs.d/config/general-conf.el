@@ -145,9 +145,3 @@
 ;; math stuff
 (install_if_missing 'math-symbol-lists)
 (install_if_missing 'math-symbols)
-
-;; markdown (create own file if needs to be configured)
-(install_if_missing 'markdown-mode)
-(install_if_missing 'markdown-mode+)
-(install_if_missing 'markdown-preview-eww)
-

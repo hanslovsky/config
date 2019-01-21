@@ -15,6 +15,9 @@
 ;; installs without config
 (load-file "~/.emacs.d/config/installs-conf.el")
 
+;; markdown
+(load-file "~/.emacs.d/config/markdown.el")
+
 ;; auctex
 (load-file "~/.emacs.d/config/latex.el")
 
