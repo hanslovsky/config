@@ -6,7 +6,6 @@
 ;; this has to go before any packae is loaded that has been installed using elpa
 ;; see: http://stackoverflow.com/questions/17598801/emacs-sometimes-cant-open-load-file
 
-
 ;; elpa
 (load-file "~/.emacs.d/config/elpa-conf.el")
 
@@ -128,5 +127,9 @@
 (load-file "~/.emacs.d/config/projectile-conf.el" )
 
 (my/global-company-mode)
+
+;; do not store settings made through customize in ~/.emacs
+(setq custom-file "~/.emacs.d/config/custom.el")
+(load custom-file 'noerror)
 
 
