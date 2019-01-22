@@ -6,6 +6,13 @@
 ;; this has to go before any packae is loaded that has been installed using elpa
 ;; see: http://stackoverflow.com/questions/17598801/emacs-sometimes-cant-open-load-file
 
+;; emacs determines file modes in this order:
+;; 1. file variables, e.g. first non-empty line ; -*-Lisp-*-
+;; 2. Shebang
+;; 3. magic-mode-alist looking at the text of the buffer
+;; 4. auto-mode-alist looking at the filename (prefer to use this)
+;; https://www.gnu.org/software/emacs/manual/html_node/emacs/Choosing-Modes.html
+
 ;; elpa
 (load-file "~/.emacs.d/config/elpa-conf.el")
 
