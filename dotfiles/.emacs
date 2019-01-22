@@ -128,7 +128,7 @@
 (load-file "~/.emacs.d/config/nyan-conf.el")
 
 ;; perspective
-(load-file "~/.emacs.d/config/persperctive-conf.el" )
+(use-package perspective :ensure t :defer 1 :config (persp-mode 1))
 
 ;; projectile
 (load-file "~/.emacs.d/config/projectile-conf.el" )
