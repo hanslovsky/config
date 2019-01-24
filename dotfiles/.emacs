@@ -19,6 +19,9 @@
 ;; use-package
 (install_if_missing 'use-package)
 
+;; company
+(load-file "~/.emacs.d/config/company.el")
+
 ;; volatile highlights mode
 (use-package volatile-highlights
   :defer 2
@@ -30,9 +33,6 @@
 
 ;; auctex
 (load-file "~/.emacs.d/config/latex.el")
-
-;; company
-(load-file "~/.emacs.d/config/company-conf.el")
 
 ;; general config
 (load-file "~/.emacs.d/config/general-conf.el")
@@ -132,8 +132,6 @@
 
 ;; projectile
 (load-file "~/.emacs.d/config/projectile-conf.el" )
-
-(my/global-company-mode)
 
 ;; do not store settings made through customize in ~/.emacs
 (setq custom-file "~/.emacs.d/config/custom.el")
