@@ -43,9 +43,6 @@
 ;; iedit
 (use-package iedit :ensure t :defer 2 :bind (("C-;" . iedit-mode) ("C-x r <return>" . 'iedit-rectangle-mode)))
 
-;; tramp
-(load-file "~/.emacs.d/config/tramp-conf.el")
-
 ;; minimap
 ;; http://elpa.gnu.org/packages/minimap.html
 (use-package minimap
