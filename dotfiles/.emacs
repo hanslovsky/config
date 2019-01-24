@@ -81,8 +81,8 @@
 ;; undo tree
 (use-package undo-tree :defer 2 :ensure t :diminish undo-tree-mode :init (global-undo-tree-mode))
 
-;; magit
-(load-file "~/.emacs.d/config/magit-conf.el")
+;; version control
+(load-file "~/.emacs.d/config/vc.el")
 
 ;; flymake
 (load-file "~/.emacs.d/config/flymake-conf.el")
