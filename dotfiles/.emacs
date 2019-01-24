@@ -58,7 +58,7 @@
   :bind ("<f7>" . minimap-mode))
 
 ;; json
-(load-file "~/.emacs.d/config/json-conf.el")
+(use-package json-mode :defer t :ensure t :mode "\\.json\\'")
 
 ;; theme related settings
 (load-file "~/.emacs.d/config/themes-conf.el")
