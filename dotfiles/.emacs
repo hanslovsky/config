@@ -19,6 +19,9 @@
 ;; use-package
 (install_if_missing 'use-package)
 
+;; helm
+(load-file "~/.emacs.d/config/helm.el")
+
 ;; company
 (load-file "~/.emacs.d/config/company.el")
 
@@ -36,9 +39,6 @@
 
 ;; general config
 (load-file "~/.emacs.d/config/general-conf.el")
-
-;; helm
-(load-file "~/.emacs.d/config/helm-conf.el")
 
 ;; iedit
 (load-file "~/.emacs.d/config/iedit-conf.el")
