@@ -41,7 +41,7 @@
 (load-file "~/.emacs.d/config/general-conf.el")
 
 ;; iedit
-(load-file "~/.emacs.d/config/iedit-conf.el")
+(use-package iedit :ensure t :defer 2 :bind (("C-;" . iedit-mode) ("C-x r <return>" . 'iedit-rectangle-mode)))
 
 ;; tramp
 (load-file "~/.emacs.d/config/tramp-conf.el")
