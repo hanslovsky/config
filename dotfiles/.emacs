@@ -79,7 +79,7 @@
 ;; (load-file "~/.emacs.d/config/speedbar-conf.el")
 
 ;; undo tree
-(load-file "~/.emacs.d/config/undo-tree-conf.el")
+(use-package undo-tree :defer 2 :ensure t :diminish undo-tree-mode :init (global-undo-tree-mode))
 
 ;; magit
 (load-file "~/.emacs.d/config/magit-conf.el")
