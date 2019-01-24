@@ -70,7 +70,7 @@
 (load-file "~/.emacs.d/config/cmake-conf.el")
 
 ;; calendar
-(load-file "~/.emacs.d/config/calendar-conf.el")
+(load-file "~/.emacs.d/config/calendar.el")
 
 ;; org
 (load-file "~/.emacs.d/config/org-conf.el")
