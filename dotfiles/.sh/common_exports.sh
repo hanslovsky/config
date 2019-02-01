@@ -11,8 +11,8 @@ fix_path()
 }
 
 
-# set local dir ot either $HOME/local or $HOME/cluster
-LOCAL_NAME="$HOME/local"
+# set local dir ot either $HOME/.local
+LOCAL_NAME="$HOME/.local"
 export LOCAL=$LOCAL_NAME
 
 # git
