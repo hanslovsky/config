@@ -30,14 +30,6 @@ export LIBRARY_PATH=`fix_path $LOCAL/lib:$LIBRARY_PATH`
 export LD_LIBRARY_PATH=`fix_path $LOCAL/lib:$SITE_PACKAGES:$LD_LIBRARY_PATH`
 export PATH=`fix_path $GIT_REPO_DIR/scripts:$LOCAL/bin:$NODE_MODULES_BIN:$PATH`
 
-# python local packages
-if command -v python 1>/dev/null 2>&1; then
-    PYTHON_MAJOR_MINOR=$(python -c 'import sys; print ("python{}.{}".format(*sys.version_info))')
-    export SITE_PACKAGES=$LOCAL/lib/${PYTHON_MAJOR_MINOR}/site-packages
-    export DIST_PACKAGES=$LOCAL/lib/${PYTHON_MAJOR_MINOR}/dist-packages
-    export PYTHONPATH=`fix_path $DIST_PACKAGES:$SITE_PACKAGES:$PYTHONPATH`
-fi
-
 export EDITOR="emacsclient -c"
 export ALTERNATE_EDITOR=""
 export TERM=xterm-256color
