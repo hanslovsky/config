@@ -66,7 +66,15 @@ zplug "desyncr/geometry-pretty-git"
 # virtualenv plugin fails with
 # basename: missing operand
 # https://github.com/fribmendes/geometry/tree/master/plugins
-export GEOMETRY_PROMPT_PLUGINS=(exec_time jobs virtualenv git pretty-git hydrate)
+
+IFS=. read major minor patch <<<"${ZSH_VERSION##*-}"
+export ZSH_VERSION_MAJOR=${major}
+export ZSH_VERSION_MINOR=${minor}
+export ZSH_VERSION_PATCH=${patch}
+
+if [ "${ZSH_VERSION_MAJOR}" -ge "5" -a "${ZSH_VERSION_MINOR}" -ge "1" ]; then
+    export GEOMETRY_PROMPT_PLUGINS=(exec_time jobs virtualenv git pretty-git hydrate)
+fi
 export GEOMETRY_COLOR_ROOT="red"
 export GEOMETRY_COLOR_VIRTUALENV="green"
 export GEOMETRY_COLOR_CONDA="red"
