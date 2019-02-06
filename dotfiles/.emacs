@@ -124,6 +124,9 @@
 ;; nyan cat
 (load-file "~/.emacs.d/config/nyan-conf.el")
 
+;; esup
+(use-package esup :ensure t :defer 2 :config (setq esup-user-init-file (file-truename "~/.emacs")))
+
 ;; perspective
 (use-package perspective :ensure t :defer 1 :config (persp-mode 1))
 
