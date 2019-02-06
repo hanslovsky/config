@@ -16,7 +16,7 @@
 (install_if_missing 'hemisu-theme) ;; try these for now
 (install_if_missing 'waher-theme ) ;; too much contrast!
 
-(require 'powerline) ;; needs to come before moe-theem
+(require 'powerline) ;; needs to come before moe-theme
 (require 'moe-theme)
 (require 'json)
  ;; Show highlighted buffer-id as decoration. (Default: nil)
@@ -24,29 +24,35 @@
 (setq moe-theme-resize-org-title nil) ;; (setq moe-theme-resize-org-title '(1.5 1.4 1.3 1.2 1.1 1.0 1.0 1.0 1.0))
 (moe-light)
 
-;; setup for sun set/rise theme changer
-;; (setq calendar-location-name "Heidelberg, Germany")
-;; (setq calendar-latitude 49.25)
-;; (setq calendar-longitude 8.42)
+(defvar my:location-info '((countryCode . "US")
+                           (city . "Alexandria")
+                           (region . "VA")
+                           (regionName . "Virginia")
+                           (timezone . "America/New_York")
+                           (lat . "38.77275200260602")
+                           (lon . "-77.14527852335527")))
+
+(defun my:update-calendar-from-location-info()
+  (setq calendar-location-name (concat (alist-get 'countryCode my:location-info) "_" (alist-get 'city  my:location-info)))
+  (setq calendar-latitude (alist-get 'lat my:location-info))
+  (setq calendar-longitude (alist-get 'lon my:location-info)))
+
+(my:update-calendar-from-location-info)
 
 ;; read longitute and latitude from freegeoip
-(defun update-my:location-info()
+(defun my:update-location-info()
   (interactive)
-  (makunbound 'my:location-info)
-  (defvar my:location-info (json-read-from-string (shell-command-to-string "curl -s 'http://ip-api.com/json'" )))
+  (setq my:location-info (json-read-from-string (shell-command-to-string '"curl -s 'http://ip-api.com/json'" )))
+  (my:update-calendar-from-location-info)
   )
 
-(update-my:location-info)
-
-(setq calendar-location-name (concat (alist-get 'countryCode my:location-info) "_" (alist-get 'city  my:location-info)))
-(setq calendar-latitude (alist-get 'lat my:location-info))
-(setq calendar-longitude (alist-get 'lon my:location-info))
-
 ;; theme changer not working as of 2018-07-10
-;; (require 'theme-changer)
+(require 'theme-changer)
 ;; (change-theme 'moe-light 'seti)
 ;; (change-theme 'hemisu-light 'seti)
 ;; good themes: gandalf (light), (n)zenburn(dark), adawaita (light), tango(-dark), wombat (dark), tsdh-light(light)
 ;; good themes: moe-{light,dark}
-(load-theme 'moe-light t)
+;; good themes: material{,-light}
+;; (load-theme 'moe-light t)
+(change-theme 'moe-light 'material)
 
