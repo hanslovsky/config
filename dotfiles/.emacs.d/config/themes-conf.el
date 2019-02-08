@@ -15,6 +15,7 @@
 (install_if_missing 'alect-themes) ;; alect-dark-alt seems to be nice dark theme
 (install_if_missing 'hemisu-theme) ;; try these for now
 (install_if_missing 'waher-theme ) ;; too much contrast!
+(install_if_missing 'solarized-theme)
 
 (require 'powerline) ;; needs to come before moe-theme
 (require 'moe-theme)
@@ -43,8 +44,7 @@
 (defun my:update-location-info()
   (interactive)
   (setq my:location-info (json-read-from-string (shell-command-to-string '"curl -s 'http://ip-api.com/json'" )))
-  (my:update-calendar-from-location-info)
-  )
+  (my:update-calendar-from-location-info))
 
 ;; theme changer not working as of 2018-07-10
 (require 'theme-changer)
@@ -54,5 +54,5 @@
 ;; good themes: moe-{light,dark}
 ;; good themes: material{,-light}
 ;; (load-theme 'moe-light t)
-(change-theme 'moe-light 'material)
+(change-theme 'solarized-light 'material)
 
