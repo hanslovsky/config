@@ -68,3 +68,25 @@ export ECLIPSE_HOME=$HOME/.eclipse
 
 # conda
 [ -f "$HOME/miniconda3/etc/profile.d/conda.sh" ] && source "$HOME/miniconda3/etc/profile.d/conda.sh"
+
+# pyjnius jar if present
+[ -f "$HOME/Dropbox/misc/pyjnius/pyjnius.jar" ] && export PYJNIUS_JAR="$HOME/Dropbox/misc/pyjnius/pyjnius.jar"
+
+function _nth_parent() {
+    directory="$1"
+    for iteration in {1..$2}; do
+        directory="$(dirname $directory)"
+    done
+    echo $directory
+}
+
+# java (only if not set already)
+if [ -z "${JAVA_HOME}" ]; then
+    # on arch JAVA_HOME is not set. Instead use default jvm location
+    DEFAULT_JVM=/usr/lib/jvm/default
+    if [ -L "${DEFAULT_JVM}" -a -d "${DEFAULT_JVM}" ]; then
+        export JAVA_HOME="${DEFAULT_JVM}"
+    else
+        hash java 2>/dev/null && export JAVA_HOME="$(_nth_parent $(realpath $(which java)) 3)"
+    fi
+fi
