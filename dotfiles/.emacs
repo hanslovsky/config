@@ -17,6 +17,7 @@
 ;; elpa
 (load-file "~/.emacs.d/config/elpa-conf.el")
 
+
 ;; use-package
 (install_if_missing 'use-package)
 
@@ -137,5 +138,10 @@
 ;; do not store settings made through customize in ~/.emacs
 (setq custom-file "~/.emacs.d/config/custom.el")
 (load custom-file 'noerror)
+
+;;; experimental packages:
+(use-package doom-modeline :defer 2  :ensure t)
+(use-package eyebrowse :defer 2 :ensure t)
+(use-package doom-themes :defer 2 :ensure t)
 
 
