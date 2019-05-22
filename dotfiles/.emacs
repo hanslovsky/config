@@ -13,6 +13,7 @@
 ;; 4. auto-mode-alist looking at the filename (prefer to use this)
 ;; https://www.gnu.org/software/emacs/manual/html_node/emacs/Choosing-Modes.html
 
+(setq gc-cons-threshold 100000000)
 ;; elpa
 (load-file "~/.emacs.d/config/elpa-conf.el")
 
