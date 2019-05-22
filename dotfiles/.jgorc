@@ -1,0 +1,11 @@
+[repositories]
+imagej.public = https://maven.imagej.net/content/groups/public
+
+[shortcuts]
+ojkotlin  = org.jetbrains.kotlin
+kcompiler = ojkotlin:kotlin-compiler
+ksruntime = ojkotlin:kotlin-script-runtime
+kstdlib   = ojkotlin:kotlin-stdlib
+kreflect  = ojkotlin:kotlin-reflect
+krepl     = kcompiler:@K2JVMCompiler
+kotlib    = de.hanslovsky:imglib2-kotlib
