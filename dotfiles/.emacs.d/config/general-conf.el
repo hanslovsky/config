@@ -114,7 +114,6 @@
 
 (install_if_missing 'visual-fill-column)
 (global-visual-line-mode)
-(global-visual-fill-column-mode)
 
 ;; set fill column to 100
 (setq-default fill-column 100)
