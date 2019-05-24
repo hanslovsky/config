@@ -8,7 +8,7 @@
 (defun my/add-run-lualatex (is-default)
   (when (executable-find "lualatex")
     (delete-dups
-     (push '("lualatex" "lualatex -%(PDF) %s %t" TeX-run-TeX t t :help "Use lualatex for compilation")
+     (push '("lualatex" "lualatex -shell-escape -%(PDF) %s %t" TeX-run-TeX t t :help "Use lualatex for compilation")
            TeX-command-list))
     ;; for some reason, this does not work but don't wanna spend too much time to work it out:
     (when is-default
@@ -36,6 +36,7 @@
   (add-hook 'LaTeX-mode-hook 'visual-line-mode)
   ;; `-key will put symbol based on key
   (add-hook 'LaTeX-mode-hook 'LaTeX-math-mode)
+  (add-hook 'LaTeX-mode-hook 'auto-fill-mode)
   ;; auctex-latexmk
   (use-package auctex-latexmk :ensure t :config (auctex-latexmk-setup))
   (use-package flyspell :ensure t)

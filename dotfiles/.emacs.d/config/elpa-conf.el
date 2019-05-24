@@ -26,3 +26,5 @@
   (when (not (boundp 'elpa_update_check))
     (defvar elpa_update_check t)
     (package-refresh-contents)))
+
+(my/initialize-package-if-necessary)
