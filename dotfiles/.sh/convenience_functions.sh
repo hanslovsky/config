@@ -96,3 +96,26 @@ function modify_line_in_path
     export $PATH_VAR_NAME=$( echo -n -e "$MODIFIED" | tr '\n' ':' )
     unset MODIFIED
 }
+
+function _br {
+    f=$(mktemp)
+    (
+        set +e
+        broot --outcmd "$f" "$@"
+        code=$?
+        if [ "$code" != 0 ]; then
+            rm -f "$f"
+            exit "$code"
+        fi
+    )
+    code=$?
+    if [ "$code" != 0 ]; then
+        return "$code"
+    fi
+    d=$(cat "$f")
+    rm -f "$f"
+    eval "$d"
+}
+
+hash broot 2>/dev/null && alias br='_br'
+
