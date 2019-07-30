@@ -22,13 +22,16 @@ export GIT_REPO_DIR=$HOME/git
 export NODE_MODULES=$LOCAL/node_modules
 export NODE_MODULES_BIN=${NODE_MODULES}/.bin
 
+# rust
+export CARGO_HOME=$HOME/.cargo
+
 
 # env
 export C_INCLUDE_PATH=`fix_path $LOCAL/include:$C_INCLUDE_PATH`
 export CPLUS_INCLUDE_PATH=`fix_path $LOCAL/include:$CPLUS_INCLUDE_PATH`
 export LIBRARY_PATH=`fix_path $LOCAL/lib:$LIBRARY_PATH`
 export LD_LIBRARY_PATH=`fix_path $LOCAL/lib:$SITE_PACKAGES:$LD_LIBRARY_PATH`
-export PATH=`fix_path $GIT_REPO_DIR/scripts:$LOCAL/bin:$NODE_MODULES_BIN:$PATH`
+export PATH=`fix_path $CARGO_HOME/bin:$GIT_REPO_DIR/scripts:$LOCAL/bin:$NODE_MODULES_BIN:$PATH`
 
 export EDITOR="emacsclient -c"
 export ALTERNATE_EDITOR=""
