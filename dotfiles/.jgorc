@@ -1,5 +1,5 @@
 [repositories]
-imagej.public = https://maven.imagej.net/content/groups/public
+scijava.public = https://maven.scijava.org/content/groups/public
 
 [shortcuts]
 ojkotlin  = org.jetbrains.kotlin
