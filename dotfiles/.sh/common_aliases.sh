@@ -93,4 +93,6 @@ calc() {
 
 alias vpn-janelia='sudo openconnect -u hanslovskyp --juniper vpn.janelia.org'
 
-hash python 2>/dev/null && pywhich() {[ -n "$1" ] && python -c "from __future__ import print_function; import $1; print($1)"}
+hash python 2>/dev/null && pywhich() {
+        [ -n "$1" ] && python -c "from __future__ import print_function; import $1; print($1)"
+    }
