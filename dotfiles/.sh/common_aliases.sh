@@ -96,3 +96,10 @@ alias vpn-janelia='sudo openconnect -u hanslovskyp --juniper vpn.janelia.org'
 hash python 2>/dev/null && pywhich() {
         [ -n "$1" ] && python -c "from __future__ import print_function; import $1; print($1)"
     }
+
+ungrab-cursor() {
+    ## sometimes JavaFX does not release cursor when hitting breakpoint
+    ## https://unix.stackexchange.com/a/40472/277163
+    setxkbmap -option grab:break_actions
+    xdotool key XF86Ungrab
+}
