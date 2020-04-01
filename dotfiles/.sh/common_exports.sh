@@ -90,6 +90,6 @@ if [ -z "${JAVA_HOME}" ]; then
     if [ -L "${DEFAULT_JVM}" -a -d "${DEFAULT_JVM}" ]; then
         export JAVA_HOME="${DEFAULT_JVM}"
     else
-        hash java 2>/dev/null && export JAVA_HOME="$(_nth_parent $(realpath $(which java)) 3)"
+        hash java 2>/dev/null && hash realpath 2>/dev/null && export JAVA_HOME="$(_nth_parent $(realpath $(which java)) 3)"
     fi
 fi
