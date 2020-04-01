@@ -186,6 +186,10 @@ if [ -f ~/.sh/zsh_exports.sh ]; then
     . ~/.sh/zsh_exports.sh
 fi
 
+if [ -f ~/.sh/source_custom.sh ]; then
+    . ~/.sh/source_custom.sh
+fi
+
 if [[ -n "$DISPLAY" && -n "" ]]; then
     CURR_DIR=$(pwd)
     cd ~/.sh/greet_dir
