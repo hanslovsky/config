@@ -103,3 +103,7 @@ ungrab-cursor() {
     setxkbmap -option grab:break_actions
     xdotool key XF86Ungrab
 }
+
+# Kubernetes
+alias ktl=kubecolor
+alias ktx=kubectx
