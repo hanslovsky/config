@@ -1,6 +1,6 @@
 [user]
 	name = Philipp Hanslovsky
-	email = hanslovskyp@janelia.hhmi.org
+	email = philipp.hanslovsky@gmail.com
 [color]
 	branch = auto
 	diff = auto
@@ -33,3 +33,9 @@
 	
 [push]
 	default = upstream
+[gui]
+	fontdiff = -family \"Noto Sans Mono\" -size 9 -weight normal -slant roman -underline 0 -overstrike 0
+[pull]
+	ff = only
+[init]
+	defaultBranch = main

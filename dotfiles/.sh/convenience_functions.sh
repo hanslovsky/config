@@ -119,3 +119,13 @@ function _br {
 
 hash broot 2>/dev/null && alias br='_br'
 
+aws-profile () {
+    FZF_DEFAULT_COMMAND="grep -E '\[role match]' ~/.aws/credentials | sed -e 's/\[//' -e s'/]//'"
+    if [ -n "$AWS_PROFILE" ]
+    then
+        FZF_DEFAULT_COMMAND="$FZF_DEFAULT_COMMAND | grep --color=always -E '$AWS_PROFILE|$'"
+    fi
+    PROFILE=$(FZF_DEFAULT_COMMAND="$FZF_DEFAULT_COMMAND" fzf --ansi --no-preview)
+    [ -n "$PROFILE" ] && export AWS_PROFILE=$PROFILE  && export AWS_DEFAULT_PROFILE=$PROFILE  && echo Updated AWS profile to $PROFILE
+}
+

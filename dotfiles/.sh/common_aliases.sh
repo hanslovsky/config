@@ -105,5 +105,17 @@ ungrab-cursor() {
 }
 
 # Kubernetes
-alias ktl=kubecolor
+source <(kubectl completion zsh)  # setup autocomplete in zsh into the current shell
+
+if hash kubecolor 2>/dev/null; then
+    # TODO: auto-completion currently does not work for kubecolor
+    #       https://github.com/dty1er/kubecolor/issues/78
+    # source <(cat <(echo -e "#compdef kubecolor\ncompdef _kubectl kubecolor") <(kubectl completion zsh | tail -n+3))
+    # compdef kubecolor=kubectl
+    alias ktl=kubecolor
+else
+    alias ktl=kubectl
+fi
+
 alias ktx=kubectx
+
