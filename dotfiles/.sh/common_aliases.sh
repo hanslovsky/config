@@ -119,3 +119,7 @@ fi
 
 alias ktx=kubectx
 
+function fdiff() {
+    diff -aruN "$1" "$2" | diff-so-fancy
+}
+
