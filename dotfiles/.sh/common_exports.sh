@@ -93,3 +93,5 @@ if [ -z "${JAVA_HOME}" ]; then
         hash java 2>/dev/null && hash realpath 2>/dev/null && export JAVA_HOME="$(_nth_parent $(realpath $(which java)) 3)"
     fi
 fi
+
+hash brave 2>/dev/null && export BROWSER=brave
