@@ -1,19 +1,3 @@
-;; probably obsolete
-(defun my/add-run-latexmk ()
-  (when (executable-find "latexmk")
-    (delete-dups
-     (push '("LatexMK" "latexmk -%(PDF) %s %t" TeX-run-TeX t t :help "Use latexmk for compilation")
-           TeX-command-list))))
-
-(defun my/add-run-lualatex (is-default)
-  (when (executable-find "lualatex")
-    (delete-dups
-     (push '("lualatex" "lualatex -shell-escape -%(PDF) %s %t" TeX-run-TeX t t :help "Use lualatex for compilation")
-           TeX-command-list))
-    ;; for some reason, this does not work but don't wanna spend too much time to work it out:
-    (when is-default
-        (setq TeX-command-default "lualatex"))))
-
 (use-package tex-site
   :ensure auctex
   :defer t
@@ -37,8 +21,6 @@
   ;; `-key will put symbol based on key
   (add-hook 'LaTeX-mode-hook 'LaTeX-math-mode)
   (add-hook 'LaTeX-mode-hook 'auto-fill-mode)
-  ;; auctex-latexmk
-  (use-package auctex-latexmk :ensure t :config (auctex-latexmk-setup))
   (use-package flyspell :ensure t)
   
   ;; setup ghostscript
@@ -46,8 +28,6 @@
   (setq preview-gs-options (quote ("-q" "-dNOSAFER" "-dNOPAUSE" "-DNOPLATFONTS" "-dPrinted" "-dTextAlphaBits=4" "-dGraphicsAlphaBits=4")))
   ;; setup okular as the default pdf viewer
   (setq TeX-view-p-list '(("Okular" "okular –unique %o#src:%n%b")))
-  (setq TeX-view-program-selection '((output-pdf "Okular")))
-  ;; add lualatex command
-  (my/add-run-lualatex t))
+  (setq TeX-view-program-selection '((output-pdf "Okular"))))
 
 
