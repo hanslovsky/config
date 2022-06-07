@@ -123,3 +123,5 @@ function fdiff() {
     diff -aruN "$1" "$2" | diff-so-fancy
 }
 
+hash git-fuzzy 2>/dev/null && alias fgit='git-fuzzy'
+
