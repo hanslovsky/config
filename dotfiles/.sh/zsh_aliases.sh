@@ -49,6 +49,10 @@ alias -g EGREP='| grep -E'
 # grep -i
 alias -g IGREP='| grep -iE'
 
+# lower/upper case
+alias -g LOWER='| awk "{ print tolower(\$0) }"'
+alias -g UPPER='| awk "{ print toupper(\$0) }"'
+
 
 # suffix alias
 # C / C++
