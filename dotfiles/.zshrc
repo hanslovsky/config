@@ -57,7 +57,8 @@ export ENHANCD_COMMAND=ecd
 # should also install emojify (available on aur): https://github.com/mrowa44/emojify
 zplug "b4b4r07/emoji-cli" # , as:command, if:"(( $+commands[jq] ))"
 # TODO come up with better shortcut
-export EMOJI_CLI_KEYBIND='^s'
+export EMOJI_CLI_KEYBIND='^x^e'
+export EMOJI_CLI_USE_EMOJI=1
 
 # zplug "peco/peco", as:command, from:gh-r
 
