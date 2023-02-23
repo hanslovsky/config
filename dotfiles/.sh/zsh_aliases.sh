@@ -9,17 +9,29 @@ alias -g NO_ERR='2>/dev/null'
 # no output at all
 alias -g SILENCE='1>/dev/null 2>&1'
 
-# copy to clipboard
-alias -g NL_CLIPBOARD='| xclip -selection clipboard'
+if hash wl-copy 2>/dev/null; then
 
-# copy to clipboard w/o trailing new line
-alias -g CLIPBOARD='| xargs -d "\n" printf %s | xclip -selection clipboard'
+    copy_command=wl-copy
+elif hash xclip 2> /dev/null; then
+    copy_command="xclip -selection clipboard"
+fi
 
-# copy to clipboard
-alias -g NLCP='| xclip -selection clipboard'
+if [ -n "$copy_command" ]; then
 
-# copy to clipboard w/o trailing new line
-alias -g CP='| xargs -d "\n" printf %s | xclip -selection clipboard'
+    # copy to clipboard
+    alias -g NL_CLIPBOARD="| $copy_command"
+
+    # copy to clipboard w/o trailing new line
+    alias -g CLIPBOARD='| xargs -d "\n" printf %s |'"$copy_command"
+
+    # copy to clipboard
+    alias -g NLCP="| $copy_command"
+
+    # copy to clipboard w/o trailing new line
+    alias -g CP='| xargs -d "\n" printf %s | '"$copy_command"
+else
+    echo "No copy command available. Please install xclip (X11) or wl-clipboard (wayland)"
+fi
 
 # PATH, single line for each entry
 alias -g NLPATH='${PATH//:/
