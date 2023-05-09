@@ -80,9 +80,6 @@
 ;; version control
 (load-file "~/.emacs.d/config/vc.el")
 
-;; yasnippet
-(load-file "~/.emacs.d/config/yasnippet-conf.el")
-
 ;; python-mode
 (load-file "~/.emacs.d/config/python-conf.el")
 
