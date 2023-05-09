@@ -68,9 +68,6 @@
 ;; matlab
 (load-file "~/.emacs.d/config/matlab-conf.el")
 
-;; cmake
-(load-file "~/.emacs.d/config/cmake-conf.el")
-
 ;; calendar
 (load-file "~/.emacs.d/config/calendar.el")
 
@@ -97,9 +94,6 @@
 
 ;; jedi
 (load-file "~/.emacs.d/config/jedi-conf.el")
-
-;; c-mode-common
-(load-file "~/.emacs.d/config/c-mode-common-conf.el")
 
 ;; functions
 ;; kill
