@@ -68,9 +68,6 @@
 ;; calendar
 (load-file "~/.emacs.d/config/calendar.el")
 
-;; org
-(load-file "~/.emacs.d/config/org-conf.el")
-
 ;; speedbar - deactivate now due to a bug with emacsclient
 ;; (load-file "~/.emacs.d/config/speedbar-conf.el")
 
