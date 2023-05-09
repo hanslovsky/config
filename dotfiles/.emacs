@@ -65,9 +65,6 @@
 ;; theme related settings
 (load-file "~/.emacs.d/config/themes-conf.el")
 
-;; matlab
-(load-file "~/.emacs.d/config/matlab-conf.el")
-
 ;; calendar
 (load-file "~/.emacs.d/config/calendar.el")
 
