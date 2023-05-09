@@ -83,9 +83,6 @@
 ;; version control
 (load-file "~/.emacs.d/config/vc.el")
 
-;; flymake
-(load-file "~/.emacs.d/config/flymake-conf.el")
-
 ;; yasnippet
 (load-file "~/.emacs.d/config/yasnippet-conf.el")
 
