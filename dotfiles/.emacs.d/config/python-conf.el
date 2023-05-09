@@ -1,7 +1,7 @@
-(install_if_missing 'python-mode)
-(install_if_missing 'jedi)
-(install_if_missing 'jedi-core)
-(install_if_missing 'company-jedi)
+(use-package python-mode :ensure t)
+(use-package jedi :ensure t)
+(use-package jedi-core :ensure t)
+(use-package company-jedi :ensure t)
 
 (add-hook 'python-mode-hook 'jedi:setup)
 

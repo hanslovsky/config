@@ -83,9 +83,6 @@
 ;; python-mode
 (load-file "~/.emacs.d/config/python-conf.el")
 
-;; jedi
-(load-file "~/.emacs.d/config/jedi-conf.el")
-
 ;; functions
 ;; kill
 (load-file "~/.emacs.d/functions/kill.el")
