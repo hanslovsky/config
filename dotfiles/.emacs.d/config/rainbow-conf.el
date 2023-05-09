@@ -1,15 +1,11 @@
-(install_if_missing 'rainbow-mode)
-(install_if_missing 'rainbow-delimiters)
-(install_if_missing 'rainbow-identifiers)
-(install_if_missing 'rainbow-blocks)
-(define-globalized-minor-mode my-global-rainbow-mode rainbow-mode
-  (lambda () (rainbow-mode 1)))
+(use-package rainbow-mode
+  :ensure t
+  :config
+  (define-globalized-minor-mode global-rainbow-mode rainbow-mode
+    (lambda () (rainbow-mode 1)))
+  (global-rainbow-mode 1) ;; enable rainbow mode in every buffer (global minor mode)
+  )
+(use-package rainbow-delimiters :ensure t :hook (prog-mode LaTeX-mode))
+(use-package rainbow-identifiers :ensure t)
+(use-package rainbow-blocks :ensure t :hook (prog-mode))
 
-(my-global-rainbow-mode 1)
-(add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
-;; (add-hook 'prog-mode-hook #'rainbow-identifiers-mode)
-
-(add-hook 'LaTeX-mode-hook #'rainbow-delimiters-mode)
-
-;; make own conf file for lisp?
-(add-hook 'prog-mode-hook #'rainbow-blocks-mode)
