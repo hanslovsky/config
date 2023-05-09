@@ -98,9 +98,6 @@
 ;; jedi
 (load-file "~/.emacs.d/config/jedi-conf.el")
 
-;; gnuplot
-(load-file "~/.emacs.d/config/gnuplot-conf.el")
-
 ;; c-mode-common
 (load-file "~/.emacs.d/config/c-mode-common-conf.el")
 

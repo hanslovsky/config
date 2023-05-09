@@ -8,14 +8,7 @@
         ("melpa-stable" . 20)
         ("melpa" . 10)))
 
-;; emacs 27 might do that for us anyway
-(defun my/initialize-package-if-necessary ()
-  (when (not (boundp 'my/package-initialized))
-    (defvar my/package-initialized t)
-    (package-initialize)))
-
 (defun install_if_missing (package_name)
-  (my/initialize-package-if-necessary)
   (when (not (package-installed-p package_name))
     (message "Installing package %s..." package_name)
     (update_packages_if_necessary)
@@ -27,4 +20,3 @@
     (defvar elpa_update_check t)
     (package-refresh-contents)))
 
-(my/initialize-package-if-necessary)
