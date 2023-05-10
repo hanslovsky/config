@@ -1,19 +1,32 @@
-(use-package lsp-mode
+(use-package eglot
   :ensure t
-  :init
-  (setq lsp-keymap-prefix "C-c l")
-  :hook (
-         (prog-mode . lsp-deferred)
-         (lsp-mode . lsp-enable-which-key-integration)
-         )
-  :commands (lsp lsp-deferred))
-(use-package lsp-treemacs :ensure t :commands lsp-treemacs-errors-list)
-(use-package dap-mode :ensure t) ;; for debugger
-(use-package which-key :ensure t :config (which-key-mode))
+  :hook ((python-mode . eglot-ensure)
+         (rust-mode-hook . eglot-ensure)))
 
 
 ;; https://www.reddit.com/r/emacs/comments/qfrxgb/using_emacs_episode_80_vertico_marginalia_consult/
-(use-package vertico :ensure t :init (vertico-mode))
+(use-package vertico
+  :ensure t
+  :init (vertico-mode)
+  :custom
+  (vertico-count 30)
+  (vertico-resize nil)
+  (vertico-cycle t)
+  :bind (:map vertico-map
+              ;; cycle through candidate groups, e.g. buffers vs files in consult-buffer
+              ("C-M-n" . vertico-next-group)
+              ("C-M-p" . vertico-previous-group)))
+(use-package vertico-quick
+  :after vertico
+  :ensure nil
+  :bind (:map vertico-map
+              ("M-q"   . vertico-quick-insert)
+              ("C-q"   . vertico-quick-exit)))
+(use-package vertico-prescient
+  :ensure t
+  :after vertico
+  :hook (vertico-mode . vertico-prescient-mode))
+
 (use-package savehist :ensure t :init (savehist-mode))
 (use-package emacs
   :init
@@ -25,7 +38,7 @@
   :bind (("C-c M-x" . consult-mode-command)
          ("M-y"     . consult-yank-pop) ;; maybe use consult-yank-from-kill-ring instead
          ("C-c f"   . consult-recent-file)
-         ("C-x C-f" . consult-find)
+         ("C-x M-f" . consult-find)
          ("C-x b"   . consult-buffer)
          ("C-x C-b" . consult-buffer))
   :init (recentf-mode)
@@ -33,32 +46,34 @@
 
 (use-package marginalia
   :ensure t
-  :bind (("M-A" . marginalia-cycle)
-         :map minibuffer-local-map
-         ("M-A" . marginalia-cycle))
+  :bind (:map minibuffer-local-map
+              ("M-A" . marginalia-cycle))
   :init
   (marginalia-mode))
 
-;; (use-package company
-;;   :defer 2
-;;   :ensure t
-;;   :init
-;;   (defvar company-idle-delay 0.3)
-;;   (defvar company-show-numbers t)
-;;   (defvar company-minimum-prefix-length 1)
-;;   (defvar company-tooltip-limit 30)
-;;   (global-company-mode)
-;;   (defvar company-quickhelp-delay 0.1)
-;;   ;; Documentation popups for Company
-;;   (use-package company-quickhelp :ensure t)
-;;   (use-package helm-company :ensure t)
-;;   :config
-;;   (company-quickhelp-mode)
-;;   (progn
-;;     (define-key company-mode-map (kbd "C-.") 'company-files)
-;;     (define-key company-active-map (kbd "TAB") 'company-complete)
-;;     (define-key company-active-map (kbd "C-d") 'company-quickhelp-show)
-;;     (define-key company-active-map (kbd "M-d") 'company-show-doc-buffer)
-;;     (define-key company-active-map (kbd "C-h") 'helm-company)))
+(use-package all-the-icons :ensure t :if (display-graphic-p))
+(use-package all-the-icons-completion
+  :ensure t
+  :after (marginalia all-the-icons)
+  :hook (marginalia-mode . all-the-icons-completion-marginalia-setup)
+  :init (all-the-icons-completion-mode))
 
-;; (use-package company-lsp)
+(use-package company
+  :ensure t
+  :init
+  :bind (("C-." . company-files)
+         ("C-<tab>" . company-complete))
+  :config
+  (setq company-idle-delay 0.3)
+  (setq company-show-numbers t)
+  (setq company-tooltip-limit 30)
+  (setq company-minimum-prefix-length 1)
+  (global-company-mode t))
+
+(use-package company-quickhelp
+  :ensure t
+  :config
+  (setq company-quickhelp-delay 0.1)
+  :bind (:map company-active-map
+              ("C-c h". company-quickhelp-manual-begin))
+  :hook (company-mode . company-quickhelp-mode))

@@ -17,11 +17,8 @@
 ;; elpa
 (load-file "~/.emacs.d/config/elpa-conf.el")
 
-
 ;; use-package
 (install_if_missing 'use-package)
-
-
 
 ;; auto-complete and narrowing
 (load-file "~/.emacs.d/config/completion-narrowing.el")
@@ -76,9 +73,6 @@
 
 ;; version control
 (load-file "~/.emacs.d/config/vc.el")
-
-;; python-mode
-(load-file "~/.emacs.d/config/python-conf.el")
 
 ;; functions
 ;; kill
