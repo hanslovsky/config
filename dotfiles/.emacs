@@ -108,9 +108,6 @@
 ;; perspective
 (use-package perspective :ensure t :defer 1 :config (persp-mode 1))
 
-;; projectile
-(load-file "~/.emacs.d/config/projectile-conf.el" )
-
 ;; do not store settings made through customize in ~/.emacs
 (setq custom-file "~/.emacs.d/config/custom.el")
 (load custom-file 'noerror)
