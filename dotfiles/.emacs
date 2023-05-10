@@ -21,17 +21,17 @@
 ;; use-package
 (install_if_missing 'use-package)
 
-;; helm
-(load-file "~/.emacs.d/config/helm.el")
 
-;; company
-(load-file "~/.emacs.d/config/company.el")
+
+;; auto-complete and narrowing
+(load-file "~/.emacs.d/config/completion-narrowing.el")
 
 ;; volatile highlights mode
 (use-package volatile-highlights
   :defer 2
   :ensure t
-  :bind ("<f8>" . volatile-highlights-mode))
+  :bind ("<f8>" . volatile-highlights-mode)
+  :init (volatile-highlights-mode))
 
 ;; markdown
 (load-file "~/.emacs.d/config/markdown.el")

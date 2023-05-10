@@ -144,3 +144,4 @@
 ;; math stuff
 (install_if_missing 'math-symbol-lists)
 (install_if_missing 'math-symbols)
+
