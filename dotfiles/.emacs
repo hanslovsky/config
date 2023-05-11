@@ -62,9 +62,6 @@
 ;; theme related settings
 (load-file "~/.emacs.d/config/themes-conf.el")
 
-;; calendar
-(load-file "~/.emacs.d/config/calendar.el")
-
 ;; speedbar - deactivate now due to a bug with emacsclient
 ;; (load-file "~/.emacs.d/config/speedbar-conf.el")
 
