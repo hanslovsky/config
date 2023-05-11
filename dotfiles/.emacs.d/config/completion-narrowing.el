@@ -1,3 +1,10 @@
+;; (use-package rust-mode)
+;; (use-package tree-sitter
+;;   :config
+;;   (require 'tree-sitter-langs)
+;;   (global-tree-sitter-mode)
+;;   (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode))`
+
 (use-package eglot
   :ensure t
   :hook ((python-mode . eglot-ensure)
@@ -22,10 +29,19 @@
   :bind (:map vertico-map
               ("M-q"   . vertico-quick-insert)
               ("C-q"   . vertico-quick-exit)))
+(use-package vertico-indexed
+  :after vertico
+  :ensure nil
+  :hook (vertico-mode . vertico-indexed-mode)
+  :init (vertico-indexed-mode))
+  ;; :bind (:map vertico-map
+              ;; ("M-q"   . vertico-quick-insert)
+              ;; ("C-q"   . vertico-quick-exit)))
 (use-package vertico-prescient
   :ensure t
   :after vertico
-  :hook (vertico-mode . vertico-prescient-mode))
+  :hook (vertico-mode . vertico-prescient-mode)
+  :init (vertico-prescient-mode))
 
 (use-package savehist :ensure t :init (savehist-mode))
 (use-package emacs
