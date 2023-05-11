@@ -21,7 +21,7 @@
 ;; (set-default 'cursor-type 'hollow) ;; hollow box
 
 ;; enable left hand side line numbers
-(global-linum-mode t)
+(global-display-line-numbers-mode)
 
 ;; write y instead of yes
 (fset 'yes-or-no-p 'y-or-n-p)
