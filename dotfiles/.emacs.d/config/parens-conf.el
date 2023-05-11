@@ -1,7 +1,8 @@
-(install_if_missing 'highlight-parentheses)
+(use-package highlight-parentheses
+  :ensure t
+  ;; use electric pair mode to create matching pairs of parens instead of autopair
+  :init (electric-pair-mode 1))
 
-;; use electric pair mode to create matching pairs of parens
-;; instead of autopair
 (electric-pair-mode 1)
 
 ;; enable highlight-parentheses in all buffers
