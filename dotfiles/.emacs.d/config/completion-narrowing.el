@@ -16,8 +16,8 @@
   :ensure t
   :init (vertico-mode)
   :custom
-  (vertico-count 30)
-  (vertico-resize nil)
+  (vertico-count 20)
+  (vertico-resize t)
   (vertico-cycle t)
   :bind (:map vertico-map
               ;; cycle through candidate groups, e.g. buffers vs files in consult-buffer
@@ -37,6 +37,12 @@
   ;; :bind (:map vertico-map
               ;; ("M-q"   . vertico-quick-insert)
               ;; ("C-q"   . vertico-quick-exit)))
+(use-package vertico-reverse
+  :after vertico
+  :ensure nil
+  :hook (vertico-mode . vertico-reverse-mode)
+  :init (vertico-reverse-mode))
+
 (use-package vertico-prescient
   :ensure t
   :after vertico
