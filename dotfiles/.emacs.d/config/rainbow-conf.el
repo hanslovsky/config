@@ -7,5 +7,4 @@
   )
 (use-package rainbow-delimiters :ensure t :hook (prog-mode LaTeX-mode))
 (use-package rainbow-identifiers :ensure t)
-(use-package rainbow-blocks :ensure t :hook (prog-mode))
 
