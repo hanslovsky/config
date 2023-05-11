@@ -42,6 +42,21 @@
   :ensure nil
   :hook (vertico-mode . vertico-reverse-mode)
   :init (vertico-reverse-mode))
+(use-package vertico-grid
+  :after vertico
+  :ensure nil)
+(use-package vertico-multiform
+  ;; Temporary toggling between the different display modes is possible.
+  ;; The following keys are bound in the `vertico-multiform-map'.
+  ;;
+  ;;   M-V -> `vertico-multiform-vertical'
+  ;;   M-G -> `vertico-multiform-grid'
+  ;;   M-F -> `vertico-multiform-flat'
+  ;;   M-R -> `vertico-multiform-reverse'
+  ;;   M-U -> `vertico-multiform-unobtrusive'
+  :after vertico
+  :ensure nil
+  :init (vertico-multiform-mode))
 
 (use-package vertico-prescient
   :ensure t
