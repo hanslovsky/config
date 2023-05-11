@@ -20,18 +20,17 @@
 (set-default 'cursor-type 'box) ;; box
 ;; (set-default 'cursor-type 'hollow) ;; hollow box
 
-;; set cursor color
-;; (set-cursor-color "black")
-
 ;; enable left hand side line numbers
 (global-linum-mode t)
 
 ;; write y instead of yes
 (fset 'yes-or-no-p 'y-or-n-p)
 
-;; In every buffer, the line which contains the cursor will be fully
-;; highlighted
-(global-hl-line-mode 1)
+;; smart cursor (cursor color equals text color)
+(use-package smart-cursor-color :ensure t)
+(smart-cursor-color-mode 1)
+;; smart cursor color does not work with global hl line mode
+(global-hl-line-mode -1)
 
 ;; no startup-screen
 (setq inhibit-startup-screen t)
@@ -44,10 +43,6 @@
 
 ;; blinking cursor
 (blink-cursor-mode 1)
-
-;; smart cursor (cursor color equals text color)
-(install_if_missing 'smart-cursor-color)
-(smart-cursor-color-mode 1)
 
 ;; settings for backup files (*~):
 (setq backup-directory-alist '(("." . "~/.emacs.d/backup"))
@@ -108,40 +103,35 @@
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'forward)
 
-;; auto fill
-;; no auto fill, use visual line mode instead
-;; (add-hook 'text-mode-hook 'turn-on-auto-fill)
-
-(install_if_missing 'visual-fill-column)
+(use-package visual-fill-column :ensure t)
 (global-visual-line-mode)
-
 ;; set fill column to 100
 (setq-default fill-column 100)
 
-(install_if_missing 'visible-mark)
+(use-package visible-mark :ensure t)
 (global-visible-mark-mode 1)
 
-(install_if_missing 'visual-regexp)
-(install_if_missing 'visual-regexp-steroids)
-(define-key global-map (kbd "C-c r") 'vr/replace)
-(define-key global-map (kbd "C-c q") 'vr/query-replace)
-(define-key esc-map (kbd "C-r") 'vr/isearch-backward) ;; C-M-r
-(define-key esc-map (kbd "C-s") 'vr/isearch-forward) ;; C-M-s
+(use-package visual-regexp :ensure t)
+(use-package visual-regexp-steroids
+  :ensure t
+  :after visual-regexp
+  :bind ((:map global-map
+               ("C-c r" . vr/replace)
+               ("C-c q" . vr/query-replace))
+         (:map esc-map
+               ("C-r" . vr/isearch-backward)
+               ("C-s" . vr/isearch-forward))))
 
-;; set split variables to force horizontal split
-;; (setq split-height-threshold nil)
-;; (setq split-width-threshold 0)
-
-(install_if_missing 'restart-emacs)
+(use-package restart-emacs :ensure t)
 
 ;; get environment variables from shell
-(install_if_missing 'exec-path-from-shell)
+(use-package exec-path-from-shell :ensure t)
 (when (or (eq system-type 'darwin) (eq system-type 'gnu/linux))
   (exec-path-from-shell-initialize))
 
 (setq user-full-name  "Philipp Hanslovsky")
 
 ;; math stuff
-(install_if_missing 'math-symbol-lists)
-(install_if_missing 'math-symbols)
+(use-package math-symbol-lists :ensure t)
+(use-package math-symbols :ensure t)
 
