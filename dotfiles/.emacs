@@ -103,9 +103,33 @@
 (setq custom-file "~/.emacs.d/config/custom.el")
 (load custom-file 'noerror)
 
-;;; experimental packages:
-(use-package doom-modeline :defer 2  :ensure t)
-(use-package eyebrowse :defer 2 :ensure t)
 (use-package doom-themes :defer 2 :ensure t)
 
+;;; modeline
+(use-package ghub :ensure t)
+(use-package doom-modeline
+  :defer 2
+  :ensure t
+  :config
+  (setq doom-modeline-minor-modes t
+        doom-modeline-major-mode-color-icon t
+        doom-modeline-buffer-state-icon t
+        doom-modeline-buffer-modification-icon nil
+        doom-modeline-time-icon nil
+        doom-modeline-battery t
+        doom-modeline-time t
+        doom-modeline-lsp nil
+        doom-modeline-enable-word-count t
+        doom-modeline-continuous-word-count-modes '(markdown-mode gfm-mode org-mode)
+        doom-modeline-buffer-encoding nil
+        doom-modeline-indent-info nil
+        doom-modeline-vcs-max-length 12
+        doom-modeline-github nil
+        doom-modeline-github-interval (* 30 60))
+  :init (doom-modeline-mode 1))
+(use-package minions :ensure t :init (minions-mode))
+(use-package keycast :ensure t :init (keycast-header-line-mode))
+
+;;; TODO
+(use-package eyebrowse :defer 2 :ensure t)
 

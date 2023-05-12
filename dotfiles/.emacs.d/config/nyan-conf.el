@@ -5,3 +5,4 @@
   (nyan-start-animation)  ;; make sure nyan cat is animated
   )
 
+;; TODO: https://depp.brause.cc/zone-nyan/
