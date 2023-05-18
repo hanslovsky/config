@@ -9,7 +9,7 @@ alias -g NO_ERR='2>/dev/null'
 # no output at all
 alias -g SILENCE='1>/dev/null 2>&1'
 
-if [ "$(uname -o)" = "Darwin" ]; then
+if [ "$(uname -o 2>/dev/null)" = "Darwin" -o "$(uname -s)" = "Darwin"]; then
     copy_command=pbcopy
 elif [ "$XDG_SESSION_TYPE" = wayland ]; then
     if hash wl-copy 2>/dev/null; then
