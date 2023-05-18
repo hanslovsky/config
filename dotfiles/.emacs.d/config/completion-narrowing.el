@@ -1,14 +1,23 @@
-;; (use-package rust-mode)
-;; (use-package tree-sitter
-;;   :config
-;;   (require 'tree-sitter-langs)
-;;   (global-tree-sitter-mode)
-;;   (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode))`
+(use-package rust-mode :ensure t)
+(use-package tree-sitter
+  :ensure t
+  :config
+  (require 'tree-sitter-langs)
+  (global-tree-sitter-mode)
+  (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode))
 
 (use-package eglot
   :ensure t
+  :config (​add-to-list​ ​'eglot-server-programs​ '((​rust-mode​) ​.​ (​"​rust-analyzer​"​)))
   :hook ((python-mode . eglot-ensure)
-         (rust-mode-hook . eglot-ensure)))
+         (rust-mode . eglot-ensure)))
+
+(use-package tree-sitter
+  :ensure t
+  :init (global-tree-sitter-mode)
+  :hook ((python-mode . tree-sitter-hl-mode)
+         (rust-mode . tree-sitter-hl-mode)))
+(use-package tree-sitter-langs :ensure t)
 
 
 ;; https://www.reddit.com/r/emacs/comments/qfrxgb/using_emacs_episode_80_vertico_marginalia_consult/
@@ -114,3 +123,9 @@
   :bind (:map company-active-map
               ("C-c h". company-quickhelp-manual-begin))
   :hook (company-mode . company-quickhelp-mode))
+
+;; Requires latest master of company mode (later than 0.9.13)
+(use-package company-box
+  :ensure t
+  :hook (company-mode . company-box-mode)
+  :init (company-box-mode))
