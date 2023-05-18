@@ -9,11 +9,20 @@ alias -g NO_ERR='2>/dev/null'
 # no output at all
 alias -g SILENCE='1>/dev/null 2>&1'
 
-if hash wl-copy 2>/dev/null; then
-
-    copy_command=wl-copy
-elif hash xclip 2> /dev/null; then
-    copy_command="xclip -selection clipboard"
+if [ "$(uname -o)" = "Darwin" ]; then
+    copy_command=pbcopy
+elif [ "$XDG_SESSION_TYPE" = wayland ]; then
+    if hash wl-copy 2>/dev/null; then
+        copy_command=wl-copy
+    else
+        echo "Will not set global copy aliases: No wl-copy installed"
+    fi
+elif [ "$XDG_SESSION_TYPE" = x11 ]; then
+    if hash xclip 2> /dev/null; then
+        copy_command="xclip -selection clipboard"
+    else
+        echo "Will not set global copy aliases: No xclip installed"
+    fi
 fi
 
 if [ -n "$copy_command" ]; then
@@ -22,7 +31,7 @@ if [ -n "$copy_command" ]; then
     alias -g NL_CLIPBOARD="| $copy_command"
 
     # copy to clipboard w/o trailing new line
-    alias -g CLIPBOARD='| xargs -d "\n" printf %s |'"$copy_command"
+    alias -g CLIPBOARD='| xargs -d "\n" printf %s | '"$copy_command"
 
     # copy to clipboard
     alias -g NLCP="| $copy_command"
