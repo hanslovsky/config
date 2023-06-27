@@ -73,7 +73,10 @@
   :hook (vertico-mode . vertico-prescient-mode)
   :init (vertico-prescient-mode))
 
-(use-package savehist :ensure t :init (savehist-mode))
+;; savehist is not on elpa, so we cannot install it. it will always check for it again.
+;; TODO where should we move savehist-mode? Should this be in here?
+(savehist-mode)
+
 (use-package emacs
   :init
   ;; Enable recursive minibuffers
