@@ -226,3 +226,25 @@ autoload -U zmv
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/zottel/mambaforge/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/zottel/mambaforge/etc/profile.d/conda.sh" ]; then
+        . "/home/zottel/mambaforge/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/zottel/mambaforge/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+
+if [ -f "/home/zottel/mambaforge/etc/profile.d/mamba.sh" ]; then
+    . "/home/zottel/mambaforge/etc/profile.d/mamba.sh"
+fi
+# <<< conda initialize <<<
+
+# opam configuration
+[[ ! -r /home/zottel/.opam/opam-init/init.zsh ]] || source /home/zottel/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
