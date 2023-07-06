@@ -129,3 +129,7 @@ aws-profile () {
     [ -n "$PROFILE" ] && export AWS_PROFILE=$PROFILE  && export AWS_DEFAULT_PROFILE=$PROFILE  && echo Updated AWS profile to $PROFILE
 }
 
+add () {
+    awk '{sum+=$1} END {print sum}' "$@"
+}
+
