@@ -105,7 +105,9 @@ ungrab-cursor() {
 }
 
 # Kubernetes
-source <(kubectl completion zsh)  # setup autocomplete in zsh into the current shell
+if hash kubectl 2>/dev/null; then
+    source <(kubectl completion zsh)  # setup autocomplete in zsh into the current shell
+fi
 
 if hash kubecolor 2>/dev/null; then
     # TODO: auto-completion currently does not work for kubecolor
