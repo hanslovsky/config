@@ -23,7 +23,7 @@
 (when (< emacs-major-version 27)
   (load (concat user-emacs-directory "early-init") nil 'nomessage))
 
-(let ((debug-on-error nil)
+(let ((debug-on-error t)
       (debug-on-quit t)
       ;; Every require/load looks at this, so removing it gets us a small
       ;; performance improvement. However we do want it set after loading
@@ -31,16 +31,22 @@
       ;; block.
       (file-name-handler-alist nil))
 
+  (defun my/load-conf (name)
+    (load-file (format "~/.emacs.d/config/%s.el" name)))
+
+  (defun my/load-confs (names)
+    (mapcar #'my/load-conf names))
+
   (package-activate-all)
 
   ;; elpa
-  (load-file "~/.emacs.d/config/elpa.el")
+  (my/load-conf 'elpa)
 
   ;; use-package
   (install_if_missing 'use-package)
 
   ;; auto-complete and narrowing
-  (load-file "~/.emacs.d/config/completion-narrowing.el")
+  (my/load-conf 'completion-narrowing)
 
   ;; volatile highlights mode
   (use-package volatile-highlights
@@ -49,14 +55,7 @@
     :bind ("<f8>" . volatile-highlights-mode)
     :init (volatile-highlights-mode))
 
-  ;; markdown
-  (load-file "~/.emacs.d/config/markdown.el")
-
-  ;; auctex
-  (load-file "~/.emacs.d/config/latex.el")
-
-  ;; general config
-  (load-file "~/.emacs.d/config/general.el")
+  (my/load-confs '("markdown" "latex" "general"))
 
   ;; iedit
   (use-package iedit :ensure t :defer 2 :bind (("C-;" . iedit-mode) ("C-x r <return>" . 'iedit-rectangle-mode)))
@@ -65,35 +64,13 @@
   (use-package json-mode :defer t :ensure t :mode "\\.json\\'")
 
   ;; theme related settings
-  (load-file "~/.emacs.d/config/themes.el")
+  (my/load-conf 'themes)
 
   ;; undo tree
   (use-package undo-tree :defer 2 :ensure t :diminish undo-tree-mode :init (global-undo-tree-mode))
 
-  ;; version control
-  (load-file "~/.emacs.d/config/vc.el")
-
-  ;; functions
-  ;; kill
-  (load-file "~/.emacs.d/config/kill.el")
-
-  ;; utility
-  (load-file "~/.emacs.d/config/utility.el")
-
-  ;; write to file and keep buffer
-  (load-file "~/.emacs.d/config/write-file-and-keep-buffer.el")
-
-  ;; show color for color representations
-  (load-file "~/.emacs.d/config/rainbow.el")
-
-  ;; parantheses highlighting and completion
-  (load-file "~/.emacs.d/config/parens.el")
-
-  ;; google
-  (load-file "~/.emacs.d/config/google.el")
-
-  ;; nyan cat
-  (load-file "~/.emacs.d/config/nyan.el")
+  (my/load-confs
+   '("vc" "kill" "utility" "write-file-and-keep-buffer" "rainbow" "parens" "google" "nyan"))
 
   ;; esup
   ;; start-up profiler
