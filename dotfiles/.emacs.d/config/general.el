@@ -1,3 +1,5 @@
+;;; general-conf.el  -*- lexical-binding: t; -*-
+
 ;; provide general config
 
 ;; Show line-number in the mode line

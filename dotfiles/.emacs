@@ -1,4 +1,4 @@
-;;; package -- Summary
+;;; package -- Summary -*- lexical-binding: t; -*-
 ;;; Commentary:
 ;; This is my Emacs file.  It has grown over time and will certainly do so in future
 ;; To put some structure in my config I decided to split it up into smaller config files
@@ -13,123 +13,128 @@
 ;; 4. auto-mode-alist looking at the filename (prefer to use this)
 ;; https://www.gnu.org/software/emacs/manual/html_node/emacs/Choosing-Modes.html
 
-(setq gc-cons-threshold 100000000)
-;; elpa
-(load-file "~/.emacs.d/config/elpa-conf.el")
+;; TODO Do I need to fail on emacs version < 26?
+(when (version< emacs-version "26.1")
+  (error "Detected Emacs %s but only 26.1 and higher is supported"
+	 emacs-version))
 
-;; use-package
-(install_if_missing 'use-package)
+;; Support for early-init was added in Emacs 27 so in order to properly support
+;; Emacs 26, we need to manually load it.
+(when (< emacs-major-version 27)
+  (load (concat user-emacs-directory "early-init") nil 'nomessage))
 
-;; auto-complete and narrowing
-(load-file "~/.emacs.d/config/completion-narrowing.el")
+(let ((debug-on-error nil)
+      (debug-on-quit t)
+      ;; Every require/load looks at this, so removing it gets us a small
+      ;; performance improvement. However we do want it set after loading
+      ;; everything, so we use let so this will return to normal after this
+      ;; block.
+      (file-name-handler-alist nil))
 
-;; volatile highlights mode
-(use-package volatile-highlights
-  :defer 2
-  :ensure t
-  :bind ("<f8>" . volatile-highlights-mode)
-  :init (volatile-highlights-mode))
+  (package-activate-all)
 
-;; markdown
-(load-file "~/.emacs.d/config/markdown.el")
+  ;; elpa
+  (load-file "~/.emacs.d/config/elpa.el")
 
-;; auctex
-(load-file "~/.emacs.d/config/latex.el")
+  ;; use-package
+  (install_if_missing 'use-package)
 
-;; general config
-(load-file "~/.emacs.d/config/general-conf.el")
+  ;; auto-complete and narrowing
+  (load-file "~/.emacs.d/config/completion-narrowing.el")
 
-;; iedit
-(use-package iedit :ensure t :defer 2 :bind (("C-;" . iedit-mode) ("C-x r <return>" . 'iedit-rectangle-mode)))
+  ;; volatile highlights mode
+  (use-package volatile-highlights
+    :defer 2
+    :ensure t
+    :bind ("<f8>" . volatile-highlights-mode)
+    :init (volatile-highlights-mode))
 
-;; minimap
-;; http://elpa.gnu.org/packages/minimap.html
-(use-package minimap
-  :defer 2
-  :ensure t
-  :init
-  (setq minimap-always-recenter t)
-  (setq minimap-dedicated-window t)
-  (setq minimap-minimum-width 20)
-  (setq minimum-recreate-window t)
-  (setq minimap-automatically-delete-window t)
-  (setq minimap-update-delay 0.03)
-  :bind ("<f7>" . minimap-mode))
+  ;; markdown
+  (load-file "~/.emacs.d/config/markdown.el")
 
-;; json
-(use-package json-mode :defer t :ensure t :mode "\\.json\\'")
+  ;; auctex
+  (load-file "~/.emacs.d/config/latex.el")
 
-;; theme related settings
-(load-file "~/.emacs.d/config/themes-conf.el")
+  ;; general config
+  (load-file "~/.emacs.d/config/general.el")
 
-;; speedbar - deactivate now due to a bug with emacsclient
-;; (load-file "~/.emacs.d/config/speedbar-conf.el")
+  ;; iedit
+  (use-package iedit :ensure t :defer 2 :bind (("C-;" . iedit-mode) ("C-x r <return>" . 'iedit-rectangle-mode)))
 
-;; undo tree
-(use-package undo-tree :defer 2 :ensure t :diminish undo-tree-mode :init (global-undo-tree-mode))
+  ;; json
+  (use-package json-mode :defer t :ensure t :mode "\\.json\\'")
 
-;; version control
-(load-file "~/.emacs.d/config/vc.el")
+  ;; theme related settings
+  (load-file "~/.emacs.d/config/themes.el")
 
-;; functions
-;; kill
-(load-file "~/.emacs.d/functions/kill.el")
+  ;; undo tree
+  (use-package undo-tree :defer 2 :ensure t :diminish undo-tree-mode :init (global-undo-tree-mode))
 
-;; utility
-(load-file "~/.emacs.d/functions/utility.el")
+  ;; version control
+  (load-file "~/.emacs.d/config/vc.el")
 
-;; write to file and keep buffer
-(load-file "~/.emacs.d/functions/write-file-and-keep-buffer.el")
+  ;; functions
+  ;; kill
+  (load-file "~/.emacs.d/config/kill.el")
 
-;; show color for color representations
-(load-file "~/.emacs.d/config/rainbow-conf.el")
+  ;; utility
+  (load-file "~/.emacs.d/config/utility.el")
 
-;; parantheses highlighting and completion
-(load-file "~/.emacs.d/config/parens-conf.el")
+  ;; write to file and keep buffer
+  (load-file "~/.emacs.d/config/write-file-and-keep-buffer.el")
 
-;; google
-(load-file "~/.emacs.d/config/google-conf.el")
+  ;; show color for color representations
+  (load-file "~/.emacs.d/config/rainbow.el")
 
-;; nyan cat
-(load-file "~/.emacs.d/config/nyan-conf.el")
+  ;; parantheses highlighting and completion
+  (load-file "~/.emacs.d/config/parens.el")
 
-;; esup
-(use-package esup :ensure t :defer 2 :config (setq esup-user-init-file (file-truename "~/.emacs")))
+  ;; google
+  (load-file "~/.emacs.d/config/google.el")
 
-;; perspective
-(use-package perspective :ensure t :defer 1 :config (persp-mode 1))
+  ;; nyan cat
+  (load-file "~/.emacs.d/config/nyan.el")
 
-;; do not store settings made through customize in ~/.emacs
-(setq custom-file "~/.emacs.d/config/custom.el")
-(load custom-file 'noerror)
+  ;; esup
+  ;; start-up profiler
+  (use-package esup :ensure t :defer 2 :config (setq esup-user-init-file (file-truename "~/.emacs")))
 
-(use-package doom-themes :defer 2 :ensure t)
+  ;; perspective
+  (use-package perspective :ensure t :defer 1 :config (persp-mode 1))
 
-;;; modeline
-(use-package ghub :ensure t)
-(use-package doom-modeline
-  :defer 2
-  :ensure t
-  :config
-  (setq doom-modeline-minor-modes t
-        doom-modeline-major-mode-color-icon t
-        doom-modeline-buffer-state-icon t
-        doom-modeline-buffer-modification-icon nil
-        doom-modeline-time-icon nil
-        doom-modeline-battery t
-        doom-modeline-time t
-        doom-modeline-lsp nil
-        doom-modeline-enable-word-count t
-        doom-modeline-continuous-word-count-modes '(markdown-mode gfm-mode org-mode)
-        doom-modeline-buffer-encoding nil
-        doom-modeline-indent-info nil
-        doom-modeline-vcs-max-length 12
-        doom-modeline-github nil
-        doom-modeline-github-interval (* 30 60))
-  :init (doom-modeline-mode 1))
-(use-package minions :ensure t :init (minions-mode))
-(use-package keycast :ensure t :init (keycast-header-line-mode))
+  ;; do not store settings made through customize in ~/.emacs
+  (setq custom-file "~/.emacs.d/config/custom.el")
+  (load custom-file 'noerror)
 
-;;; TODO
-(use-package eyebrowse :defer 2 :ensure t)
+  (use-package doom-themes :defer 2 :ensure t)
+
+  ;;; modeline
+  (use-package ghub :ensure t)
+  (use-package doom-modeline
+    :defer 2
+    :ensure t
+    :config
+    (setq doom-modeline-minor-modes t
+          doom-modeline-major-mode-color-icon t
+          doom-modeline-buffer-state-icon t
+          doom-modeline-buffer-modification-icon nil
+          doom-modeline-time-icon nil
+          doom-modeline-battery t
+          doom-modeline-time t
+          doom-modeline-lsp nil
+          doom-modeline-enable-word-count t
+          doom-modeline-continuous-word-count-modes '(markdown-mode gfm-mode org-mode)
+          doom-modeline-buffer-encoding nil
+          doom-modeline-indent-info nil
+          doom-modeline-vcs-max-length 12
+          doom-modeline-github nil
+          doom-modeline-github-interval (* 30 60))
+    :init (doom-modeline-mode 1))
+  (use-package minions :ensure t :init (minions-mode))
+  (use-package keycast :ensure t :init (keycast-header-line-mode))
+
+  ;;; TODO
+  (use-package eyebrowse :defer 2 :ensure t)
+
+  )
 

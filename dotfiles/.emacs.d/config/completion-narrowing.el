@@ -19,6 +19,12 @@
          (rust-mode . tree-sitter-hl-mode)))
 (use-package tree-sitter-langs :ensure t)
 
+(use-package tuareg :ensure t)
+(use-package merlin
+  :ensure t
+  :hook ((tuareg-mode . merlin-mode)
+         (caml-mode-hook merlin-mode)))
+
 
 ;; https://www.reddit.com/r/emacs/comments/qfrxgb/using_emacs_episode_80_vertico_marginalia_consult/
 (use-package vertico

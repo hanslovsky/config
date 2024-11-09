@@ -1,3 +1,4 @@
+;;; elpa-conf.el -*- lexical-binding: t; -*-
 ;; set repositories for elpa
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
                          ("melpa" . "http://melpa.org/packages/")
