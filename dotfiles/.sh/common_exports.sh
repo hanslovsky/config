@@ -95,3 +95,11 @@ if [ -z "${JAVA_HOME}" ]; then
 fi
 
 hash brave 2>/dev/null && export BROWSER=brave
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+# CONDA
+[[ -s "$HOME/.sh/conda.sh" ]] && source "$HOME/.sh/conda.sh"
+

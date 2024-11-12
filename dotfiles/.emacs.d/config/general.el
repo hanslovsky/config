@@ -127,9 +127,10 @@
 (use-package restart-emacs :ensure t)
 
 ;; get environment variables from shell
-(use-package exec-path-from-shell :ensure t)
-(when (or (eq system-type 'darwin) (eq system-type 'gnu/linux))
-  (exec-path-from-shell-initialize))
+;; TODO this is very slow. Will need to re-work ~/.zshrc into ~/.zshenv so I can use non-interactive shell
+;; (use-package exec-path-from-shell :ensure t)
+;; (when (or (eq system-type 'darwin) (eq system-type 'gnu/linux))
+;;   (exec-path-from-shell-initialize))
 
 (setq user-full-name  "Philipp Hanslovsky")
 

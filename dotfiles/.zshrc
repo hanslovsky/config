@@ -75,11 +75,6 @@ zplug "desyncr/geometry-pretty-git"
 # basename: missing operand
 # https://github.com/fribmendes/geometry/tree/master/plugins
 
-IFS=. read major minor patch <<<"${ZSH_VERSION##*-}"
-export ZSH_VERSION_MAJOR=${major}
-export ZSH_VERSION_MINOR=${minor}
-export ZSH_VERSION_PATCH=${patch}
-
 if [ "${ZSH_VERSION_MAJOR}" -ge "5" -a "${ZSH_VERSION_MINOR}" -ge "1" ]; then
     export GEOMETRY_PROMPT_PLUGINS=(exec_time jobs virtualenv git pretty-git hydrate)
 fi
@@ -172,25 +167,6 @@ if [ -f ~/.sh/zsh_aliases.sh ]; then
     . ~/.sh/zsh_aliases.sh
 fi
 
-# convenience function
-if [ -f ~/.sh/convenience_functions.sh ]; then
-    . ~/.sh/convenience_functions.sh
-fi
-
-# set environment variables
-if [ -f ~/.sh/common_exports.sh ]; then
-    . ~/.sh/common_exports.sh
-fi
-
-# set environment variables
-if [ -f ~/.sh/zsh_exports.sh ]; then
-    . ~/.sh/zsh_exports.sh
-fi
-
-if [ -f ~/.sh/source_custom.sh ]; then
-    . ~/.sh/source_custom.sh
-fi
-
 if [[ -n "$DISPLAY" && -n "" ]]; then
     CURR_DIR=$(pwd)
     cd ~/.sh/greet_dir
@@ -222,11 +198,6 @@ bindkey -M isearch " " magic-space # normal space during searches
 
 # enable zmv
 autoload -U zmv
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-[[ -s "$HOME/.sh/conda.sh" ]] && source "$HOME/.sh/conda.sh"
 
 # opam configuration
 [[ ! -r /home/zottel/.opam/opam-init/init.zsh ]] || source /home/zottel/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null

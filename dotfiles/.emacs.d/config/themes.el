@@ -1,6 +1,6 @@
 (use-package theme-changer :ensure t)
 (use-package gandalf-theme :ensure t)
-(use-package zenburn-theme :ensure t)
+;; (use-package zenburn-theme :ensure t)
 (use-package railscasts-theme :ensure t)
 ;; (use-package moe-theme :ensure t) ;; https://github.com/kuanyui/moe-theme.el ;; currently not working for some reason
 (use-package material-theme :ensure t) ;; pretty good theme

@@ -23,6 +23,8 @@
 (when (< emacs-major-version 27)
   (load (concat user-emacs-directory "early-init") nil 'nomessage))
 
+(setq use-package-compute-statistics t)
+
 (let ((debug-on-error t)
       (debug-on-quit t)
       ;; Every require/load looks at this, so removing it gets us a small
@@ -45,6 +47,13 @@
   ;; use-package
   (install_if_missing 'use-package)
 
+  ;; benchmark start-up time
+  (use-package benchmark-init
+    :ensure t
+    :config
+    ;; To disable collection of benchmark data after init is done.
+    (add-hook 'after-init-hook 'benchmark-init/deactivate))
+
   ;; auto-complete and narrowing
   (my/load-conf 'completion-narrowing)
 
@@ -64,17 +73,13 @@
   (use-package json-mode :defer t :ensure t :mode "\\.json\\'")
 
   ;; theme related settings
-  (my/load-conf 'themes)
+  ;; (my/load-conf 'themes)
 
   ;; undo tree
   (use-package undo-tree :defer 2 :ensure t :diminish undo-tree-mode :init (global-undo-tree-mode))
 
   (my/load-confs
    '("vc" "kill" "utility" "write-file-and-keep-buffer" "rainbow" "parens" "google" "nyan"))
-
-  ;; esup
-  ;; start-up profiler
-  (use-package esup :ensure t :defer 2 :config (setq esup-user-init-file (file-truename "~/.emacs")))
 
   ;; perspective
   (use-package perspective :ensure t :defer 1 :config (persp-mode 1))
@@ -83,7 +88,7 @@
   (setq custom-file "~/.emacs.d/config/custom.el")
   (load custom-file 'noerror)
 
-  (use-package doom-themes :defer 2 :ensure t)
+  ;; (use-package doom-themes :defer 2 :ensure t)
 
   ;;; modeline
   (use-package ghub :ensure t)
