@@ -20,6 +20,12 @@
 
 (setq use-package-compute-statistics t)
 
+;; elpa package archives
+(setq package-archives '(("melpa" . "http://melpa.org/packages/")
+                         ("melpa-stable" . "https://stable.melpa.org/packages/")
+			 ("gnu" . "https://elpa.gnu.org/packages/")
+			 ("nongnu" . "https://elpa.nongnu.org/nongnu/")))
+
 (let ((debug-on-error t)
       (debug-on-quit t)
       ;; Every require/load looks at this, so removing it gets us a small
@@ -29,7 +35,7 @@
       (file-name-handler-alist nil))
 
   (defun my/load-conf (name)
-    (load-file (format "~/.emacs.d/config/%s.el" name)))
+    (load-file (format "~/.config/emacs/config/%s.el" name)))
 
   (package-activate-all)
 
@@ -39,10 +45,6 @@
     :config
     ;; To disable collection of benchmark data after init is done.
     (add-hook 'after-init-hook 'benchmark-init/deactivate))
-
-  ;; elpa package archives
-  (setq package-archives '(("melpa" . "http://melpa.org/packages/")
-                         ("melpa-stable" . "https://stable.melpa.org/packages/")))
 
   (defvar package-archive-priorities
     '(("melpa-stable" . 20)
@@ -69,8 +71,9 @@
          (rust-mode . eglot-ensure)))
   
 
-  ;; undo tree; open with C-x u
-  (use-package undo-tree :defer 2 :ensure t :diminish undo-tree-mode :init (global-undo-tree-mode))
+  ;; visual undo tree
+  ;; How to bind to a good key?
+  (use-package vundo :defer 2 :ensure t)
 
   ;; rainbow mode for parens and delimiters
   (use-package rainbow-mode
@@ -145,7 +148,7 @@
   (my/load-conf 'save-as)
   
   ;; do not store settings made through customize in ~/.emacs
-  (setq custom-file "~/.emacs.d/config/custom.el")
+  (setq custom-file "~/.config/emacs/config/custom.el")
   (load custom-file 'noerror)
 
   ;; (use-package doom-themes :defer 2 :ensure t)
