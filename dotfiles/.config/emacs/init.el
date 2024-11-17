@@ -141,6 +141,10 @@
                                      "/nrs/.*"
                                      "/ssh:.+:/nrs/.*"))
 
+  ;; load narrowing and copmletion packages
+  ;; needs a revisit
+  (my/load-conf 'completion-narrowing)
+
   ;; Add function nuke-some-buffers that closes all unmodified buffers and prompts for others
   (my/load-conf 'kill)
 
