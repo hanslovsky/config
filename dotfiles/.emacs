@@ -14,14 +14,9 @@
 ;; https://www.gnu.org/software/emacs/manual/html_node/emacs/Choosing-Modes.html
 
 ;; TODO Do I need to fail on emacs version < 26?
-(when (version< emacs-version "26.1")
-  (error "Detected Emacs %s but only 26.1 and higher is supported"
+(when (version< emacs-version "29")
+  (error "Emacs version must be at least 29 but found %s"
 	 emacs-version))
-
-;; Support for early-init was added in Emacs 27 so in order to properly support
-;; Emacs 26, we need to manually load it.
-(when (< emacs-major-version 27)
-  (load (concat user-emacs-directory "early-init") nil 'nomessage))
 
 (setq use-package-compute-statistics t)
 
@@ -36,16 +31,7 @@
   (defun my/load-conf (name)
     (load-file (format "~/.emacs.d/config/%s.el" name)))
 
-  (defun my/load-confs (names)
-    (mapcar #'my/load-conf names))
-
   (package-activate-all)
-
-  ;; elpa
-  (my/load-conf 'elpa)
-
-  ;; use-package
-  (install_if_missing 'use-package)
 
   ;; benchmark start-up time
   (use-package benchmark-init
@@ -54,36 +40,110 @@
     ;; To disable collection of benchmark data after init is done.
     (add-hook 'after-init-hook 'benchmark-init/deactivate))
 
-  ;; auto-complete and narrowing
-  (my/load-conf 'completion-narrowing)
+  ;; elpa package archives
+  (setq package-archives '(("melpa" . "http://melpa.org/packages/")
+                         ("melpa-stable" . "https://stable.melpa.org/packages/")))
 
-  ;; volatile highlights mode
+  (defvar package-archive-priorities
+    '(("melpa-stable" . 20)
+      ("melpa" . 10)))
+
+  ;; tree-sitter config (syntax highlighting)
+  (require 'treesit)
+  (use-package treesit-auto
+    :ensure t
+    :custom
+    (treesit-auto-install 'prompt)
+    :config
+    (treesit-auto-add-to-auto-mode-alist 'all)
+    (global-treesit-auto-mode))
+
+  ;; rust setup. For now, just rust mode
+  (use-package rust-mode :ensure t)
+
+  ;; language server protocol (LSP) config
+  (use-package eglot
+  :ensure t
+  :config (​add-to-list​ ​'eglot-server-programs​ '((​rust-mode​) ​.​ (​"​rust-analyzer​"​)))
+  :hook ((python-mode . eglot-ensure)
+         (rust-mode . eglot-ensure)))
+  
+
+  ;; undo tree; open with C-x u
+  (use-package undo-tree :defer 2 :ensure t :diminish undo-tree-mode :init (global-undo-tree-mode))
+
+  ;; rainbow mode for parens and delimiters
+  (use-package rainbow-mode
+    :ensure t
+    :config
+    (define-globalized-minor-mode global-rainbow-mode rainbow-mode
+      (lambda () (rainbow-mode 1)))
+    (global-rainbow-mode 1) ;; enable rainbow mode in every buffer (global minor mode)
+    )
+  ;; TODO do we really want this for delimiters and identifiers?
+  (use-package rainbow-delimiters :ensure t :hook (prog-mode . rainbow-delimiters-mode))
+  (use-package rainbow-identifiers :ensure t)
+
+
+  ;; highlight parens
+  (use-package highlight-parentheses
+  :ensure t
+  ;; use electric pair mode to create matching pairs of parens instead of autopair
+  :init (global-highlight-parentheses-mode t))
+  (electric-pair-mode 1)
+
+
+  ;; put volatile highlights on undo, yank[-pop], kill-{region,line,...}, delete-region, find-tag and some others
+  ;; volatile highlights will be 
   (use-package volatile-highlights
     :defer 2
     :ensure t
     :bind ("<f8>" . volatile-highlights-mode)
-    :init (volatile-highlights-mode))
+    :init
+    (volatile-highlights-mode)
+    (vhl/define-extension 'undo-tree 'undo-tree-yank 'undo-tree-move)
+    (vhl/install-extension 'undo-tree))
 
-  (my/load-confs '("markdown" "latex" "general"))
+  (my/load-conf 'general)
 
-  ;; iedit
-  (use-package iedit :ensure t :defer 2 :bind (("C-;" . iedit-mode) ("C-x r <return>" . 'iedit-rectangle-mode)))
+  ;; TODO latex support
+
+  ;; Markdown support. Use github markdown for all markdown files
+  (use-package
+    markdown-mode
+    :defer t
+    :ensure t
+    :mode (("\\.md\\'" . gfm-mode)))
+
+  ;; iedit: edit multiple occurences at once + rectangle mode
+  (use-package iedit :ensure t :defer 2 :bind (("C-;" . iedit-mode)
+					       ("C-x r <return>" . 'iedit-rectangle-mode)))
 
   ;; json
   (use-package json-mode :defer t :ensure t :mode "\\.json\\'")
 
   ;; theme related settings
-  ;; (my/load-conf 'themes)
+  (my/load-conf 'themes)
 
-  ;; undo tree
-  (use-package undo-tree :defer 2 :ensure t :diminish undo-tree-mode :init (global-undo-tree-mode))
+  ;; control git from emacs via magit
+  (use-package magit
+  :defer 2
+  :ensure t
+  :bind (("C-x g" . magit-status)))
 
-  (my/load-confs
-   '("vc" "kill" "utility" "write-file-and-keep-buffer" "rainbow" "parens" "google" "nyan"))
+  ;; TODO we exclude network file systems and tramp here but that is probably not needed anymore
+  (setq vc-ignore-dir-regexp (format "\\(%s\\)\\|\\(%s\\)\\|\\(%s\\)|\\(%s\\)"
+                                     vc-ignore-dir-regexp
+                                     tramp-file-name-regexp
+                                     "/nrs/.*"
+                                     "/ssh:.+:/nrs/.*"))
 
-  ;; perspective
-  (use-package perspective :ensure t :defer 1 :config (persp-mode 1))
+  ;; Add function nuke-some-buffers that closes all unmodified buffers and prompts for others
+  (my/load-conf 'kill)
 
+  ;; Add save-as function that prompts whether to switch to new file
+  (my/load-conf 'save-as)
+  
   ;; do not store settings made through customize in ~/.emacs
   (setq custom-file "~/.emacs.d/config/custom.el")
   (load custom-file 'noerror)
@@ -113,10 +173,23 @@
           doom-modeline-github-interval (* 30 60))
     :init (doom-modeline-mode 1))
   (use-package minions :ensure t :init (minions-mode))
+
+  ;; show last executed command & key binding
   (use-package keycast :ensure t :init (keycast-header-line-mode))
 
-  ;;; TODO
-  (use-package eyebrowse :defer 2 :ensure t)
+  ;; google integration
+  (use-package google-this :ensure t :defer 2)
+  (use-package google-translate :ensure t :defer 2)
+  (use-package google-maps :ensure t :defer 2)
 
+  ;; fun with nyan cat
+  (use-package nyan-mode
+    :ensure t
+    :config
+    (nyan-mode 1) ;; turn on nyan cat mode
+    (nyan-start-animation)  ;; make sure nyan cat is animated
+    )
   )
+
+
 

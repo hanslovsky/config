@@ -126,6 +126,7 @@
 
 (use-package restart-emacs :ensure t)
 
+;;; NOTE!! We don't need this when starting emacs via command line, which is what I always do anyways
 ;; get environment variables from shell
 ;; TODO this is very slow. Will need to re-work ~/.zshrc into ~/.zshenv so I can use non-interactive shell
 ;; (use-package exec-path-from-shell :ensure t)
