@@ -2,9 +2,9 @@
 alias getbb='gs -dNOPAUSE -dBATCH -q -sDEVICE=bbox'
 
 # emacs
-alias ec='emacsclient -c -n'
-alias et='emacsclient -t -s term'
-alias e='emacsclient -n'
+alias ec='emacsclient -c -n -a ""'
+alias et='emacsclient -t -s term -a ""'
+alias e='emacsclient -n -a ""'
 ecs() { ec "/sudo::$@"; }
 ets() { et "/sudo::$@"; }
 es() { e "/sudo::$@"; }
