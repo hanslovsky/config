@@ -1,21 +1,3 @@
-(require 'treesit)
-(use-package treesit-auto
-  :ensure t
-  :custom
-  (treesit-auto-install 'prompt)
-  :config
-  (treesit-auto-add-to-auto-mode-alist 'all)
-  (global-treesit-auto-mode))
-
-(use-package rust-mode :ensure t)
-
-(use-package eglot
-  :ensure t
-  :config (​add-to-list​ ​'eglot-server-programs​ '((​rust-mode​) ​.​ (​"​rust-analyzer​"​)))
-  :hook ((python-mode . eglot-ensure)
-         (rust-mode . eglot-ensure)))
-
-
 ;; https://www.reddit.com/r/emacs/comments/qfrxgb/using_emacs_episode_80_vertico_marginalia_consult/
 (use-package vertico
   :ensure t
@@ -128,3 +110,4 @@
   :ensure t
   :hook (company-mode . company-box-mode)
   :init (company-box-mode))
+
