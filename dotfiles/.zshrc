@@ -204,3 +204,6 @@ autoload -U zmv
 
 # direnv
 hash direnv && eval "$(direnv hook zsh)"
+
+zprof > "$ZSH_STARTUP_PROFILE_FILE"
+

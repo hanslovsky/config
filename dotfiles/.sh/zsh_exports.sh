@@ -10,3 +10,5 @@ fi
 # opam configuration (for OCaml)
 [[ ! -r /home/zottel/.opam/opam-init/init.zsh ]] || source /home/zottel/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
 
+export ZSH_STARTUP_PROFILE_FILE="$LOCAL/tmp/zsh-profile.$$"
+mkdir -p "$LOCAL/tmp"

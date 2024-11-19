@@ -69,8 +69,6 @@ export ECLIPSE_HOME=$HOME/.eclipse
 # added by travis gem
 [ -f "$HOME/.travis/travis.sh" ] && source "$HOME/.travis/travis.sh"
 
-# conda
-[ -f "$HOME/miniconda3/etc/profile.d/conda.sh" ] && source "$HOME/miniconda3/etc/profile.d/conda.sh"
 
 # pyjnius jar if present
 [ -f "$HOME/Dropbox/misc/pyjnius/pyjnius.jar" ] && export PYJNIUS_JAR="$HOME/Dropbox/misc/pyjnius/pyjnius.jar"
