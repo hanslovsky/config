@@ -201,3 +201,6 @@ autoload -U zmv
 
 # opam configuration
 [[ ! -r /home/zottel/.opam/opam-init/init.zsh ]] || source /home/zottel/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+
+# direnv
+hash direnv && eval "$(direnv hook zsh)"
