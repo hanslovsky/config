@@ -47,16 +47,6 @@ export EMOJI_CLI_USE_EMOJI=1
 
 # themes
 
-zplug "fribmendes/geometry"
-
-if [ "${ZSH_VERSION_MAJOR}" -ge "5" -a "${ZSH_VERSION_MINOR}" -ge "1" ]; then
-    export GEOMETRY_PROMPT_PLUGINS=(exec_time jobs virtualenv git)
-fi
-export GEOMETRY_COLOR_ROOT="red"
-export GEOMETRY_COLOR_VIRTUALENV="green"
-export GEOMETRY_COLOR_CONDA="red"
-export GEOMETRY_VIRTUALENV_CONDA_SEPARATOR="~~"
-
 zplug load
 
 
@@ -130,6 +120,11 @@ autoload -U zmv
 
 # direnv
 hash direnv && eval "$(direnv hook zsh)"
+
+# starship theme
+# https://github.com/starship/starship
+# requires that starship is installed e.g. pacman -S starship
+hash starship && eval "$(starship init zsh)"
 
 zprof > "$ZSH_STARTUP_PROFILE_FILE"
 
