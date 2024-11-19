@@ -129,3 +129,7 @@ hash git-fuzzy 2>/dev/null && alias fgit='git-fuzzy'
 
 # define alias to copy and resize edited images:
 alias copy-to-edited='copy-to-edited.sh | wc -l && FACTOR=50% resize.sh | wc -l && FACTOR=25% resize.sh | wc -l'
+
+function take {
+    mkdir -p $@ && cd ${@:$#}
+}

@@ -1,10 +1,3 @@
-# Path to your oh-my-zsh configuration.
-# ZSH=$HOME/.oh-my-zsh
-
-# a lot of stuff in here: https://github.com/b4b4r07/dotfiles/blob/master/.zsh/zplug.zsh
-
-# login1 crashes when starting zsh, thus go back to this commit there: 734ce7d
-
 # good fonts: source-code-pro roboto
 # get them at ttf-google-fonts-git
 
@@ -12,45 +5,37 @@ export ZPLUG_HOME=$HOME/.zplug
 
 source $ZPLUG_HOME/init.zsh
 
-zplug "mafredri/zsh-async", from:github, defer:0
+# syntax highlighting, e.g. keywords like for
+zplug "zsh-users/zsh-syntax-highlighting", from:github, defer:3
 
-zplug "zsh-users/zsh-history-substring-search", defer:3
-
+# completions that may not be available in plain zsh, e.g. archlinux-java
 zplug "zsh-users/zsh-completions"
 
+# suggest a command based on what is typed so far.
+# E.g.
+#   $ echo 123
+#   $ e
+# will suggest echo 123
 zplug "zsh-users/zsh-autosuggestions"
 
-# from https://github.com/zsh-users/zsh-syntax-highlighting/issues/286#issuecomment-271486864
-if [[ $ZSH_EVAL_CONTEXT == 'file' ]]; then
-    zplug "zsh-users/zsh-syntax-highlighting", from:github, defer:3
-fi
-
+# print a calendar of contributions similar to what is on github.com
 zplug "k4rthik/git-cal", as:command
 
-zplug "plugins/git",   from:oh-my-zsh
-
-zplug "lib/functions",   from:oh-my-zsh
-
-zplug "lib/theme-and-appearance",   from:oh-my-zsh
-
-zplug "lib/directories",   from:oh-my-zsh
-
 zplug "lib/history",   from:oh-my-zsh
-
-zplug "plugins/emoji-clock",   from:oh-my-zsh
 
 zplug "lib/completion", from:oh-my-zsh
 
 # fuzzy matchers
 # definitely manage this with .zshrc
 zplug "zsh-users/zaw"
+# trigger zaw: C-x ;
+bindkey '^R' zaw-history
 
-zplug "jhawthorn/fzy", as:command, rename-to:fzy, hook-build:"make && sudo make install"
-
-# enhanced cd command
+# enhanced cd command; replace cd with ecd to use
 zplug "b4b4r07/enhancd", use:init.sh
-export ENHANCD_FILTER=fzy
+export ENHANCD_FILTER=sk:fzy:fzf
 export ENHANCD_COMMAND=ecd
+export ENHANCD_HYPHEN_NUM=30
 
 # emoji completion, use ^s to start
 # needs fzy and jq (both available on arch repos)
@@ -60,79 +45,20 @@ zplug "b4b4r07/emoji-cli" # , as:command, if:"(( $+commands[jq] ))"
 export EMOJI_CLI_KEYBIND='^x^e'
 export EMOJI_CLI_USE_EMOJI=1
 
-# zplug "peco/peco", as:command, from:gh-r
-
-
 # themes
 
 zplug "fribmendes/geometry"
 
-# community plugins
-zplug "jedahan/geometry-hydrate"
-zplug "desyncr/geometry-pretty-git"
-# requires Ctrl - D at startup
-# virtualenv plugin fails with
-# basename: missing operand
-# https://github.com/fribmendes/geometry/tree/master/plugins
-
 if [ "${ZSH_VERSION_MAJOR}" -ge "5" -a "${ZSH_VERSION_MINOR}" -ge "1" ]; then
-    export GEOMETRY_PROMPT_PLUGINS=(exec_time jobs virtualenv git pretty-git hydrate)
+    export GEOMETRY_PROMPT_PLUGINS=(exec_time jobs virtualenv git)
 fi
 export GEOMETRY_COLOR_ROOT="red"
 export GEOMETRY_COLOR_VIRTUALENV="green"
 export GEOMETRY_COLOR_CONDA="red"
 export GEOMETRY_VIRTUALENV_CONDA_SEPARATOR="~~"
 
-# zplug "sindresorhus/pure", use:pure.zsh, from:github, as:theme
-
-# if ! zplug check; then
-#     zplug install
-# fi
-
 zplug load
 
-
-
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-# ZSH_THEME="af-magic"
-# ZSH_THEME="kphoen" # ++
-# ZSH_THEME="sunrise" # ++
-# ZSH_THEME="gnzh" #  +
-# ZSH_THEME="norm" #  +
-# ZSH_THEME="nanotech" #  +
-# ZSH_THEME="minimal" # 
-# ZSH_THEME="mrtazz" #  ++
-# ZSH_THEME="dieter" # ++
-# ZSH_THEME="bureau" # ++
-# ZSH_THEME="kolo" # +
-# ZSH_THEME="miloshadzic" # +
-# ZSH_THEME="sunaku" # ++
-# ZSH_THEME="amuse" # ++
-# ZSH_THEME="zottel" # +++
-# ZSH_THEME="geometry/geometry"
-
-# themes to test:
-# xxf
-# cordial
-# gitster
-# haribo
-# lambda-mod
-# Node
-# Spaceship
-# Nodeys
-# geometry
-# Bunnyruni
-# lambda pure
-
-# Set to this to use case-sensitive completion
-# CASE_SENSITIVE="true"
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
 
 # prompts
 # enable the use of tramp with zsh
@@ -192,7 +118,7 @@ globalias() {
 
 zle -N globalias
 
-bindkey " " globalias
+bindkey " " globalias              # anything after space can be global alias
 bindkey "^ " magic-space           # control-space to bypass completion
 bindkey -M isearch " " magic-space # normal space during searches
 
