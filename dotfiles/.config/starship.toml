@@ -79,7 +79,8 @@ disabled = false
 number_threshold = 1
 symbol_threshold = 1
 style = "bg:color_orange fg:color_fg0"
-format = '[$symbol$number]($style)'
+format = '[$symbol$number ]($style)'
+symbol = "⚙"
 
 [directory]
 style = "fg:color_fg0 bg:color_yellow"
