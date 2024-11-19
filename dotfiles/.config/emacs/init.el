@@ -60,10 +60,24 @@
     (treesit-auto-add-to-auto-mode-alist 'all)
     (global-treesit-auto-mode))
 
-  ;; rust setup. For now, just rust mode
+  ;;; rust setup. For now, just rust mode
   (use-package rust-mode :ensure t)
 
-  ;; language server protocol (LSP) config
+  ;;; language server protocol (LSP) config
+  ;; To make this work properly, set up a .envrc file in the directory
+  ;; that loads an appropriate interpreter that also has the
+  ;; python-lsp-server package installed
+  ;;   https://pypi.org/project/python-lsp-server/
+  ;; For example:
+  ;;  mamba create -n tmp python  # create environment
+  ;;  mamba activate tmp  # activate environment
+  ;;  python -m pip install python-lsp-server  # install lsp server
+  ;;  echo 'hash conda && source activate tmp' >> /some/dir/.envrc  # set up .envrc
+  ;;
+  ;; Then, after opening a python file within /some/dir (including
+  ;; sub-directories), type M-x eglot and select pylsp as language server.
+  ;; This should get the right interpreter for you.
+  (use-package envrc :ensure t :hook (after-init . envrc-global-mode))
   (use-package eglot
   :ensure t
   :config (​add-to-list​ ​'eglot-server-programs​ '((​rust-mode​) ​.​ (​"​rust-analyzer​"​)))

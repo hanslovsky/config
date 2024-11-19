@@ -1,4 +1,4 @@
-;; https://www.reddit.com/r/emacs/comments/qfrxgb/using_emacs_episode_80_vertico_marginalia_consult/
+;; vertico for vertical copmletion UI
 (use-package vertico
   :ensure t
   :init (vertico-mode)
@@ -51,15 +51,12 @@
   :hook (vertico-mode . vertico-prescient-mode)
   :init (vertico-prescient-mode))
 
-;; savehist is not on elpa, so we cannot install it. it will always check for it again.
-;; TODO where should we move savehist-mode? Should this be in here?
-(savehist-mode)
-
 (use-package emacs
   :init
   ;; Enable recursive minibuffers
   (setq enable-recursive-minibuffers t))
 
+;; consult for complete-read/narrowing/selection buffers
 (use-package consult
   :ensure t
   :bind (("C-c M-x" . consult-mode-command)
@@ -71,6 +68,7 @@
   :init (recentf-mode)
   )
 
+;; Marginalia enriches consult completion buffer, e.g. with doc string or file information
 (use-package marginalia
   :ensure t
   :bind (:map minibuffer-local-map
@@ -78,6 +76,8 @@
   :init
   (marginalia-mode))
 
+;; Use appropriate icons for (mostly?) everything,
+;; e.g. folders for directories, icons based on file extension, etc
 (use-package all-the-icons :ensure t :if (display-graphic-p))
 (use-package all-the-icons-completion
   :ensure t
@@ -85,29 +85,24 @@
   :hook (marginalia-mode . all-the-icons-completion-marginalia-setup)
   :init (all-the-icons-completion-mode))
 
-(use-package company
-  :ensure t
-  :init
-  :bind (("C-." . company-files)
-         ("C-<tab>" . company-complete))
-  :config
-  (setq company-idle-delay 0.3)
-  (setq company-show-numbers t)
-  (setq company-tooltip-limit 30)
-  (setq company-minimum-prefix-length 1)
-  (global-company-mode t))
+;; in-buffer completion
+(use-package corfu :ensure t :init (global-corfu-mode))
+;; A few more useful configurations...
+(use-package emacs
+  :custom
+  ;; TAB cycle if there are only few candidates
+  ;; (completion-cycle-threshold 3)
 
-(use-package company-quickhelp
-  :ensure t
-  :config
-  (setq company-quickhelp-delay 0.1)
-  :bind (:map company-active-map
-              ("C-c h". company-quickhelp-manual-begin))
-  :hook (company-mode . company-quickhelp-mode))
+  ;; Enable indentation+completion using the TAB key.
+  ;; `completion-at-point' is often bound to M-TAB.
+  (tab-always-indent 'complete)
 
-;; Requires latest master of company mode (later than 0.9.13)
-(use-package company-box
-  :ensure t
-  :hook (company-mode . company-box-mode)
-  :init (company-box-mode))
+  ;; Emacs 30 and newer: Disable Ispell completion function.
+  ;; Try `cape-dict' as an alternative.
+  (text-mode-ispell-word-completion nil)
+
+  ;; Hide commands in M-x which do not apply to the current mode.  Corfu
+  ;; commands are hidden, since they are not used via M-x. This setting is
+  ;; useful beyond Corfu.
+  (read-extended-command-predicate #'command-completion-default-include-p))
 
