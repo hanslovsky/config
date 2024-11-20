@@ -21,7 +21,7 @@
 (setq use-package-compute-statistics t)
 
 ;; elpa package archives
-(setq package-archives '(("melpa" . "http://melpa.org/packages/")
+(setq package-archives '(("melpa" . "https://melpa.org/packages/")
                          ("melpa-stable" . "https://stable.melpa.org/packages/")
 			 ("gnu" . "https://elpa.gnu.org/packages/")
 			 ("nongnu" . "https://elpa.nongnu.org/nongnu/")))
