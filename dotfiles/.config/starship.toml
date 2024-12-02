@@ -94,7 +94,7 @@ disabled = false
 [[battery.display]]
 threshold = 10
 style = "bg:color_orange fg:color_fg0"
-discharging_symbol = '▁!'
+discharging_symbol = '💀'
 
 [[battery.display]]
 threshold = 22
