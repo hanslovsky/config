@@ -5,6 +5,7 @@ format = """
 $os\
 $username\
 $hostname\
+$battery\
 $jobs\
 [](bg:color_yellow fg:color_orange)\
 $directory\
@@ -81,6 +82,59 @@ ssh_only = false
 style = "bg:color_orange fg:color_fg0"
 format = "[@$ssh_symbol$hostname ]($style)"
 disabled= false
+
+[battery]
+full_symbol = '🔋 '
+charging_symbol = '⚡️ '
+discharging_symbol = '▁'
+style = "bg:color_orange fg:color_fg0"
+format = '[$symbol$percentage]($style)'
+disabled = false
+
+[[battery.display]]
+threshold = 10
+style = "bg:color_orange fg:color_fg0"
+discharging_symbol = '▁!'
+
+[[battery.display]]
+threshold = 22
+style = "bg:color_orange fg:color_fg0"
+discharging_symbol = '▁ '
+
+[[battery.display]]
+threshold = 35
+style = "bg:color_orange fg:color_fg0"
+discharging_symbol = '▂ '
+
+[[battery.display]]
+threshold = 47
+style = "bg:color_orange fg:color_fg0"
+discharging_symbol = '▃ '
+
+[[battery.display]]
+threshold = 60
+style = "bg:color_orange fg:color_fg0"
+discharging_symbol = '▄ '
+
+[[battery.display]]
+threshold = 72
+style = "bg:color_orange fg:color_fg0"
+discharging_symbol = '▅ '
+
+[[battery.display]]
+threshold = 85
+style = "bg:color_orange fg:color_fg0"
+discharging_symbol = '▆ '
+
+[[battery.display]]
+threshold = 97
+style = "bg:color_orange fg:color_fg0"
+discharging_symbol = '▇'
+
+[[battery.display]]
+threshold = 100
+style = "bg:color_orange fg:color_fg0"
+discharging_symbol = '█ '
 
 [jobs]
 disabled = false
